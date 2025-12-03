@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS 3D - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="../about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="../cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="../resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="../contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-article">
+            <div class="article-header">
+                <span class="article-category">Game Development - Apprentissage</span>
+                <h1>🎯 FPS 3D - Mon Premier Projet Unity</h1>
+                <div class="article-meta">
+                    <span>📅 2024 - 2025</span>
+                    <span>⏱️ Projet en cours</span>
+                    <span>👨‍💻 C# & Unity</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <section class="article-section">
+                    <h2>📖 À propos du projet</h2>
+                    <p>Ce projet est mon premier vrai projet de game development. C'est un FPS (First-Person Shooter) 3D complet créé avec Unity et C#. J'ai suivi l'excellente série de tutoriels <strong><a href="https://www.youtube.com/@TUTOUNITYFR" target="_blank" style="color: var(--primary-color); text-decoration: underline;">TUTO UNITY FR</a></strong> sur YouTube pour réaliser ce projet.</p>
+                    <p>Ce projet m'a permis d'apprendre :</p>
+                    <ul>
+                        <li>Les bases du développement 3D avec Unity</li>
+                        <li>La gestion des contrôles et de la physique</li>
+                        <li>Les systèmes de jeu (tir, santé, respawn)</li>
+                        <li>L'interface utilisateur (UI)</li>
+                        <li>La programmation orientée objet en C#</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎮 Étapes principales du développement</h2>
+
+                    <div class="reference-box">
+                        <h4>1️⃣ Introduction au projet</h4>
+                        <p>Première vidéo : <strong><a href="https://www.youtube.com/watch?v=65i-egqXY0o&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=1" target="_blank">EP00 : Introduction à la série</a></strong></p>
+                        <p>Présentation du projet global et des objectifs à atteindre. Cette vidéo donne une vue d'ensemble de ce que nous allons construire.</p>
+                        <div class="screenshots-gallery" id="gallery-1">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>2️⃣ Création du joueur</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=4wH6YJ9aeVo&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=2" target="_blank">EP01 : Ajout du joueur</a></strong></p>
+                        <p>Création du prefab du joueur, configuration de la caméra et mise en place de la structure de base du personnage jouable.</p>
+                        <div class="screenshots-gallery" id="gallery-2">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>3️⃣ Système de mouvements</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=9Sr1B5diVZY&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=3" target="_blank">EP02 : Player Movements</a></strong></p>
+                        <p>Implémentation du système de mouvements : avancer, reculer, se tourner. Gestion de l'input clavier et intégration de la physique.</p>
+                        <div class="screenshots-gallery" id="gallery-3">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>4️⃣ Configuration de Mirror</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=NQbXjHWH6Cw&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=4" target="_blank">EP03 : Setting up Mirror</a></strong></p>
+                        <p>Installation et configuration du package Mirror pour permettre le multijoueur. Mise en place de la synchronisation réseau.</p>
+                        <div class="screenshots-gallery" id="gallery-4">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>5️⃣ Système de tir</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=zBKLh3vxEgM&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=7" target="_blank">EP06 : Système de tir</a></strong></p>
+                        <p>Implémentation du système de tir avec raycast, gestion des munitions et synchronisation pour le multijoueur.</p>
+                        <div class="screenshots-gallery" id="gallery-5">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>6️⃣ Système de dégâts et santé</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=YtaOAyy4cS4&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=8" target="_blank">EP07 : Player Damage</a></strong></p>
+                        <p>Création du système de santé des joueurs, gestion des dégâts et détection des impacts.</p>
+                        <div class="screenshots-gallery" id="gallery-6">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>7️⃣ Système de respawn</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=jsuaV9M_IJw&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=9" target="_blank">EP08 : Respawn</a></strong></p>
+                        <p>Implémentation du système de respawn : récupération de la santé, repositionnement et synchronisation réseau.</p>
+                        <div class="screenshots-gallery" id="gallery-7">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>8️⃣ Interface utilisateur (UI)</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=-W1rcFwf1o4&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=11" target="_blank">EP10 : Réticule et UI</a></strong></p>
+                        <p>Création du HUD (Heads-Up Display) : réticule de visée, barre de vie, affichage des munitions et autres informations de jeu.</p>
+                        <div class="screenshots-gallery" id="gallery-8">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>9️⃣ Tir automatique et animations</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=vh3gitTILuo&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=13" target="_blank">EP12 : Tir automatique</a></strong></p>
+                        <p>Implémentation du tir automatique, recoil de l'arme et animations de tir pour plus de réalisme.</p>
+                        <div class="screenshots-gallery" id="gallery-9">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>🔟 Tableau des scores</h4>
+                        <p>Vidéo : <strong><a href="https://www.youtube.com/watch?v=5uwSl0pEoQo&list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN&index=19" target="_blank">EP18 : Tableau des scores</a></strong></p>
+                        <p>Création d'un système de score : suivi des kills et des morts, affichage du classement pendant et après la partie.</p>
+                        <div class="screenshots-gallery" id="gallery-10">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🛠️ Technologies utilisées</h2>
+                    <ul>
+                        <li><strong>Unity Engine</strong> - Moteur 3D</li>
+                        <li><strong>C#</strong> - Langage de programmation</li>
+                        <li><strong>Mirror Networking</strong> - Pour le multijoueur</li>
+                        <li><strong>Physics Engine Unity</strong> - Physique 3D</li>
+                        <li><strong>Raycast System</strong> - Pour le système de tir</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>📚 Ce que j'ai appris</h2>
+                    <ul>
+                        <li>Programmation en C# et Programmation Orientée Objet</li>
+                        <li>Développement 3D avec Unity (transforms, rigidbodies, colliders)</li>
+                        <li>Système de jeu (game loops, event handling)</li>
+                        <li>Programmation réseau avec Mirror</li>
+                        <li>Gestion d'UI avec le système Canvas d'Unity</li>
+                        <li>Optimisation et débogage</li>
+                        <li>Architecture de code et design patterns</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎓 Ressources principales</h2>
+                    <p>Ce projet a été créé en suivant la playlist complète : <strong><a href="https://www.youtube.com/playlist?list=PLUWxWDlz8PYI2OdmIhOnxg92kl0DgS1EN" target="_blank">Créer un FPS MULTIJOUEUR avec Mirror sur Unity</a></strong></p>
+                    <p>La chaîne <strong><a href="https://www.youtube.com/@TUTOUNITYFR" target="_blank">TUTO UNITY FR</a></strong> propose des tutoriels de très haute qualité et très bien expliqués. Je recommande vivement cette ressource pour toute personne voulant débuter avec Unity et le game development.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>✨ Améliorations futures</h2>
+                    <ul>
+                        <li>Ajouter plus de variété dans les armes</li>
+                        <li>Créer des maps plus détaillées</li>
+                        <li>Implémenter des powerups</li>
+                        <li>Optimiser les performances</li>
+                        <li>Ajouter des effets sonores et musique</li>
+                        <li>Créer un système de matchmaking</li>
+                    </ul>
+                </section>
+            </div>
+
+            <div class="article-footer">
+                <a href="index.html" class="btn-back">← Retour aux projets</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+
+    <style>
+        .screenshots-gallery {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius-md);
+            min-height: 100px;
+            align-content: start;
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .gallery-placeholder p {
+            margin: 0.5rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-md);
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay button {
+            background: var(--error-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-item-overlay button:hover {
+            background: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        .add-screenshot-btn {
+            grid-column: 1 / -1;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .add-screenshot-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-screenshot-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.screenshots-gallery');
+
+            galleries.forEach((gallery, index) => {
+                const galleryId = gallery.id || `gallery-${index}`;
+                gallery.id = galleryId;
+
+                addScreenshotButton(gallery);
+                loadGalleryData(gallery);
+            });
+
+            function addScreenshotButton(gallery) {
+                const button = document.createElement('button');
+                button.className = 'add-screenshot-btn';
+                button.textContent = '➕ Ajouter un screenshot';
+                button.type = 'button';
+
+                button.addEventListener('click', function() {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.multiple = true;
+
+                    input.addEventListener('change', function(e) {
+                        const files = e.target.files;
+                        const currentImages = gallery.querySelectorAll('.gallery-item').length;
+
+                        for (let file of files) {
+                            if (currentImages >= 10) {
+                                alert('Maximum 10 screenshots par étape!');
+                                break;
+                            }
+
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                addImageToGallery(gallery, event.target.result, galleryId);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+
+                    input.click();
+                });
+
+                gallery.appendChild(button);
+            }
+
+            function addImageToGallery(gallery, imageData, galleryId) {
+                const placeholder = gallery.querySelector('.gallery-placeholder');
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = imageData;
+
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-item-overlay';
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '🗑️ Supprimer';
+                deleteBtn.type = 'button';
+
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    item.remove();
+                    saveGalleryData(gallery, galleryId);
+
+                    if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                        const placeholder = gallery.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            placeholder.style.display = 'block';
+                        }
+                    }
+                });
+
+                overlay.appendChild(deleteBtn);
+                item.appendChild(img);
+                item.appendChild(overlay);
+
+                const button = gallery.querySelector('.add-screenshot-btn');
+                gallery.insertBefore(item, button);
+
+                saveGalleryData(gallery, galleryId);
+            }
+
+            function saveGalleryData(gallery, galleryId) {
+                const images = [];
+                gallery.querySelectorAll('.gallery-item img').forEach(img => {
+                    images.push(img.src);
+                });
+                localStorage.setItem(`fps-gallery-${galleryId}`, JSON.stringify(images));
+            }
+
+            function loadGalleryData(gallery) {
+                const galleryId = gallery.id;
+                const savedImages = localStorage.getItem(`fps-gallery-${galleryId}`);
+
+                if (savedImages) {
+                    const images = JSON.parse(savedImages);
+                    const placeholder = gallery.querySelector('.gallery-placeholder');
+
+                    images.forEach(imageData => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+
+                        const img = document.createElement('img');
+                        img.src = imageData;
+
+                        const overlay = document.createElement('div');
+                        overlay.className = 'gallery-item-overlay';
+
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️ Supprimer';
+                        deleteBtn.type = 'button';
+
+                        deleteBtn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            item.remove();
+                            saveGalleryData(gallery, galleryId);
+
+                            if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                                const placeholder = gallery.querySelector('.gallery-placeholder');
+                                if (placeholder) {
+                                    placeholder.style.display = 'block';
+                                }
+                            }
+                        });
+
+                        overlay.appendChild(deleteBtn);
+                        item.appendChild(img);
+                        item.appendChild(overlay);
+
+                        const button = gallery.querySelector('.add-screenshot-btn');
+                        gallery.insertBefore(item, button);
+
+                        if (placeholder) {
+                            placeholder.style.display = 'none';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>

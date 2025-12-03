@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="projets/index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="contact.html" class="nav-link active">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="contact-section">
+            <h1>ME CONTACTER</h1>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Vos informations</h3>
+                    <p>N'hésitez pas à me contacter pour :</p>
+                    <ul>
+                        <li>Discuter de projets ou collaborations</li>
+                        <li>Des questions techniques</li>
+                        <li>Ou simplement échanger sur le développement</li>
+                    </ul>
+                    <p>Remplissez le formulaire ci-dessous et je vous répondrai au plus tôt.</p>
+                </div>
+
+                <form class="contact-form-advanced">
+                    <!-- Type de demande -->
+                    <div class="request-type">
+                        <div class="type-option">
+                            <input type="radio" id="type-recruitment" name="request-type" value="recruitment" checked>
+                            <label for="type-recruitment">💼 Recrutement</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" id="type-collaboration" name="request-type" value="collaboration">
+                            <label for="type-collaboration">🤝 Collaboration</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" id="type-technical" name="request-type" value="technical">
+                            <label for="type-technical">🔧 Question technique</label>
+                        </div>
+                        <div class="type-option">
+                            <input type="radio" id="type-other" name="request-type" value="other">
+                            <label for="type-other">❓ Autre</label>
+                        </div>
+                    </div>
+
+                    <!-- Upload de fichier -->
+                    <div class="file-upload">
+                        <label for="file">📎 Joindre un fichier (CV, spécifications, etc.)</label>
+                        <input type="file" id="file" class="file-input" accept=".pdf,.doc,.docx,.txt">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="prenom">Prénom *</label>
+                            <input type="text" id="prenom" name="prenom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="nom">Nom de famille *</label>
+                            <input type="text" id="nom" name="nom" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">E-mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Entreprise / Organisation</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">Niveau d'urgence</label>
+                        <select id="urgency" name="urgency">
+                            <option value="normal">Normal</option>
+                            <option value="urgent">Urgent</option>
+                            <option value="very-urgent">Très urgent</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Laissez-nous un message... *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre demande en détail..."></textarea>
+                    </div>
+
+                    <!-- Prévisualisation -->
+                    <div class="message-preview">
+                        <h4>Prévisualisation du message :</h4>
+                        <p></p>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Envoyer le message</button>
+                </form>
+
+                <div class="newsletter">
+                    <h3>SUIVRE MES ARTICLES</h3>
+                    <p>Restez informé de mes nouveaux articles et tutoriels</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre adresse email *" required>
+                        <button type="submit">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

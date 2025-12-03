@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction à la POO en Java - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .code-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            overflow-x: auto;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            line-height: 1.8;
+            letter-spacing: 0.3px;
+        }
+
+        .code-block {
+            white-space: pre;
+            word-wrap: normal;
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow);
+        }
+
+        .concept-card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+
+        .example-section {
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05) 0%, rgba(58, 12, 163, 0.05) 100%);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            margin: 1.5rem 0;
+        }
+
+        .example-section h4 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .benefit-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .benefit-item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: var(--border-radius-md);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .benefit-item strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="../projets/index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="../about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="../cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="../resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="../contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <article class="blog-article">
+            <div class="article-header">
+                <span class="article-category">Tutoriel</span>
+                <h1>🎓 Introduction à la Programmation Orientée Objet en Java</h1>
+                <div class="article-meta">
+                    <span>📅 15 décembre 2024</span>
+                    <span>⏱️ 18 min de lecture</span>
+                    <span>👨‍💻 Java</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <section class="article-section">
+                    <h2>🚀 Pourquoi la POO ? Pourquoi maintenant ?</h2>
+                    <p>Imaginez que vous construisez une maison. Vous pourriez tout faire en une seule fonction géante qui gère les murs, les portes, les fenêtres, l'électricité, la plomberie... Ça serait un cauchemar à maintenir ! La Programmation Orientée Objet fonctionne comme un architecte : elle organise votre code en petites pièces (objets) chacune avec une responsabilité spécifique.</p>
+                    <p>La POO n'est pas juste un concept théorique. C'est <strong>la réalité du développement professionnel</strong>. Tous les grands projets utilisent la POO. Apprendre maintenant, c'est apprendre comment les vrais développeurs pensent et organisent leurs projets.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>📚 Les 4 piliers de la POO</h2>
+
+                    <div class="concept-card">
+                        <h3>1️⃣ Les Classes et Objets</h3>
+                        <p>Une <strong>classe</strong> est comme un blueprint (plan) pour créer des objets. Un <strong>objet</strong> est l'instance réelle de cette classe.</p>
+                        <p><strong>Analogue dans la vie réelle :</strong> La classe est le modèle d'une voiture chez le constructeur, l'objet est votre voiture dans le garage.</p>
+                        
+                        <div class="example-section">
+                            <h4>💡 Exemple concret</h4>
+                            <p>Imaginez un jeu vidéo où vous contrôlez un personnage :</p>
+                            <div class="code-block">public class Personnage {
+    // Attributs (propriétés)
+    String nom;
+    int pointsVie;
+    int niveau;
+    
+    // Méthodes (actions)
+    void attaquer() {
+        System.out.println(nom + " attaque !");
+    }
+    
+    void prendre_degats(int degats) {
+        pointsVie -= degats;
+        System.out.println(nom + " perd " + degats + " PV");
+    }
+}
+
+// Créer une instance de la classe
+Personnage hero = new Personnage();
+hero.nom = "Link";
+hero.pointsVie = 100;
+hero.attaquer(); // Affiche : Link attaque !</div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>2️⃣ L'Encapsulation</h3>
+                        <p>L'encapsulation signifie "cacher" les détails internes d'une classe et ne laisser accéder que ce qui est nécessaire. C'est comme une boîte noire : vous savez ce qu'elle fait, mais pas comment à l'intérieur.</p>
+                        
+                        <div class="example-section">
+                            <h4>💡 Pourquoi c'est important</h4>
+                            <p>Vous avez un compte bancaire. Vous ne voulez pas que quelqu'un puisse modifier directement votre solde. Vous voulez qu'il passe par des méthodes sécurisées (dépôt, retrait). (référence : <a href="../projets/ap3.html" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">AP3</a>)</p>
+                            <div class="code-block">public class CompteBancaire {
+    private double solde;  // Private = on ne peut pas accéder directement
+    
+    // Public = on peut appeler cette méthode
+    public void deposer(double montant) {
+        if (montant > 0) {
+            solde += montant;
+            System.out.println("Dépôt accepté");
+        }
+    }
+    
+    public void retirer(double montant) {
+        if (montant <= solde) {
+            solde -= montant;
+            System.out.println("Retrait accepté");
+        } else {
+            System.out.println("Solde insuffisant");
+        }
+    }
+    
+    public double consulterSolde() {
+        return solde;
+    }
+}</div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>3️⃣ L'Héritage</h3>
+                        <p>L'héritage permet à une classe d'hériter des propriétés et méthodes d'une autre classe. C'est comme la génétique : les enfants héritent des caractéristiques de leurs parents.</p>
+                        
+                        <div class="example-section">
+                            <h4>💡 Exemple concret</h4>
+                            <p>Tous les animaux mangent et dorment. Pas besoin de réécrire ces méthodes pour chaque animal :</p>
+                            <div class="code-block">// Classe parente (parent class)
+public class Animal {
+    String nom;
+    
+    void manger() {
+        System.out.println(nom + " est en train de manger");
+    }
+    
+    void dormir() {
+        System.out.println(nom + " dort...");
+    }
+}
+
+// Classe enfant (hérite de Animal)
+public class Chien extends Animal {
+    void aboyer() {
+        System.out.println(nom + " aboie : Wouf wouf !");
+    }
+}
+
+// Utilisation
+Chien monChien = new Chien();
+monChien.nom = "Rex";
+monChien.manger();  // Hérité d'Animal
+monChien.aboyer();  // Spécifique à Chien</div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>4️⃣ Le Polymorphisme</h3>
+                        <p>Le polymorphisme signifie "plusieurs formes". C'est la capacité d'une méthode à se comporter différemment selon l'objet qui l'appelle.</p>
+                        
+                        <div class="example-section">
+                            <h4>💡 Exemple concret</h4>
+                            <p>Imaginez une interface musicale. Tous les instruments peuvent jouer, mais chacun sonne différemment :</p>
+                            <div class="code-block">public abstract class Instrument {
+    abstract void jouer();  // Chaque instrument joue différemment
+}
+
+public class Guitare extends Instrument {
+    void jouer() {
+        System.out.println("Plin plin plin... 🎸");
+    }
+}
+
+public class Piano extends Instrument {
+    void jouer() {
+        System.out.println("Ding ding ding... 🎹");
+    }
+}
+
+// Le polymorphisme en action
+Instrument instrument1 = new Guitare();
+Instrument instrument2 = new Piano();
+
+instrument1.jouer();  // Affiche : Plin plin plin...
+instrument2.jouer();  // Affiche : Ding ding ding...</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎯 Les Avantages concrets de la POO</h2>
+                    
+                    <div class="benefit-list">
+                        <div class="benefit-item">
+                            <strong>🧩 Modularité</strong>
+                            Divisez votre code en petits modules indépendants et faciles à tester individuellement.
+                        </div>
+                        <div class="benefit-item">
+                            <strong>♻️ Réutilisabilité</strong>
+                            Une fois qu'une classe est bien écrite, réutilisez-la partout sans réécrire le code.
+                        </div>
+                        <div class="benefit-item">
+                            <strong>🔒 Maintenabilité</strong>
+                            Modifiez une classe sans casser le reste du code. Les changements sont isolés.
+                        </div>
+                        <div class="benefit-item">
+                            <strong>📈 Scalabilité</strong>
+                            Construisez de grands projets sans que le code devienne un chaos ingérable.
+                        </div>
+                        <div class="benefit-item">
+                            <strong>👥 Collaboration</strong>
+                            Plusieurs développeurs peuvent travailler sur des classes différentes sans conflit.
+                        </div>
+                        <div class="benefit-item">
+                            <strong>🚀 Productivité</strong>
+                            Écrivez plus vite. Les frameworks modernes et les bibliothèques utilisent la POO.
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>💪 Cas d'usage réels</h2>
+                    
+                    <h3>📱 Application mobile (Android)</h3>
+                    <p>Une application a des Activity (écrans), Services (tâches en arrière-plan), et des modèles de données. Chacun est une classe. Sans POO, ce serait un cauchemar.</p>
+
+                    <h3>🎮 Jeu vidéo</h3>
+                    <p>Personnages, ennemis, objets, projectiles. Chacun peut hériter d'une classe Entity avec des propriétés communes (position, santé, direction) et des comportements spécifiques.</p>
+
+                    <h3>💼 Application web</h3>
+                    <p>Utilisateurs, produits, commandes. Chacun est une classe avec ses méthodes (créer, modifier, supprimer, valider).</p>
+
+                    <h3>🚗 Logiciel automobile</h3>
+                    <p>Les systèmes modernes des voitures utilisent la POO. Moteur, transmission, freins, électronique. Tous des objets qui communiquent.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎓 Les meilleurs principes à retenir</h2>
+                    
+                    <div class="concept-card">
+                        <h3>✔️ Pensez en terme d'objets</h3>
+                        <p>Avant de coder, demandez-vous : "Quels sont les objets dans mon application ?" Une todo app a des Task, un jeu a des Entity, etc.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>✔️ Une classe = Une responsabilité</h3>
+                        <p>Une classe Utilisateur gère les données utilisateur, pas la sauvegarde en base de données (ça, c'est pour une classe Database).</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>✔️ Préférez la composition à l'héritage</h3>
+                        <p>Au lieu d'hériter de tout, composez : une Voiture a un Moteur, des Roues, etc. C'est plus flexible que d'hériter.</p>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>✔️ Utilisez l'encapsulation</h3>
+                        <p>Marquez les attributs en private par défaut, et utilisez des getters/setters si nécessaire. C'est de la défense en profondeur.</p>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🚀 Prochain pas : Mettez-vous au travail !</h2>
+                    <p>La meilleure façon d'apprendre la POO, c'est de <strong>coder</strong>. Voici une progression :
+                    </p>
+                    <ol>
+                        <li><strong>Semaine 1 :</strong> Créez des classes simples (Voiture, Personne, Livre)</li>
+                        <li><strong>Semaine 2 :</strong> Jouez avec l'héritage (Animal → Chien, Chat)</li>
+                        <li><strong>Semaine 3 :</strong> Construisez un petit projet (todo app, jeu simple)</li>
+                        <li><strong>Semaine 4+ :</strong> Approfondissez avec les patterns de design</li>
+                    </ol>
+                    <p>Chaque projet renforcera votre compréhension. N'attendez pas de tout comprendre avant de commencer. La POO s'apprend en practiquant.</p>
+                </section>
+
+                <section class="article-section">
+                    <h2>📖 Ressources pour aller plus loin</h2>
+                    <ul>
+                        <li>Oracle's Java Tutorial (officiel et gratuit)</li>
+                        <li>Design Patterns: Elements of Reusable Object-Oriented Software (Gang of Four)</li>
+                        <li>Refactoring: Improving the Design of Existing Code (Martin Fowler)</li>
+                        <li>Clean Code (Robert C. Martin)</li>
+                    </ul>
+                </section>
+
+                <section class="article-section" style="background: linear-gradient(135deg, rgba(67, 97, 238, 0.1) 0%, rgba(58, 12, 163, 0.1) 100%); padding: 2rem; border-radius: var(--border-radius-md); border: 2px solid var(--primary-color);">
+                    <h2>🎯 En résumé...</h2>
+                    <p>La POO n'est pas compliquée. C'est juste une <strong>façon de penser</strong> le code comme une collection d'objets qui travaillent ensemble. Chaque objet sait ce qu'il est, ce qu'il peut faire, et comment communiquer avec les autres.</p>
+                    <p>Quand vous aurez compris ça, vous comprendrez la majorité des codes que vous lirez. Et quand vous coderez, vous écrirez du code que les autres comprendront facilement.</p>
+                    <p><strong>Alors ? Prêt à transformer votre façon de programmer ? 💪</strong></p>
+                </section>
+
+                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid var(--border-color); text-align: center;">
+                    <a href="../blog.html" class="cta-button">← Retour au blog</a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

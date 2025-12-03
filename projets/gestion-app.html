@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Stock - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .screenshots-gallery {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius-md);
+            min-height: 100px;
+            align-content: start;
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .gallery-placeholder p {
+            margin: 0.5rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-md);
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay button {
+            background: var(--error-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-item-overlay button:hover {
+            background: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        .add-screenshot-btn {
+            grid-column: 1 / -1;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .add-screenshot-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-screenshot-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="../about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="../cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="../resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="../contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-article">
+            <div class="article-header">
+                <span class="article-category">Développement Web - Projet Scolaire</span>
+                <h1>📊 Application Web de Gestion de Stock</h1>
+                <div class="article-meta">
+                    <span>📅 Novembre 2025</span>
+                    <span>⏱️ 60 heures</span>
+                    <span>👨‍💻 PHP & MySQL</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <section class="article-section">
+                    <h2>📖 À propos du projet</h2>
+                    <p>Cette application web permet de gérer l'inventaire d'un magasin ou d'une entreprise. Elle a été développée en PHP avec une base de données MySQL. Le projet inclut une interface complète pour ajouter, modifier, supprimer et rechercher des produits, ainsi que la gestion des utilisateurs et des différents niveaux d'accès.</p>
+                    <p>Ce projet m'a permis d'apprendre :</p>
+                    <ul>
+                        <li>Les principes du développement web côté serveur (PHP)</li>
+                        <li>La gestion des bases de données (MySQL) avec des requêtes SQL</li>
+                        <li>Les opérations CRUD (Create, Read, Update, Delete)</li>
+                        <li>La sécurité des applications web (authentification, autorisation)</li>
+                        <li>La création d'interfaces utilisateur fonctionnelles et intuitives</li>
+                        <li>La gestion des formulaires et de la validation des données</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎯 Étapes principales du développement</h2>
+
+                    <div class="reference-box">
+                        <h4>1️⃣ Configuration de la base de données</h4>
+                        <p>Création de la structure MySQL pour stocker les produits, les catégories, les utilisateurs et les mouvements de stock. Définition des relations et des contraintes pour assurer l'intégrité des données.</p>
+                        <div class="screenshots-gallery" id="gallery-1">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>2️⃣ Système d'authentification</h4>
+                        <p>Création du système de connexion avec hachage sécurisé des mots de passe, gestion des sessions et des rôles d'utilisateurs (administrateur, gestionnaire, utilisateur simple).</p>
+                        <div class="screenshots-gallery" id="gallery-2">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>3️⃣ Gestion des produits (CRUD)</h4>
+                        <p>Implémentation des fonctionnalités pour créer, lire, modifier et supprimer des produits. Interface web pour visualiser tous les produits avec pagination et filtrage par catégorie.</p>
+                        <div class="screenshots-gallery" id="gallery-3">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>4️⃣ Système de recherche et filtrage</h4>
+                        <p>Développement d'une barre de recherche dynamique pour trouver rapidement des produits par nom, code ou catégorie. Implémentation de filtres avancés pour affiner les résultats.</p>
+                        <div class="screenshots-gallery" id="gallery-4">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>5️⃣ Gestion des mouvements de stock</h4>
+                        <p>Enregistrement des entrées et sorties de stock, suivi des modifications avec horodatage et historique complet. Génération d'alertes pour les produits en rupture de stock.</p>
+                        <div class="screenshots-gallery" id="gallery-5">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>6️⃣ Rapports et statistiques</h4>
+                        <p>Création de tableaux de bord affichant les statistiques du stock (produits les plus vendus, mouvements récents, valeur totale du stock). Génération de rapports en PDF pour l'export des données.</p>
+                        <div class="screenshots-gallery" id="gallery-6">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🛠️ Technologies utilisées</h2>
+                    <ul>
+                        <li><strong>Langage de programmation :</strong> PHP 7.4+</li>
+                        <li><strong>Base de données :</strong> MySQL / MariaDB</li>
+                        <li><strong>Front-end :</strong> HTML5, CSS3, JavaScript</li>
+                        <li><strong>Sécurité :</strong> Password hashing (PHP password_hash), Prepared statements, Session management</li>
+                        <li><strong>Serveur :</strong> Apache / Nginx</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>✨ Compétences acquises</h2>
+                    <ul>
+                        <li>Développement d'applications web complètes côté serveur</li>
+                        <li>Design et optimisation de bases de données relationnelles</li>
+                        <li>Implémentation de mesures de sécurité essentielles</li>
+                        <li>Création d'interfaces utilisateur réactives et ergonomiques</li>
+                        <li>Gestion de projets de taille moyenne avec specifications fonctionnelles</li>
+                        <li>Testing et débogage d'applications complexes</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🚀 Améliorations futures</h2>
+                    <ul>
+                        <li>Intégration d'un API REST pour les opérations mobiles</li>
+                        <li>Implémentation d'un système de notification par email</li>
+                        <li>Ajout de graphiques interactifs pour les statistiques</li>
+                        <li>Migration vers une architecture MVC (Laravel ou Symfony)</li>
+                        <li>Implémentation d'un système de cache pour les performances</li>
+                        <li>Tests unitaires et d'intégration complets</li>
+                    </ul>
+                </section>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="cta-button">← Retour aux projets</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.screenshots-gallery');
+
+            galleries.forEach((gallery, index) => {
+                const galleryId = gallery.id || `gallery-${index}`;
+                gallery.id = galleryId;
+
+                addScreenshotButton(gallery);
+                loadGalleryData(gallery);
+            });
+
+            function addScreenshotButton(gallery) {
+                const button = document.createElement('button');
+                button.className = 'add-screenshot-btn';
+                button.textContent = '➕ Ajouter un screenshot';
+                button.type = 'button';
+
+                button.addEventListener('click', function() {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.multiple = true;
+
+                    input.addEventListener('change', function(e) {
+                        const files = e.target.files;
+                        const currentImages = gallery.querySelectorAll('.gallery-item').length;
+
+                        for (let file of files) {
+                            if (currentImages >= 10) {
+                                alert('Maximum 10 screenshots par étape!');
+                                break;
+                            }
+
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                addImageToGallery(gallery, event.target.result, galleryId);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+
+                    input.click();
+                });
+
+                gallery.appendChild(button);
+            }
+
+            function addImageToGallery(gallery, imageData, galleryId) {
+                const placeholder = gallery.querySelector('.gallery-placeholder');
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = imageData;
+
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-item-overlay';
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '🗑️ Supprimer';
+                deleteBtn.type = 'button';
+
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    item.remove();
+                    saveGalleryData(gallery, galleryId);
+
+                    if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                        const placeholder = gallery.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            placeholder.style.display = 'block';
+                        }
+                    }
+                });
+
+                overlay.appendChild(deleteBtn);
+                item.appendChild(img);
+                item.appendChild(overlay);
+
+                const button = gallery.querySelector('.add-screenshot-btn');
+                gallery.insertBefore(item, button);
+
+                saveGalleryData(gallery, galleryId);
+            }
+
+            function saveGalleryData(gallery, galleryId) {
+                const images = [];
+                gallery.querySelectorAll('.gallery-item img').forEach(img => {
+                    images.push(img.src);
+                });
+                localStorage.setItem(`gestion-gallery-${galleryId}`, JSON.stringify(images));
+            }
+
+            function loadGalleryData(gallery) {
+                const galleryId = gallery.id;
+                const savedImages = localStorage.getItem(`gestion-gallery-${galleryId}`);
+
+                if (savedImages) {
+                    const images = JSON.parse(savedImages);
+                    const placeholder = gallery.querySelector('.gallery-placeholder');
+
+                    images.forEach(imageData => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+
+                        const img = document.createElement('img');
+                        img.src = imageData;
+
+                        const overlay = document.createElement('div');
+                        overlay.className = 'gallery-item-overlay';
+
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️ Supprimer';
+                        deleteBtn.type = 'button';
+
+                        deleteBtn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            item.remove();
+                            saveGalleryData(gallery, galleryId);
+
+                            if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                                const placeholder = gallery.querySelector('.gallery-placeholder');
+                                if (placeholder) {
+                                    placeholder.style.display = 'block';
+                                }
+                            }
+                        });
+
+                        overlay.appendChild(deleteBtn);
+                        item.appendChild(img);
+                        item.appendChild(overlay);
+
+                        const button = gallery.querySelector('.add-screenshot-btn');
+                        gallery.insertBefore(item, button);
+
+                        if (placeholder) {
+                            placeholder.style.display = 'none';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

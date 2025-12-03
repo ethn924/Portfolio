@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources Utiles - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <!-- Métadonnées SEO -->
+    <meta name="description" content="Ressources utiles pour développeurs : outils, plateformes d'apprentissage, communautés et FAQ technique.">
+    <meta name="keywords" content="développement, ressources, outils, tutoriels, BTS SIO, programmation">
+    <meta name="author" content="Ethan">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" aria-label="Retour à l'accueil">PORTFOLIO DE ETHAN</a>
+            <button class="mobile-menu-btn" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="projets/index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="resources.html" class="nav-link active" aria-current="page">Ressources</a></li>
+                <li><a href="contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content" id="main-content">
+        <section class="resources-section">
+            <div class="section-header">
+                <h1>RESSOURCES UTILES</h1>
+                <p class="section-subtitle">Liens, outils et communautés recommandés pour les développeurs</p>
+                <div class="loading-indicator" id="loading-indicator" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>Chargement des ressources...</span>
+                </div>
+            </div>
+            
+            <div class="resources-grid">
+                <!-- Catégorie 1 : Ressources BTS SIO -->
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Ressources pour étudier en BTS SIO</h3>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" aria-label="MDN Web Docs (ouvre un nouvel onglet)">
+                                <strong>MDN Web Docs</strong>
+                            </a>
+                            <span class="resource-description">Documentation web complète et de référence</span>
+                            <span class="resource-category">Documentation</span>
+                        </li>
+                        <li>
+                            <a href="https://www.w3schools.com/" target="_blank" rel="noopener noreferrer" aria-label="W3Schools (ouvre un nouvel onglet)">
+                                <strong>W3Schools</strong>
+                            </a>
+                            <span class="resource-description">Tutoriels web interactifs pour HTML/CSS/JavaScript</span>
+                            <span class="resource-category">Tutoriels</span>
+                        </li>
+                        <li>
+                            <a href="https://learn.unity.com/" target="_blank" rel="noopener noreferrer" aria-label="Unity Learn (ouvre un nouvel onglet)">
+                                <strong>Unity Learn</strong>
+                            </a>
+                            <span class="resource-description">Ressources officielles pour apprendre Unity</span>
+                            <span class="resource-category">Game Dev</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 2 : Outils essentiels -->
+                <div class="resource-card">
+                    <div class="resource-icon">🛠️</div>
+                    <h3>Outils essentiels</h3>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" aria-label="Git (ouvre un nouvel onglet)">
+                                <strong>Git</strong>
+                            </a>
+                            <span class="resource-description">Système de contrôle de version</span>
+                            <span class="resource-category">Versioning</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub (ouvre un nouvel onglet)">
+                                <strong>GitHub</strong>
+                            </a>
+                            <span class="resource-description">Plateforme de partage de code et collaboration</span>
+                            <span class="resource-category">Code</span>
+                        </li>
+                        <li>
+                            <a href="https://www.canva.com/" target="_blank" rel="noopener noreferrer" aria-label="Canva (ouvre un nouvel onglet)">
+                                <strong>Canva</strong>
+                            </a>
+                            <span class="resource-description">Outil de design graphique en ligne</span>
+                            <span class="resource-category">Design</span>
+                        </li>
+                        <li>
+                            <a href="https://tinypng.com/" target="_blank" rel="noopener noreferrer" aria-label="TinyPNG (ouvre un nouvel onglet)">
+                                <strong>TinyPNG</strong>
+                            </a>
+                            <span class="resource-description">Compression d'images sans perte de qualité</span>
+                            <span class="resource-category">Optimisation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 3 : Communautés & Forums -->
+                <div class="resource-card">
+                    <div class="resource-icon">👥</div>
+                    <h3>Communautés & Forums</h3>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank" rel="noopener noreferrer" aria-label="Stack Overflow (ouvre un nouvel onglet)">
+                                <strong>Stack Overflow</strong>
+                            </a>
+                            <span class="resource-description">Questions/réponses pour développeurs</span>
+                            <span class="resource-category">Forum</span>
+                        </li>
+                        <li>
+                            <a href="https://www.reddit.com/r/learnprogramming/" target="_blank" rel="noopener noreferrer" aria-label="Reddit Learn Programming (ouvre un nouvel onglet)">
+                                <strong>r/learnprogramming</strong>
+                            </a>
+                            <span class="resource-description">Communauté Reddit pour apprendre</span>
+                            <span class="resource-category">Communauté</span>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/unity" target="_blank" rel="noopener noreferrer" aria-label="Discord Unity (ouvre un nouvel onglet)">
+                                <strong>Discord Unity</strong>
+                            </a>
+                            <span class="resource-description">Communauté Discord officielle Unity</span>
+                            <span class="resource-category">Chat</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Catégorie 4 : Outils de Veille Technologique -->
+                <div class="resource-card">
+                    <div class="resource-icon">📡</div>
+                    <h3>Outils de Veille Technologique</h3>
+                    <ul class="resource-links">
+                        <li>
+                            <a href="https://feedly.com/" target="_blank" rel="noopener noreferrer" aria-label="Feedly (ouvre un nouvel onglet)">
+                                <strong>Feedly</strong>
+                            </a>
+                            <span class="resource-description">Agrégateur RSS pour suivre les blogs tech - <em>Celui utilisé pour mes recherches</em></span>
+                            <span class="resource-category">RSS</span>
+                        </li>
+                        <li>
+                            <a href="https://github.com/trending" target="_blank" rel="noopener noreferrer" aria-label="GitHub Trending (ouvre un nouvel onglet)">
+                                <strong>GitHub Trending</strong>
+                            </a>
+                            <span class="resource-description">Projets GitHub populaires du moment</span>
+                            <span class="resource-category">Tendances</span>
+                        </li>
+                        <li>
+                            <a href="https://news.ycombinator.com/" target="_blank" rel="noopener noreferrer" aria-label="Hacker News (ouvre un nouvel onglet)">
+                                <strong>Hacker News</strong>
+                            </a>
+                            <span class="resource-description">Actualités et discussions technologiques</span>
+                            <span class="resource-category">Actualités</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>❓ Questions Fréquentes (FAQ)</h2>
+                <div class="faq-container">
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                            <span>Quel est le meilleur langage pour débuter en programmation ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-1">
+                            <p>Pour les débutants, je recommande <strong>Python</strong> pour sa simplicité et sa polyvalence. Pour le web, commencez avec <strong>HTML/CSS/JavaScript</strong>. Pour la POO, <strong>Java</strong> est excellent car il impose une bonne structure.</p>
+                            <ul>
+                                <li><strong>Python</strong> : Syntaxe simple, nombreuses bibliothèques</li>
+                                <li><strong>JavaScript</strong> : Essentiel pour le développement web</li>
+                                <li><strong>Java</strong> : Excellent pour apprendre la POO</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                            <span>Quelles ressources pour apprendre Unity ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-2">
+                            <p>Commencez par les tutoriels officiels sur <strong>Unity Learn</strong>. Ensuite, les chaînes YouTube "Brackeys" et "Code Monkey" sont excellentes. Pratiquez en créant de petits jeux simples.</p>
+                            <ul>
+                                <li><strong>Unity Learn</strong> : Cours gratuits officiels</li>
+                                <li><strong>Brackeys (YouTube)</strong> : Tutoriels complets pour débutants</li>
+                                <li><strong>Code Monkey (YouTube)</strong> : Techniques avancées</li>
+                                <li><strong>Unity Asset Store</strong> : Assets gratuits pour commencer</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                            <span>Comment se préparer pour un BTS SIO ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-3">
+                            <p>1. <strong>Renforcez vos bases en algorithmique</strong> avec des sites comme France-IOI<br>
+                               2. <strong>Apprenez les bases du HTML/CSS</strong> sur Codecademy ou FreeCodeCamp<br>
+                               3. <strong>Familiarisez-vous avec les systèmes d'information</strong><br>
+                               4. <strong>Développez votre curiosité technologique</strong> en suivant l'actualité tech</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                            <span>Quelle spécialité choisir en BTS SIO ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-4">
+                            <p><strong>SLAM</strong> (Solutions Logicielles et Applications Métiers) si vous aimez :<br>
+                               • Le développement et la programmation<br>
+                               • Créer des applications et logiciels<br>
+                               • Travailler sur des bases de données</p>
+                               
+                            <p><strong>SISR</strong> (Solutions d'Infrastructure, Systèmes et Réseaux) si vous préférez :<br>
+                               • Les réseaux et la sécurité<br>
+                               • L'administration système<br>
+                               • La maintenance infrastructure</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
+                            <span>Comment trouver un stage en développement ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-5">
+                            <p>1. <strong>Créez un portfolio</strong> (comme celui-ci !) pour montrer vos compétences<br>
+                               2. <strong>Contribuez à des projets open source</strong> sur GitHub<br>
+                               3. <strong>Participez à des événements tech</strong> (meetups, hackathons)<br>
+                               4. <strong>Contactez directement les entreprises</strong> qui vous intéressent<br>
+                               5. <strong>Utilisez LinkedIn</strong> pour réseauter avec des professionnels</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" aria-controls="faq-6">
+                            <span>Quels sont mes projets futurs ?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer" id="faq-6">
+                            <p>1. <strong>Réussir mon BTS SIO</strong> et approfondir mes connaissances<br>
+                               2. <strong>Continuer à explorer Unity</strong> et créer de petits projets en 3D<br>
+                               3. <strong>Améliorer mes compétences en POO</strong> et en bases de données<br>
+                               4. <strong>Contribuer à des projets open source</strong> pour apprendre<br>
+                               5. <strong>Trouver une première expérience professionnelle</strong> en développement<br>
+                               6. <strong>Continuer mes études</strong> ou explorer différents domaines du développement</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Newsletter -->
+            <div class="newsletter-card">
+                <div class="newsletter-icon">📧</div>
+                <h3>Restez informé</h3>
+                <p>Abonnez-vous à ma newsletter pour recevoir les dernières ressources et tutoriels</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email *" required aria-label="Adresse email pour la newsletter">
+                    <button type="submit">S'abonner</button>
+                </form>
+                <p class="newsletter-note">Pas de spam, désabonnez-vous à tout moment.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+            <div class="footer-links">
+                <a href="sitemap.html">Plan du site</a>
+                <a href="privacy.html">Confidentialité</a>
+                <a href="accessibility.html">Accessibilité</a>
+            </div>
+            <p class="footer-stats" id="visit-counter">Chargement des statistiques...</p>
+        </div>
+    </footer>
+
+    <!-- Console Dev -->
+    <button class="dev-console" aria-label="Ouvrir la console de développement">💻</button>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close" aria-label="Fermer la console">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande..." aria-label="Commande console">
+                <button aria-label="Exécuter la commande">Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Retour en haut -->
+    <button class="back-to-top" aria-label="Retour en haut de la page">↑</button>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>

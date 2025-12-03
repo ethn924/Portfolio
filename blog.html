@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Technique - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="projets/index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog Technique</a></li>
+                <li><a href="resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-section">
+            <div class="section-header">
+                <h1>BLOG TECHNIQUE</h1>
+                <p class="section-subtitle">Tutoriels, retours d'expérience et veille technologique sur le développement logiciel et le game development</p>
+            </div>
+            
+            <!-- Filtrage par catégorie -->
+            <div class="filter-container">
+                <div class="filter-search-bar">
+                    <input type="text" class="blog-search" placeholder="🔍 Chercher dans les articles...">
+                </div>
+                <h3>Filtrer par catégorie : <span class="article-count">(7 articles)</span></h3>
+                <div class="filter-tags">
+                    <button class="filter-tag active" data-filter="tous">Tous</button>
+                    <button class="filter-tag" data-filter="tutoriel">Tutoriels</button>
+                    <button class="filter-tag" data-filter="experience">Retours d'expérience</button>
+                    <button class="filter-tag" data-filter="veille">Veille technologique</button>
+                    <button class="filter-tag" data-filter="gamedev">Game Development</button>
+                    <button class="filter-tag" data-filter="poo">Programmation POO</button>
+                </div>
+            </div>
+            
+            <div class="no-articles-message">
+                <p>Aucun article trouvé pour cette recherche 😔</p>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Article 1 -->
+                <article class="blog-card" data-category="tutoriel poo" data-search="introduction programmation orientée objet java classes objets héritage polymorphisme encapsulation">
+                    <span class="blog-category blog-cat-tutoriel">Tutoriel</span>
+                    <h2>Introduction à la Programmation Orientée Objet en Java</h2>
+                    <div class="blog-meta">
+                        <span>📅 15 décembre 2024</span>
+                        <span>⏱️ 18 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Découvrez les concepts fondamentaux de la POO en Java : classes, objets, héritage, polymorphisme et encapsulation. Un guide riche en analogies et exemples concrets pour vraiment comprendre.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Java</span>
+                        <span class="blog-tag">POO</span>
+                        <span class="blog-tag">Tutoriel</span>
+                    </div>
+                    <a href="articles/article-poo-java.html" class="read-more">Lire l'article →</a>
+                </article>
+                
+                <!-- Article 2 -->
+                <article class="blog-card" data-category="experience gamedev" data-search="unity c sharp csharp développement jeux premiers pas apprentissage prototypes 3d">
+                    <span class="blog-category blog-cat-experience">Retour d'expérience</span>
+                    <h2>Mes premiers pas avec Unity et le développement de jeux</h2>
+                    <div class="blog-meta">
+                        <span>📅 10 janvier 2025</span>
+                        <span>⏱️ 12 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Retour sur mon apprentissage d'Unity et du C#. Les défis rencontrés, les ressources utiles et mes premiers prototypes de jeu 3D.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">C#</span>
+                        <span class="blog-tag">Game Dev</span>
+                    </div>
+                    <a href="articles/article-unity-premiers-pas.html" class="read-more">Lire l'article →</a>
+                </article>
+                
+                <!-- Article 3 -->
+                <article class="blog-card" data-category="tutoriel" data-search="développement web html css javascript frontend responsive design">
+                    <span class="blog-category blog-cat-tutoriel">Tutoriel</span>
+                    <h2>Créer un site web responsive avec HTML/CSS/JavaScript</h2>
+                    <div class="blog-meta">
+                        <span>📅 5 janvier 2025</span>
+                        <span>⏱️ 10 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Guide pratique pour créer un site web qui s'adapte à tous les appareils. Apprentissage du responsive design avec media queries, flexbox et les bonnes pratiques du web.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">HTML/CSS</span>
+                        <span class="blog-tag">JavaScript</span>
+                        <span class="blog-tag">Responsive</span>
+                    </div>
+                    <a href="articles/article-responsive-web.html" class="read-more">Lire l'article →</a>
+                </article>
+                
+                <!-- Article 4 -->
+                <article class="blog-card" data-category="tutoriel" data-search="php mysql base de données requêtes sql formulaires web">
+                    <span class="blog-category blog-cat-tutoriel">Tutoriel</span>
+                    <h2>Créer une application web avec PHP et MySQL</h2>
+                    <div class="blog-meta">
+                        <span>📅 28 décembre 2024</span>
+                        <span>⏱️ 15 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Tutoriel pour apprendre à créer une application web complète en PHP avec une base de données MySQL. Gestion des formulaires, requêtes SQL et sécurité de base.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">PHP</span>
+                        <span class="blog-tag">MySQL</span>
+                        <span class="blog-tag">Bases de données</span>
+                    </div>
+                    <a href="articles/article-php-mysql.html" class="read-more">Lire l'article →</a>
+                </article>
+                
+                <!-- Article 5 -->
+                <article class="blog-card" data-category="experience" data-search="leçons apprises stage développement web gestion projet équipe code review déploiement production">
+                    <span class="blog-category blog-cat-experience">Retour d'expérience</span>
+                    <h2>Leçons apprises lors de mon stage en développement web</h2>
+                    <div class="blog-meta">
+                        <span>📅 20 décembre 2024</span>
+                        <span>⏱️ 14 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Retour sur mon stage de 3 mois en entreprise : gestion de projet, travail en équipe, code review et déploiement en production.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Stage</span>
+                        <span class="blog-tag">Expérience</span>
+                        <span class="blog-tag">Développement</span>
+                    </div>
+                    <a href="articles/article-stage-developpement.html" class="read-more">Lire l'article →</a>
+                </article>
+                
+                <!-- Article 6 -->
+                <article class="blog-card" data-category="veille" data-search="impact jeux vidéos société socialisation santé mentale éducation économie esport">
+                    <span class="blog-category blog-cat-veille">Veille technologique</span>
+                    <h2>L'Impact des Jeux Vidéos sur la Société</h2>
+                    <div class="blog-meta">
+                        <span>📅 2 décembre 2024</span>
+                        <span>⏱️ 20 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Analyse approfondie de l'impact des jeux vidéos sur la société : socialisation, santé mentale, éducation et économie. Découvrez comment les jeux transforment nos sociétés modernes.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Jeux vidéos</span>
+                        <span class="blog-tag">Société</span>
+                        <span class="blog-tag">Veille</span>
+                    </div>
+                    <a href="articles/article-impact-jeux-video.html" class="read-more">Lire l'article →</a>
+                </article>
+
+                <!-- Article 7 -->
+                <article class="blog-card" data-category="gamedev" data-search="debuggage unity c# erreurs communes game development astuces">
+                    <span class="blog-category blog-cat-gamedev">Game Development</span>
+                    <h2>Erreurs courantes en développement Unity et comment les éviter</h2>
+                    <div class="blog-meta">
+                        <span>📅 15 décembre 2024</span>
+                        <span>⏱️ 12 min de lecture</span>
+                    </div>
+                    <p class="blog-excerpt">Guide des erreurs courantes rencontrées lors du développement de jeux Unity et des solutions pour les résoudre. Astuces de debuggage et bonnes pratiques.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Unity</span>
+                        <span class="blog-tag">C#</span>
+                        <span class="blog-tag">Debuggage</span>
+                    </div>
+                    <a href="articles/article-erreurs-unity.html" class="read-more">Lire l'article →</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

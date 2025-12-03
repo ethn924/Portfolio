@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Bibliothèque - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .screenshots-gallery {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius-md);
+            min-height: 100px;
+            align-content: start;
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .gallery-placeholder p {
+            margin: 0.5rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-md);
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay button {
+            background: var(--error-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-item-overlay button:hover {
+            background: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        .add-screenshot-btn {
+            grid-column: 1 / -1;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .add-screenshot-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-screenshot-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="../about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="../cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="../resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="../contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-article">
+            <div class="article-header">
+                <span class="article-category">Développement Desktop - Projet Scolaire</span>
+                <h1>📚 Système de Gestion de Bibliothèque</h1>
+                <div class="article-meta">
+                    <span>📅 Septembre 2025</span>
+                    <span>⏱️ 45 heures</span>
+                    <span>👨‍💻 Java & Swing</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <section class="article-section">
+                    <h2>📖 À propos du projet</h2>
+                    <p>Application de gestion de bibliothèque développée en Java avec une interface graphique Swing. Cette application permet de gérer complètement une bibliothèque : gestion des livres, des emprunteurs, des emprunts et des retours. Le projet intègre une base de données pour la persistance des données et des rapports de gestion.</p>
+                    <p>Ce projet m'a permis d'apprendre :</p>
+                    <ul>
+                        <li>La programmation orientée objet avancée avec Java</li>
+                        <li>La création d'interfaces graphiques avec Swing</li>
+                        <li>La connexion à une base de données depuis Java (JDBC)</li>
+                        <li>L'implémentation de patterns de design (MVC, DAO)</li>
+                        <li>La gestion d'événements et les interactions utilisateur</li>
+                        <li>La génération de rapports et l'export de données</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎯 Étapes principales du développement</h2>
+
+                    <div class="reference-box">
+                        <h4>1️⃣ Architecture et modèle de données</h4>
+                        <p>Conception de l'architecture MVC avec les classes métier (Livre, Emprunteur, Emprunt), création de la base de données et implémentation des interfaces DAO pour l'accès aux données.</p>
+                        <div class="screenshots-gallery" id="gallery-1">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>2️⃣ Interface principale et navigation</h4>
+                        <p>Création de la fenêtre principale avec barre de menu, panneaux de navigation et mise en place du système de changement d'écrans pour accéder aux différentes fonctionnalités.</p>
+                        <div class="screenshots-gallery" id="gallery-2">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>3️⃣ Gestion des livres</h4>
+                        <p>Développement des interfaces pour ajouter, modifier et supprimer des livres. Implémentation du système de recherche par titre, auteur ou ISBN avec affichage en tableau.</p>
+                        <div class="screenshots-gallery" id="gallery-3">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>4️⃣ Gestion des emprunteurs</h4>
+                        <p>Création des fonctionnalités pour enregistrer les emprunteurs, consulter et modifier leurs informations. Implémentation d'un système de catégories d'emprunteurs (étudiant, adulte, enfant) avec des règles différentes.</p>
+                        <div class="screenshots-gallery" id="gallery-4">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>5️⃣ Système d'emprunts et retours</h4>
+                        <p>Implémentation du système complet d'emprunt et retour de livres avec validation des règles (durée maximale, nombre de livres empruntable). Gestion des amendes en cas de retard et historique des emprunts.</p>
+                        <div class="screenshots-gallery" id="gallery-5">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>6️⃣ Rapports et statistiques</h4>
+                        <p>Création de rapports détaillés sur l'état du catalogue, les emprunteurs actifs, les livres les plus empruntés et les statistiques de la bibliothèque. Export des données en format PDF et Excel.</p>
+                        <div class="screenshots-gallery" id="gallery-6">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🛠️ Technologies utilisées</h2>
+                    <ul>
+                        <li><strong>Langage :</strong> Java 11+</li>
+                        <li><strong>Interface graphique :</strong> Swing (JFrame, JPanel, JTable)</li>
+                        <li><strong>Base de données :</strong> MySQL / MariaDB</li>
+                        <li><strong>Connexion DB :</strong> JDBC avec prepared statements</li>
+                        <li><strong>IDE :</strong> Eclipse ou IntelliJ IDEA</li>
+                        <li><strong>Génération de rapports :</strong> JasperReports (optionnel)</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>✨ Compétences acquises</h2>
+                    <ul>
+                        <li>Développement complet d'applications desktop avec Java</li>
+                        <li>Maîtrise de la POO et des patterns de design</li>
+                        <li>Création d'interfaces GUI professionnelles avec Swing</li>
+                        <li>Gestion des événements et interactions utilisateur</li>
+                        <li>Intégration de bases de données relationnelles</li>
+                        <li>Génération et exportation de rapports</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🚀 Améliorations futures</h2>
+                    <ul>
+                        <li>Migration vers JavaFX pour une interface plus moderne</li>
+                        <li>Implémentation d'un système réseau multi-utilisateur</li>
+                        <li>Ajout de notifications automatiques pour les retards</li>
+                        <li>Création d'une version web (Spring Boot + Angular)</li>
+                        <li>Intégration de code-barres pour les livres</li>
+                        <li>Développement d'une application mobile (Android)</li>
+                    </ul>
+                </section>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="cta-button">← Retour aux projets</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023-2025 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.screenshots-gallery');
+
+            galleries.forEach((gallery, index) => {
+                const galleryId = gallery.id || `gallery-${index}`;
+                gallery.id = galleryId;
+
+                addScreenshotButton(gallery);
+                loadGalleryData(gallery);
+            });
+
+            function addScreenshotButton(gallery) {
+                const button = document.createElement('button');
+                button.className = 'add-screenshot-btn';
+                button.textContent = '➕ Ajouter un screenshot';
+                button.type = 'button';
+
+                button.addEventListener('click', function() {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.multiple = true;
+
+                    input.addEventListener('change', function(e) {
+                        const files = e.target.files;
+                        const currentImages = gallery.querySelectorAll('.gallery-item').length;
+
+                        for (let file of files) {
+                            if (currentImages >= 10) {
+                                alert('Maximum 10 screenshots par étape!');
+                                break;
+                            }
+
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                addImageToGallery(gallery, event.target.result, galleryId);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+
+                    input.click();
+                });
+
+                gallery.appendChild(button);
+            }
+
+            function addImageToGallery(gallery, imageData, galleryId) {
+                const placeholder = gallery.querySelector('.gallery-placeholder');
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = imageData;
+
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-item-overlay';
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '🗑️ Supprimer';
+                deleteBtn.type = 'button';
+
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    item.remove();
+                    saveGalleryData(gallery, galleryId);
+
+                    if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                        const placeholder = gallery.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            placeholder.style.display = 'block';
+                        }
+                    }
+                });
+
+                overlay.appendChild(deleteBtn);
+                item.appendChild(img);
+                item.appendChild(overlay);
+
+                const button = gallery.querySelector('.add-screenshot-btn');
+                gallery.insertBefore(item, button);
+
+                saveGalleryData(gallery, galleryId);
+            }
+
+            function saveGalleryData(gallery, galleryId) {
+                const images = [];
+                gallery.querySelectorAll('.gallery-item img').forEach(img => {
+                    images.push(img.src);
+                });
+                localStorage.setItem(`bibliotheque-gallery-${galleryId}`, JSON.stringify(images));
+            }
+
+            function loadGalleryData(gallery) {
+                const galleryId = gallery.id;
+                const savedImages = localStorage.getItem(`bibliotheque-gallery-${galleryId}`);
+
+                if (savedImages) {
+                    const images = JSON.parse(savedImages);
+                    const placeholder = gallery.querySelector('.gallery-placeholder');
+
+                    images.forEach(imageData => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+
+                        const img = document.createElement('img');
+                        img.src = imageData;
+
+                        const overlay = document.createElement('div');
+                        overlay.className = 'gallery-item-overlay';
+
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️ Supprimer';
+                        deleteBtn.type = 'button';
+
+                        deleteBtn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            item.remove();
+                            saveGalleryData(gallery, galleryId);
+
+                            if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                                const placeholder = gallery.querySelector('.gallery-placeholder');
+                                if (placeholder) {
+                                    placeholder.style.display = 'block';
+                                }
+                            }
+                        });
+
+                        overlay.appendChild(deleteBtn);
+                        item.appendChild(img);
+                        item.appendChild(overlay);
+
+                        const button = gallery.querySelector('.add-screenshot-btn');
+                        gallery.insertBefore(item, button);
+
+                        if (placeholder) {
+                            placeholder.style.display = 'none';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

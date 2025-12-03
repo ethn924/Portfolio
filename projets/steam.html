@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet Steam - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+    <style>
+        .screenshots-gallery {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--bg-light);
+            border-radius: var(--border-radius-md);
+            min-height: 100px;
+            align-content: start;
+        }
+
+        .gallery-placeholder {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .gallery-placeholder p {
+            margin: 0.5rem 0;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-md);
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-item-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item-overlay button {
+            background: var(--error-color);
+            color: white;
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition-fast);
+        }
+
+        .gallery-item-overlay button:hover {
+            background: #d32f2f;
+            transform: scale(1.05);
+        }
+
+        .gallery-info {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+
+        .add-screenshot-btn {
+            grid-column: 1 / -1;
+            padding: 1rem;
+            background: var(--gradient-primary);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-top: 0.5rem;
+        }
+
+        .add-screenshot-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .add-screenshot-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #file-input {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="../about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="../cv.html" class="nav-link">Mon CV</a></li>
+                <li><a href="../blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="../resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="../contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="blog-article">
+            <div class="article-header">
+                <span class="article-category">Cybersécurité - TP Scolaire</span>
+                <h1>🔓 TP Phishing - Reproduction d'une Interface Steam</h1>
+                <div class="article-meta">
+                    <span>📅 Octobre 2025</span>
+                    <span>⏱️ 41 heures</span>
+                    <span>👨‍💻 HTML, CSS & JavaScript</span>
+                </div>
+            </div>
+
+            <div class="article-content">
+                <section class="article-section">
+                    <h2>📖 À propos du projet</h2>
+                    <p>Ce projet est un travail pratique de cybersécurité ayant pour objectif de comprendre les mécanismes des attaques de phishing. J'ai reproduit l'interface du site Steam pour analyser comment les arnaqueurs se servent des sites familiers pour tromper les utilisateurs et récupérer des données sensibles.</p>
+                    <p>Ce projet pédagogique m'a permis d'apprendre :</p>
+                    <ul>
+                        <li>Les techniques utilisées dans les attaques de phishing</li>
+                        <li>Comment reproduire fidèlement une interface web existante</li>
+                        <li>Les vulnérabilités des utilisateurs face aux interfaces connues</li>
+                        <li>Les bonnes pratiques pour reconnaître et se protéger contre le phishing</li>
+                        <li>Les implications légales et éthiques de ces techniques</li>
+                        <li>L'importance de la sensibilisation à la cybersécurité</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>🎯 Étapes principales du développement</h2>
+
+                    <div class="reference-box">
+                        <h4>1️⃣ Analyse de l'interface original Steam</h4>
+                        <p>Étude détaillée du design, de la structure HTML et du fonctionnement du site Steam. Identification des éléments clés à reproduire pour créer une fausse interface convaincante.</p>
+                        <div class="screenshots-gallery" id="gallery-1">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>2️⃣ Création de la structure HTML</h4>
+                        <p>Développement du code HTML pour reproduire l'ensemble de la structure du site Steam, incluant la navigation, les sections principales et les formulaires.</p>
+                        <div class="screenshots-gallery" id="gallery-2">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>3️⃣ Stylisation CSS - Design responsive</h4>
+                        <p>Implémentation du CSS pour reproduire visuellement le site Steam avec une grande fidélité. Attention particulière au design responsive pour que le site fonctionne sur tous les appareils.</p>
+                        <div class="screenshots-gallery" id="gallery-3">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>4️⃣ Page de connexion</h4>
+                        <p>Création du formulaire de connexion qui simule le système d'authentification de Steam. Cette page est cruciale car c'est généralement là que les arnaqueurs tentent de capturer les identifiants.</p>
+                        <div class="screenshots-gallery" id="gallery-4">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>5️⃣ Formulaires de vérification et de paiement</h4>
+                        <p>Implémentation des formulaires qui demandent des informations sensibles comme la vérification de compte ou les données bancaires. Ces éléments sont typiques des pages de phishing.</p>
+                        <div class="screenshots-gallery" id="gallery-5">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reference-box">
+                        <h4>6️⃣ Analyse de sécurité et rapport final</h4>
+                        <p>Analyse approfondie de comment et pourquoi cette interface est convaincante, quels sont les signaux d'alerte pour identifier un site de phishing, et recommandations pour la sensibilisation des utilisateurs.</p>
+                        <div class="screenshots-gallery" id="gallery-6">
+                            <div class="gallery-placeholder">
+                                <p>📸 Ajoute jusqu'à 10 screenshots ici</p>
+                                <p style="font-size: 0.9rem; color: var(--text-light);">Clique droit sur une image pour la supprimer</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="article-section">
+                    <h2>🛡️ Signaux d'alerte pour détecter le phishing</h2>
+                    <ul>
+                        <li><strong>URL suspecte :</strong> Vérifier l'adresse exacte du site (domaine, TLD)</li>
+                        <li><strong>Certificat SSL :</strong> Chercher le cadenas et "https://" dans la barre d'adresse</li>
+                        <li><strong>Demandes inhabituelles :</strong> Les vrais sites ne demandent jamais les identifiants par email</li>
+                        <li><strong>Design approximatif :</strong> Fautes d'orthographe, images de basse qualité</li>
+                        <li><strong>Liens cachés :</strong> Survolez les liens pour voir leur vraie destination</li>
+                        <li><strong>Emails suspects :</strong> Vérifier l'adresse expéditeur exacte</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>✨ Compétences acquises</h2>
+                    <ul>
+                        <li>Compréhension approfondie des techniques de phishing</li>
+                        <li>Reproduction fidèle d'interfaces web existantes</li>
+                        <li>Développement de formulaires HTML fonctionnels</li>
+                        <li>Design responsive et compatibilité cross-browser</li>
+                        <li>Sensibilisation aux risques de cybersécurité</li>
+                        <li>Pensée critique sur la sécurité de l'information</li>
+                    </ul>
+                </section>
+
+                <section class="article-section">
+                    <h2>⚠️ Note éthique</h2>
+                    <p>Ce projet a été réalisé uniquement à des fins éducatives dans un contexte scolaire contrôlé. La création de vraies pages de phishing pour arnaquer les utilisateurs est illégale et contraire à l'éthique. L'objectif est de comprendre comment ces attaques fonctionnent pour mieux les prévenir et protéger les utilisateurs.</p>
+                </section>
+
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+                    <a href="index.html" class="cta-button">← Retour aux projets</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.screenshots-gallery');
+
+            galleries.forEach((gallery, index) => {
+                const galleryId = gallery.id || `gallery-${index}`;
+                gallery.id = galleryId;
+
+                addScreenshotButton(gallery);
+                loadGalleryData(gallery);
+            });
+
+            function addScreenshotButton(gallery) {
+                const button = document.createElement('button');
+                button.className = 'add-screenshot-btn';
+                button.textContent = '➕ Ajouter un screenshot';
+                button.type = 'button';
+
+                button.addEventListener('click', function() {
+                    const input = document.createElement('input');
+                    input.type = 'file';
+                    input.accept = 'image/*';
+                    input.multiple = true;
+
+                    input.addEventListener('change', function(e) {
+                        const files = e.target.files;
+                        const currentImages = gallery.querySelectorAll('.gallery-item').length;
+
+                        for (let file of files) {
+                            if (currentImages >= 10) {
+                                alert('Maximum 10 screenshots par projet!');
+                                break;
+                            }
+
+                            const reader = new FileReader();
+                            reader.onload = function(event) {
+                                addImageToGallery(gallery, event.target.result, galleryId);
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                    });
+
+                    input.click();
+                });
+
+                gallery.appendChild(button);
+            }
+
+            function addImageToGallery(gallery, imageData, galleryId) {
+                const placeholder = gallery.querySelector('.gallery-placeholder');
+                if (placeholder) {
+                    placeholder.style.display = 'none';
+                }
+
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+
+                const img = document.createElement('img');
+                img.src = imageData;
+
+                const overlay = document.createElement('div');
+                overlay.className = 'gallery-item-overlay';
+
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = '🗑️ Supprimer';
+                deleteBtn.type = 'button';
+
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    item.remove();
+                    saveGalleryData(gallery, galleryId);
+
+                    if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                        const placeholder = gallery.querySelector('.gallery-placeholder');
+                        if (placeholder) {
+                            placeholder.style.display = 'block';
+                        }
+                    }
+                });
+
+                overlay.appendChild(deleteBtn);
+                item.appendChild(img);
+                item.appendChild(overlay);
+
+                const button = gallery.querySelector('.add-screenshot-btn');
+                gallery.insertBefore(item, button);
+
+                saveGalleryData(gallery, galleryId);
+            }
+
+            function saveGalleryData(gallery, galleryId) {
+                const images = [];
+                gallery.querySelectorAll('.gallery-item img').forEach(img => {
+                    images.push(img.src);
+                });
+                localStorage.setItem(`steam-gallery-${galleryId}`, JSON.stringify(images));
+            }
+
+            function loadGalleryData(gallery) {
+                const galleryId = gallery.id;
+                const savedImages = localStorage.getItem(`steam-gallery-${galleryId}`);
+
+                if (savedImages) {
+                    const images = JSON.parse(savedImages);
+                    const placeholder = gallery.querySelector('.gallery-placeholder');
+
+                    images.forEach(imageData => {
+                        const item = document.createElement('div');
+                        item.className = 'gallery-item';
+
+                        const img = document.createElement('img');
+                        img.src = imageData;
+
+                        const overlay = document.createElement('div');
+                        overlay.className = 'gallery-item-overlay';
+
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = '🗑️ Supprimer';
+                        deleteBtn.type = 'button';
+
+                        deleteBtn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            item.remove();
+                            saveGalleryData(gallery, galleryId);
+
+                            if (gallery.querySelectorAll('.gallery-item').length === 0) {
+                                const placeholder = gallery.querySelector('.gallery-placeholder');
+                                if (placeholder) {
+                                    placeholder.style.display = 'block';
+                                }
+                            }
+                        });
+
+                        overlay.appendChild(deleteBtn);
+                        item.appendChild(img);
+                        item.appendChild(overlay);
+
+                        const button = gallery.querySelector('.add-screenshot-btn');
+                        gallery.insertBefore(item, button);
+
+                        if (placeholder) {
+                            placeholder.style.display = 'none';
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
