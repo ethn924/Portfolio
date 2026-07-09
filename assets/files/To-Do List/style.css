@@ -1,0 +1,300 @@
+/* ==========================================================================
+   RÈGLES GLOBALES
+   ========================================================================== */
+   * {
+    margin: 0;           /* Supprime les marges par défaut */
+    padding: 0;          /* Supprime les espacements internes par défaut */
+    box-sizing: border-box; /* Inclut padding et bordures dans la largeur/hauteur */
+    font-family: 'Arial', sans-serif; /* Police par défaut */
+  }
+  
+  /* ==========================================================================
+     STYLE DU BODY ET FOND
+     ========================================================================== */
+  body {
+    display: flex;                   /* Utilisation de Flexbox pour centrer le contenu */
+    justify-content: center;         /* Centre horizontalement */
+    align-items: center;             /* Centre verticalement */
+    flex-direction: column;          /* Empile les éléments verticalement */
+    min-height: 100vh;               /* Hauteur minimale de la fenêtre */
+    background-image: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Dégradé de fond clair */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transition douce pour le mode sombre */
+  }
+  
+  /* ==========================================================================
+     MODE SOMBRE
+     ========================================================================== */
+  .dark-mode {
+    background-image: linear-gradient(135deg, #232526, #414345); /* Fond sombre */
+    color: #fff;              /* Texte en blanc pour une meilleure lisibilité */
+  }
+  
+  /* ==========================================================================
+     CONTAINER PRINCIPAL
+     ========================================================================== */
+  .container {
+    background: rgba(255, 255, 255, 0.95); /* Fond blanc avec légère transparence */
+    padding: 25px;            /* Espacement interne */
+    border-radius: 12px;      /* Bords arrondis */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Ombre portée pour effet de profondeur */
+    width: 95%;               /* Largeur responsive */
+    max-width: 750px;         /* Largeur maximale */
+    text-align: center;       /* Texte centré */
+    transition: background 0.3s ease; /* Transition pour le changement de mode */
+  }
+  .dark-mode .container {
+    background: rgba(40, 40, 40, 0.9); /* Fond plus foncé en mode sombre */
+  }
+  
+  /* ==========================================================================
+     BOUTON DE BASCULE DU MODE SOMBRE/CLAIR
+     ========================================================================== */
+  .mode-toggle {
+    position: absolute;  /* Positionnement fixe en haut à droite */
+    top: 15px;
+    right: 15px;
+  }
+  #modeToggle {
+    padding: 10px 20px;  /* Espacement interne */
+    background-color: #4CAF50; /* Couleur de fond verte */
+    color: white;        /* Texte en blanc */
+    border: none;        /* Pas de bordure */
+    border-radius: 6px;  /* Coins arrondis */
+    font-size: 16px;     /* Taille de police */
+    cursor: pointer;     /* Curseur en forme de main */
+    transition: background 0.3s ease; /* Transition pour le survol */
+  }
+  #modeToggle:hover {
+    background-color: #388e3c; /* Couleur légèrement plus foncée au survol */
+  }
+  .dark-mode #modeToggle {
+    background-color: #666; /* Couleur différente en mode sombre */
+  }
+  
+  /* ==========================================================================
+     FORMULAIRE D'AJOUT DE TÂCHE
+     ========================================================================== */
+  .champs {
+    display: flex;             /* Flexbox pour l'agencement horizontal */
+    gap: 12px;                 /* Espacement entre les éléments */
+    align-items: center;       /* Alignement vertical centré */
+    justify-content: center;   /* Centre les éléments horizontalement */
+    margin-bottom: 20px;       /* Marge inférieure */
+    flex-wrap: wrap;           /* Passage à la ligne sur petits écrans */
+  }
+  .champs input, .champs select {
+    padding: 12px;             /* Espacement interne */
+    border-radius: 6px;        /* Coins arrondis */
+    border: 2px solid #ddd;    /* Bordure grise claire */
+    font-size: 16px;           /* Taille de police */
+    flex: 1;                   /* Prend toute la place disponible */
+    min-width: 200px;          /* Largeur minimale */
+    max-width: 100%;           /* S'adapte à la taille du conteneur */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour le focus */
+  }
+  .champs input:focus, .champs select:focus {
+    border-color: #4CAF50;     /* Bordure verte au focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Lueur verte */
+  }
+  .dark-mode .champs input, 
+  .dark-mode .champs select {
+    background: #555;          /* Fond sombre pour les inputs en mode sombre */
+    color: white;              /* Texte en blanc */
+    border: 2px solid #777;    /* Bordure plus foncée */
+  }
+  
+  /* ==========================================================================
+     BOUTON D'AJOUT DE TÂCHE
+     ========================================================================== */
+  .add {
+    background: #4CAF50;       /* Fond vert */
+    border: none;              /* Pas de bordure */
+    border-radius: 50px;        /* Forme arrondie */
+    padding: 0 15px;           /* Espacement horizontal */
+    height: 60px;              /* Hauteur fixe */
+    cursor: pointer;           /* Curseur pointer */
+    transition: transform 0.3s ease, background 0.3s ease; /* Transitions pour les effets */
+    display: flex;             /* Utilisation de Flexbox */
+    align-items: center;       /* Alignement vertical centré */
+    gap: 8px;                 /* Espacement entre texte et icône (si présente) */
+    font-size: 18px;           /* Taille de police */
+    color: white;              /* Texte en blanc */
+    white-space: nowrap;       /* Empêche le texte de se casser */
+  }
+  .add:hover {
+    background: #388e3c;       /* Couleur modifiée au survol */
+    transform: scale(1.05);    /* Légère augmentation de taille */
+  }
+  .dark-mode .add {
+    background: #666;          /* Couleur adaptée en mode sombre */
+  }
+  
+  /* ==========================================================================
+     ANIMATION D'APPARITION DES TÂCHES
+     ========================================================================== */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .task-table tr {
+    animation: fadeIn 0.5s ease; /* Applique l'animation à chaque ligne */
+  }
+  
+  /* ==========================================================================
+     MESSAGE D'ERREUR
+     ========================================================================== */
+  .error-message {
+    color: red;                /* Texte en rouge */
+    font-size: 14px;           /* Taille de police réduite */
+    margin-bottom: 10px;       /* Marge inférieure */
+    min-height: 20px;          /* Hauteur minimale pour éviter le déplacement du contenu */
+    transition: opacity 0.3s ease; /* Transition pour l'affichage/disparition */
+  }
+  
+  /* ==========================================================================
+     SECTION DES FILTRES
+     ========================================================================== */
+  .filters {
+    margin: 20px 0;           /* Marge autour des filtres */
+    padding: 15px;            /* Espacement interne */
+    border: 2px solid #4CAF50;/* Bordure verte */
+    border-radius: 8px;       /* Coins arrondis */
+    background: #f0fff0;      /* Fond très clair avec une touche de vert */
+    display: flex;            /* Flexbox pour l'agencement */
+    flex-wrap: wrap;          /* Passage à la ligne sur petits écrans */
+    justify-content: center;  /* Centre les éléments */
+    gap: 15px;                /* Espacement entre les éléments */
+    transition: background 0.3s ease; /* Transition pour le mode sombre */
+  }
+  .filters .filter-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* Aligne le contenu à gauche */
+  }
+  .filters label {
+    margin-bottom: 5px;       /* Espacement sous le label */
+    font-size: 16px;          /* Taille de police */
+    color: #4CAF50;           /* Couleur du texte */
+  }
+  .filters select {
+    padding: 8px 10px;        /* Espacement interne */
+    border: 1px solid #ddd;   /* Bordure légère */
+    border-radius: 6px;       /* Coins arrondis */
+    background: white;        /* Fond blanc */
+    font-size: 16px;          /* Taille de police */
+    min-width: 150px;         /* Largeur minimale */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transitions pour le focus */
+  }
+  .filters select:focus {
+    border-color: #4CAF50;    /* Bordure verte au focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Lueur verte */
+  }
+  .dark-mode .filters {
+    border: 2px solid #666;   /* Bordure adaptée en mode sombre */
+    background: #444;         /* Fond sombre */
+  }
+  .dark-mode .filters label {
+    color: #ffdb4d;           /* Texte jaune pâle pour le contraste */
+  }
+  .dark-mode .filters select {
+    background: #555;         /* Fond sombre pour les sélecteurs */
+    color: white;             /* Texte en blanc */
+    border: 1px solid #777;   /* Bordure adaptée */
+  }
+  
+  /* ==========================================================================
+     TABLEAU DES TÂCHES
+     ========================================================================== */
+  .task-table {
+    width: 100%;              /* Largeur maximale */
+    border-collapse: collapse; /* Fusion des bordures */
+    margin-top: 20px;         /* Marge supérieure */
+  }
+  .task-table th, .task-table td {
+    border: 1px solid #ddd;   /* Bordure grise claire */
+    padding: 12px;            /* Espacement interne */
+    text-align: center;       /* Texte centré */
+    font-size: 16px;          /* Taille de police */
+    transition: background 0.3s ease; /* Transition pour les changements de fond */
+  }
+  .task-table th {
+    background: #4CAF50;      /* Fond vert pour les entêtes */
+    color: white;             /* Texte en blanc */
+  }
+  .dark-mode .task-table th {
+    background: #666;         /* Fond adapté en mode sombre */
+  }
+  .task-table tr:nth-child(even) {
+    background: #f9f9f9;      /* Fond alternatif pour les lignes paires */
+  }
+  .dark-mode .task-table tr:nth-child(even) {
+    background: #555;         /* Fond adapté en mode sombre */
+  }
+  
+  /* ==========================================================================
+     BOUTONS "MODIFIER" & "SUPPRIMER"
+     ========================================================================== */
+  .modify, .delete {
+    padding: 8px 12px;        /* Espacement interne */
+    border: none;             /* Pas de bordure */
+    cursor: pointer;          /* Curseur pointer */
+    border-radius: 6px;       /* Coins arrondis */
+    transition: transform 0.3s ease, background 0.3s ease; /* Transitions pour l'effet au survol */
+    font-size: 14px;          /* Taille de police */
+    min-width: 80px;          /* Largeur minimale */
+    text-align: center;       /* Texte centré */
+  }
+  .modify {
+    background-color: #ffcc00; /* Fond jaune pour le bouton modifier */
+    color: white;              /* Texte en blanc */
+  }
+  .modify:hover {
+    background-color: #e6b800; /* Couleur changeante au survol */
+    transform: scale(1.1);     /* Légère augmentation de taille */
+  }
+  .delete {
+    background-color: #ff5555; /* Fond rouge pour le bouton supprimer */
+    color: white;
+  }
+  .delete:hover {
+    background-color: #c9302c; /* Couleur changeante au survol */
+    transform: scale(1.1);
+  }
+  .dark-mode .modify {
+    background-color: #ffdb4d; /* Couleur adaptée en mode sombre */
+  }
+  .dark-mode .delete {
+    background-color: #ff6666;
+  }
+  
+  /* ==========================================================================
+     EFFET D'EDITION
+     ========================================================================== */
+  /* En mode clair, mise en évidence des champs éditables */
+  .editing {
+    background-color: #fff8c4;  /* Fond jaune pâle */
+    border: 2px dashed #4CAF50;   /* Bordure en pointillé vert */
+    padding: 4px;
+  }
+  /* En mode sombre, ajustement pour garder la lisibilité */
+  .dark-mode .editing {
+    background-color: #555;      /* Fond sombre */
+    border: 2px dashed #ffdb4d;   /* Bordure jaune pâle */
+    padding: 4px;
+    color: white;                /* Texte en blanc */
+  }
+  
+  /* ==========================================================================
+     RESPONSIVE
+     ========================================================================== */
+  @media screen and (max-width: 750px) {
+    .champs {
+      flex-direction: column;   /* Empile verticalement sur petits écrans */
+      gap: 10px;
+    }
+    .filters {
+      flex-direction: column;   /* Empile verticalement les filtres */
+      gap: 10px;
+    }
+  }
+  

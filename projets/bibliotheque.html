@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de Bibliothèque AP2 — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><a href="../index.html#projects">Projets</a><span>›</span><span>Bibliothèque Java AP2</span></div>
+            <div class="section-label">AP2 — BTS SIO · Septembre 2025</div>
+            <h1 class="page-title">📚 Système de Gestion de Bibliothèque – AP2</h1>
+            <p class="page-subtitle">Application Java Desktop MVC avec interface Swing et base de données MySQL via JDBC</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Sep. 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>18 heures</strong></span>
+                <span class="meta-chip">🎓 <strong>AP2 – BTS SIO</strong></span>
+                <span class="meta-chip">☕ <strong>Java / Swing</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Java</span>
+                <span class="tech-pill">Swing</span>
+                <span class="tech-pill">JDBC</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">MVC</span>
+                <span class="tech-pill">POO</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>
+                    Ce projet est mon <strong>AP2 en BTS SIO</strong> — une application Java Desktop de gestion de bibliothèque développée avec une interface graphique <strong>Swing</strong> et une base de données <strong>MySQL</strong> connectée via <strong>JDBC</strong>. L'application suit une architecture <strong>MVC</strong> stricte avec 3 packages distincts : <code>controller</code>, <code>model</code> et <code>view</code>.
+                </p>
+                <p>
+                    L'application permet à des adhérents de se connecter, de consulter le catalogue des livres disponibles, d'emprunter et retourner des ouvrages, et de gérer leur compte personnel — le tout synchronisé en temps réel avec la base de données.
+                </p>
+
+                <h2>Architecture du projet</h2>
+                <div class="code-block">
+                    <pre>📁 PROJET_ETHAN_AP2/
+├── 📁 controller/
+│   └── mainMVC.java         — Point d'entrée, initialise le modèle
+├── 📁 model/
+│   ├── model.java           — Connexion BDD, logique métier, CRUD
+│   ├── LIVRE.java           — Entité livre (ISBN, titre, prix, auteur, emprunteur)
+│   ├── AUTEUR.java          — Entité auteur (num, nom, prénom, date, description)
+│   └── ADHERENT.java        — Entité adhérent (num, nom, prénom, email, livres)
+└── 📁 view/
+    ├── View_Connexion.java  — Écran de connexion par numéro adhérent
+    ├── View_Accueil.java    — Menu principal (4 actions)
+    ├── View_Catalogue.java  — Tableau de tous les livres avec statut
+    ├── View_Emprunt.java    — Formulaire d'emprunt par ISBN
+    ├── View_Compte.java     — Profil modifiable de l'adhérent
+    ├── View_LivresEmpruntes.java — Liste des livres empruntés + retour
+    └── View_Livre.java      — Vue livre (structure)</pre>
+                </div>
+
+                <h2>Fonctionnalités</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">🔑</div>
+                        <h4>Connexion adhérent</h4>
+                        <p>Authentification par numéro d'adhérent (A001, A002…). L'adhérent connecté est conservé en mémoire dans le modèle pour toute la session.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📋</div>
+                        <h4>Catalogue complet</h4>
+                        <p>Tableau JTable affichant tous les livres : ISBN, titre, auteur, prix et statut (Disponible / Emprunté). Copie de cellule via Ctrl+C.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📖</div>
+                        <h4>Emprunt de livres</h4>
+                        <p>Saisie de l'ISBN pour emprunter un livre disponible. Vérification en temps réel : livre existant, non déjà emprunté, adhérent valide.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">↩️</div>
+                        <h4>Retour de livres</h4>
+                        <p>Liste des livres empruntés par l'adhérent avec bouton de retour. Mise à jour instantanée de la liste après retour.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">👤</div>
+                        <h4>Gestion du compte</h4>
+                        <p>Modification du nom, prénom et email directement depuis l'interface. Mise à jour en BDD et en mémoire.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🗄️</div>
+                        <h4>Synchronisation BDD</h4>
+                        <p>Toutes les données sont chargées au démarrage depuis MySQL. Chaque action (emprunt, retour, modif) met à jour la BDD ET les objets en mémoire.</p>
+                    </div>
+                </div>
+
+                <h2>Modèle de données</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">LIVRE</span>
+                        <div>
+                            <h4>Entité LIVRE</h4>
+                            <p>Attributs : <code>ISBN</code> (clé), <code>titre</code>, <code>prix</code> (float), <code>emprunteur</code> (ADHERENT), <code>auteur</code> (AUTEUR). Un livre peut avoir un emprunteur nul s'il est disponible.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">AUTEUR</span>
+                        <div>
+                            <h4>Entité AUTEUR</h4>
+                            <p>Attributs : <code>num</code> (clé), <code>nom</code>, <code>prénom</code>, <code>date_naissance</code>, <code>description</code>. Lié à zéro ou plusieurs livres.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">ADHERENT</span>
+                        <div>
+                            <h4>Entité ADHERENT</h4>
+                            <p>Attributs : <code>num</code> (clé), <code>nom</code>, <code>prénom</code>, <code>email</code>, <code>ListLivre</code> (ArrayList). L'adhérent porte sa propre liste de livres empruntés.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Étapes du développement</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Conception de la base de données</h4>
+                            <p>Création du schéma MySQL <code>ap2_ethan_2025</code> avec les tables <code>livre</code>, <code>auteur</code>, <code>adherent</code>. Définition des clés étrangères et insertion de données de test.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Modèle & entités Java</h4>
+                            <p>Création des classes LIVRE, AUTEUR, ADHERENT avec encapsulation stricte (attributs privés, getters/setters). Implémentation du <code>model.java</code> central avec connexion JDBC et méthodes <code>getAll()</code>, <code>findLivre()</code>, <code>findAdherent()</code>, <code>findAuteur()</code>.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Logique métier</h4>
+                            <p>Implémentation de <code>emprunterLivre()</code> et <code>retournerLivre()</code> dans le modèle : vérifications côté objet, requête SQL UPDATE, mise à jour synchronisée des objets en mémoire. Même logique pour <code>updateAdherent()</code>.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Vues Swing</h4>
+                            <p>Développement des 6 vues avec positionnement absolu (<code>setLayout(null)</code>). Chaque vue accède au modèle via <code>mainMVC.getM()</code>. La vue Catalogue utilise un <code>JTable</code> avec <code>DefaultTableModel</code> et colonnes non éditables.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">05</span>
+                        <div>
+                            <h4>Tests et corrections</h4>
+                            <p>Tests des cas limites : emprunt d'un livre déjà pris, retour d'un livre non emprunté, connexion avec un numéro inexistant. Gestion des erreurs SQL avec messages JOptionPane clairs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Architecture <strong>MVC</strong> en Java avec packages séparés (controller / model / view)</li>
+                    <li>Connexion BDD depuis Java avec <strong>JDBC</strong> et <code>DriverManager</code></li>
+                    <li>Conception d'interfaces <strong>Swing</strong> (JFrame, JTable, JList, JTextField, JOptionPane)</li>
+                    <li><strong>POO avancée</strong> : encapsulation, associations entre objets, ArrayList</li>
+                    <li>Gestion de l'état de session (adhérent connecté persisté dans le modèle)</li>
+                    <li>Synchronisation double : <strong>BDD + objets en mémoire</strong> pour éviter les requêtes inutiles</li>
+                    <li>Gestion des erreurs et cas limites dans les interactions utilisateur</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">Septembre 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">18 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Contexte</span><span class="sm-value">AP2 – BTS SIO</span></div>
+                        <div class="sm-row"><span class="sm-label">Langage</span><span class="sm-value">Java</span></div>
+                        <div class="sm-row"><span class="sm-label">UI</span><span class="sm-value">Swing</span></div>
+                        <div class="sm-row"><span class="sm-label">BDD</span><span class="sm-value">MySQL via JDBC</span></div>
+                        <div class="sm-row"><span class="sm-label">Pattern</span><span class="sm-value">MVC</span></div>
+                        <div class="sm-row"><span class="sm-label">BDD nom</span><span class="sm-value">ap2_ethan_2025</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/PROJET_ETHAN_AP2.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

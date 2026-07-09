@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Gestion de Stock — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><a href="../index.html#projects">Projets</a><span>›</span><span>Gestion de Stock</span></div>
+            <div class="section-label">Projet Web — Novembre 2025</div>
+            <h1 class="page-title">🌐 Application Web de Gestion de Stock</h1>
+            <p class="page-subtitle">Application web de gestion d'inventaire développée en PHP/MySQL</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Nov. 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>60 heures</strong></span>
+                <span class="meta-chip">🌐 <strong>PHP / MySQL</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span><span class="tech-pill">HTML/CSS</span><span class="tech-pill">JavaScript</span>
+            </div>
+        </div>
+        <div class="page-body">
+            <main class="page-main">
+                <h2>À propos du projet</h2>
+                <p>Cette application web permet de gérer l'inventaire d'un magasin ou d'une entreprise. Développée en <strong>PHP</strong> avec une base de données <strong>MySQL</strong>, elle inclut une interface complète pour ajouter, modifier, supprimer et rechercher des produits, ainsi que la gestion des utilisateurs et des niveaux d'accès.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item"><div class="fi-icon">📦</div><h4>Gestion des produits</h4><p>Ajout, modification, suppression de produits avec catégorie, prix, quantité et référence.</p></div>
+                    <div class="feature-item"><div class="fi-icon">🔍</div><h4>Recherche et filtres</h4><p>Filtrage par catégorie, recherche par nom ou référence, tri par prix ou quantité.</p></div>
+                    <div class="feature-item"><div class="fi-icon">👤</div><h4>Gestion des utilisateurs</h4><p>Comptes administrateur et employé avec niveaux d'accès différenciés.</p></div>
+                    <div class="feature-item"><div class="fi-icon">📊</div><h4>Suivi du stock</h4><p>Alertes de stock faible, historique des mouvements, statistiques de l'inventaire.</p></div>
+                    <div class="feature-item"><div class="fi-icon">🔐</div><h4>Authentification</h4><p>Système de connexion sécurisé avec sessions PHP et hachage des mots de passe.</p></div>
+                    <div class="feature-item"><div class="fi-icon">📋</div><h4>CRUD complet</h4><p>Opérations Create, Read, Update, Delete sur tous les produits via interface web.</p></div>
+                </div>
+
+                <h2>Étapes du développement</h2>
+                <div class="steps-list">
+                    <div class="step-item"><span class="step-num">01</span><div><h4>Base de données MySQL</h4><p>Structure relationnelle pour produits, catégories, utilisateurs et mouvements de stock avec contraintes d'intégrité.</p></div></div>
+                    <div class="step-item"><span class="step-num">02</span><div><h4>Authentification et sessions</h4><p>Système de login sécurisé, gestion des sessions PHP et différenciation admin/employé.</p></div></div>
+                    <div class="step-item"><span class="step-num">03</span><div><h4>Interface CRUD produits</h4><p>Formulaires de saisie, tableau de liste avec actions, pagination et recherche en temps réel via JavaScript.</p></div></div>
+                    <div class="step-item"><span class="step-num">04</span><div><h4>Sécurité et validation</h4><p>Requêtes préparées PDO, validation serveur et client, protection contre les failles communes.</p></div></div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Développement web côté serveur avec <strong>PHP</strong></li>
+                    <li>Gestion de <strong>bases de données MySQL</strong> et requêtes SQL avancées</li>
+                    <li>Opérations <strong>CRUD</strong> complètes</li>
+                    <li>Authentification et <strong>sécurité web</strong></li>
+                    <li>Interfaces utilisateur fonctionnelles avec formulaires HTML</li>
+                    <li>Validation côté serveur et client</li>
+                </ul>
+            </main>
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">Novembre 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">60 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Stack</span><span class="sm-value">PHP + MySQL</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Actions</h3>
+                    <div class="sidebar-links">
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2025 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

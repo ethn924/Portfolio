@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction à la POO en Java — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+    <style>
+        code {
+            font-family: var(--font-mono);
+            font-size: 0.82rem;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.1rem 0.4rem;
+            border-radius: 3px;
+            color: var(--accent);
+        }
+        /* Code blocks stay dark in both themes for readability */
+        .code-block { background: #0e0e1a; border: 1px solid #2a2a3a; border-radius: var(--r-md); padding: 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
+        .code-block pre { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.75; color: #e8e8ee; margin: 0; white-space: pre; }
+        .kw { color: #818cf8; }
+        .cl { color: #6ee7b7; }
+        .cm { color: #5a5a7a; font-style: italic; }
+        .st { color: #f472b6; }
+        .nm { color: #fbbf24; }
+        .concept-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .concept-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; transition: border-color 0.2s; }
+        .concept-card:hover { border-color: var(--accent); }
+        .concept-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--accent); }
+        .concept-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+        @media (max-width: 600px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#blog">Blog</a><span>›</span>
+                <span>Introduction à la POO en Java</span>
+            </div>
+            <span class="blog-cat cat-tutoriel" style="display:inline-block;margin-bottom:1rem">Tutoriel</span>
+            <h1 class="page-title">Introduction à la Programmation Orientée Objet en Java</h1>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>15 décembre 2024</strong></span>
+                <span class="meta-chip">⏱ <strong>18 min de lecture</strong></span>
+                <span class="meta-chip">✍ <strong>Ethan Lalienne</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Java</span><span class="tech-pill">POO</span><span class="tech-pill">Classes</span><span class="tech-pill">Héritage</span><span class="tech-pill">Polymorphisme</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <p class="article-intro">
+                La <strong>Programmation Orientée Objet (POO)</strong> est une façon de penser et d'organiser son code autour de "objets" qui représentent des entités du monde réel. En Java, c'est le paradigme fondamental. Ce guide vous explique les 4 piliers avec des analogies concrètes et des exemples de code commentés.
+            </p>
+
+            <div class="article-section">
+                <h2>Pourquoi la POO ?</h2>
+                <p>Imaginez que vous construisez un jeu vidéo avec du code procédural classique. Très vite, votre code devient un enchevêtrement de variables globales et de fonctions difficiles à maintenir. La POO résout ce problème en regroupant les données et les comportements dans des <strong>classes</strong>.</p>
+                <div class="concept-grid">
+                    <div class="concept-card"><h4>🧩 Modularité</h4><p>Divisez votre code en modules indépendants, faciles à tester individuellement.</p></div>
+                    <div class="concept-card"><h4>♻️ Réutilisabilité</h4><p>Une classe bien écrite peut être réutilisée dans plusieurs projets sans réécriture.</p></div>
+                    <div class="concept-card"><h4>🔒 Maintenabilité</h4><p>Modifiez une classe sans casser le reste du code — les changements sont isolés.</p></div>
+                    <div class="concept-card"><h4>👥 Collaboration</h4><p>Plusieurs développeurs peuvent travailler sur des classes différentes sans conflit.</p></div>
+                </div>
+            </div>
+
+            <div class="article-section">
+                <h2>1️⃣ Les Classes et les Objets</h2>
+                <p>Une <strong>classe</strong> est un modèle (blueprint), un <strong>objet</strong> est une instance de cette classe. Comme un plan d'architecte (classe) et une maison construite (objet).</p>
+                <p>Exemple concret — imaginez un jeu vidéo :</p>
+                <div class="code-block"><pre><span class="kw">public class</span> <span class="cl">Personnage</span> {
+    <span class="cm">// Attributs (propriétés)</span>
+    <span class="cl">String</span> nom;
+    <span class="kw">int</span> pointsVie;
+    <span class="kw">int</span> niveau;
+
+    <span class="cm">// Méthodes (actions)</span>
+    <span class="kw">void</span> attaquer() {
+        System.out.println(nom + <span class="st">" attaque !"</span>);
+    }
+
+    <span class="kw">void</span> prendresDegats(<span class="kw">int</span> degats) {
+        pointsVie -= degats;
+        System.out.println(nom + <span class="st">" perd "</span> + degats + <span class="st">" PV"</span>);
+    }
+}
+
+<span class="cm">// Créer une instance (un objet)</span>
+<span class="cl">Personnage</span> hero = <span class="kw">new</span> <span class="cl">Personnage</span>();
+hero.nom = <span class="st">"Link"</span>;
+hero.pointsVie = <span class="nm">100</span>;
+hero.attaquer(); <span class="cm">// Affiche : Link attaque !</span></pre></div>
+            </div>
+
+            <div class="article-section">
+                <h2>2️⃣ L'Encapsulation</h2>
+                <p>L'encapsulation signifie <strong>cacher les détails internes</strong> d'une classe. C'est comme une boîte noire : vous savez ce qu'elle fait, mais pas comment à l'intérieur.</p>
+                <p>Exemple : un compte bancaire. Vous ne voulez pas que quelqu'un puisse modifier directement votre solde. Il doit passer par des méthodes sécurisées.</p>
+                <div class="code-block"><pre><span class="kw">public class</span> <span class="cl">CompteBancaire</span> {
+    <span class="kw">private double</span> solde; <span class="cm">// private = accès interdit de l'extérieur</span>
+
+    <span class="cm">// Getter — lire le solde</span>
+    <span class="kw">public double</span> getSolde() {
+        <span class="kw">return</span> solde;
+    }
+
+    <span class="cm">// Méthode sécurisée pour déposer</span>
+    <span class="kw">public void</span> deposer(<span class="kw">double</span> montant) {
+        <span class="kw">if</span> (montant > <span class="nm">0</span>) {
+            solde += montant;
+            System.out.println(<span class="st">"Dépôt de "</span> + montant + <span class="st">"€ accepté"</span>);
+        }
+    }
+
+    <span class="cm">// Méthode sécurisée pour retirer</span>
+    <span class="kw">public void</span> retirer(<span class="kw">double</span> montant) {
+        <span class="kw">if</span> (montant > <span class="nm">0</span> && montant <= solde) {
+            solde -= montant;
+        } <span class="kw">else</span> {
+            System.out.println(<span class="st">"Solde insuffisant !"</span>);
+        }
+    }
+}</pre></div>
+                <p>Avec l'encapsulation, personne ne peut faire <code>compte.solde = -9999</code> depuis l'extérieur — le compilateur Java refusera. C'est la sécurité du code !</p>
+            </div>
+
+            <div class="article-section">
+                <h2>3️⃣ L'Héritage</h2>
+                <p>L'héritage permet à une classe d'<strong>hériter des propriétés et méthodes</strong> d'une autre. C'est comme la génétique : les enfants héritent des caractéristiques de leurs parents.</p>
+                <p>Tous les animaux mangent et dorment — pas besoin de réécrire ces méthodes pour chaque animal :</p>
+                <div class="code-block"><pre><span class="cm">// Classe parente</span>
+<span class="kw">public class</span> <span class="cl">Animal</span> {
+    <span class="cl">String</span> nom;
+
+    <span class="kw">void</span> manger() {
+        System.out.println(nom + <span class="st">" est en train de manger"</span>);
+    }
+    <span class="kw">void</span> dormir() {
+        System.out.println(nom + <span class="st">" dort..."</span>);
+    }
+}
+
+<span class="cm">// Classe enfant — hérite de Animal</span>
+<span class="kw">public class</span> <span class="cl">Chien</span> <span class="kw">extends</span> <span class="cl">Animal</span> {
+    <span class="kw">void</span> aboyer() {
+        System.out.println(nom + <span class="st">" : Wouf wouf !"</span>);
+    }
+}
+
+<span class="cm">// Utilisation</span>
+<span class="cl">Chien</span> monChien = <span class="kw">new</span> <span class="cl">Chien</span>();
+monChien.nom = <span class="st">"Rex"</span>;
+monChien.manger();  <span class="cm">// Hérité de Animal</span>
+monChien.aboyer();  <span class="cm">// Spécifique à Chien</span></pre></div>
+                <p>Le mot-clé <code>extends</code> établit la relation d'héritage. Le Chien <em>est un</em> Animal — c'est la règle "is-a" de la POO.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>4️⃣ Le Polymorphisme</h2>
+                <p>Le polymorphisme signifie <strong>"plusieurs formes"</strong>. Une même méthode peut se comporter différemment selon l'objet qui l'appelle.</p>
+                <p>Imaginez une interface musicale — tous les instruments jouent, mais chacun sonne différemment :</p>
+                <div class="code-block"><pre><span class="kw">public abstract class</span> <span class="cl">Instrument</span> {
+    <span class="kw">abstract void</span> jouer(); <span class="cm">// Chaque instrument joue différemment</span>
+}
+
+<span class="kw">public class</span> <span class="cl">Guitare</span> <span class="kw">extends</span> <span class="cl">Instrument</span> {
+    <span class="kw">void</span> jouer() {
+        System.out.println(<span class="st">"Plin plin plin... 🎸"</span>);
+    }
+}
+
+<span class="kw">public class</span> <span class="cl">Piano</span> <span class="kw">extends</span> <span class="cl">Instrument</span> {
+    <span class="kw">void</span> jouer() {
+        System.out.println(<span class="st">"Ding ding ding... 🎹"</span>);
+    }
+}
+
+<span class="cm">// Le polymorphisme en action</span>
+<span class="cl">Instrument</span> i1 = <span class="kw">new</span> <span class="cl">Guitare</span>();
+<span class="cl">Instrument</span> i2 = <span class="kw">new</span> <span class="cl">Piano</span>();
+i1.jouer(); <span class="cm">// Plin plin plin...</span>
+i2.jouer(); <span class="cm">// Ding ding ding...</span></pre></div>
+                <p>Le même appel <code>.jouer()</code> produit des résultats différents selon le type réel de l'objet. C'est la puissance du polymorphisme !</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Récapitulatif — Les 4 piliers</h2>
+                <div class="concept-grid">
+                    <div class="concept-card"><h4>📦 Classe / Objet</h4><p>La classe est le moule, l'objet est l'instance. Regroupez données et comportements ensemble.</p></div>
+                    <div class="concept-card"><h4>🔒 Encapsulation</h4><p>Cachez les détails internes. Utilisez <code>private</code> et exposez des méthodes publiques contrôlées.</p></div>
+                    <div class="concept-card"><h4>👨‍👦 Héritage</h4><p>Une classe enfant hérite de la classe parente avec <code>extends</code>. Réutilisez et spécialisez.</p></div>
+                    <div class="concept-card"><h4>🎭 Polymorphisme</h4><p>Une même méthode, plusieurs comportements selon le type d'objet. Puissant et flexible.</p></div>
+                </div>
+            </div>
+
+            <div class="article-section">
+                <h2>Cas d'usage réels</h2>
+                <ul>
+                    <li><strong>Jeu vidéo :</strong> Personnages, ennemis, objets héritent d'une classe <code>Entity</code> avec des propriétés communes (position, santé) et des comportements spécifiques</li>
+                    <li><strong>Application web :</strong> Utilisateurs, produits, commandes sont des classes avec méthodes CRUD (créer, modifier, supprimer, valider)</li>
+                    <li><strong>Application bancaire :</strong> Comptes courants et épargne héritent d'une classe <code>Compte</code> abstraite — comme dans mon projet AP3 !</li>
+                    <li><strong>Gestion de bibliothèque :</strong> Livres, emprunteurs, emprunts — chacun une classe avec ses responsabilités, comme dans mon projet Java Swing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-back">
+            <a href="../index.html#blog" class="btn btn-outline">← Retour au Blog</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2025 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

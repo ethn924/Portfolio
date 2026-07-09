@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#projects">Projets</a><span>›</span>
+                <span>To-Do List</span>
+            </div>
+            <div class="section-label">Projet Web — 2025–2026</div>
+            <h1 class="page-title">✅ To-Do List — Gestionnaire de tâches</h1>
+            <p class="page-subtitle">Application web de gestion de tâches avec catégories personnalisées, priorités et persistance des données via localStorage</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2025–2026</strong></span>
+                <span class="meta-chip">⏱ <strong>~10h</strong></span>
+                <span class="meta-chip">🌐 <strong>HTML / CSS / JS</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">HTML</span>
+                <span class="tech-pill">CSS</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">localStorage</span>
+                <span class="tech-pill">DOM</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>To-Do List est une application web de gestion de tâches développée entièrement en <strong>JavaScript vanilla</strong>, sans aucune dépendance externe. Elle permet à l'utilisateur de créer, organiser, modifier et supprimer ses tâches du quotidien, avec un système de catégories et de priorités.</p>
+                <p>L'application intègre une <strong>persistance des données via localStorage</strong>, ce qui signifie que les tâches restent enregistrées même après fermeture du navigateur. Elle propose également un <strong>mode sombre/clair</strong> dont la préférence est mémorisée entre les sessions.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">➕</div>
+                        <h4>Ajout de tâches</h4>
+                        <p>Formulaire complet permettant de saisir une tâche, de choisir sa catégorie (Travail, Personnel, Urgent) et d'affecter une priorité (Haute, Moyenne, Basse).</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🏷️</div>
+                        <h4>Catégories personnalisées</h4>
+                        <p>Possibilité de créer ses propres catégories à la volée via l'option "Créer une nouvelle catégorie". Les nouvelles catégories sont automatiquement ajoutées aux filtres.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">✏️</div>
+                        <h4>Modification en ligne</h4>
+                        <p>Édition directe du texte et de la catégorie d'une tâche grâce à <code>contentEditable</code>, sans quitter la page ni ouvrir de modal. La priorité reste verrouillée.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔍</div>
+                        <h4>Filtres dynamiques</h4>
+                        <p>Filtrage en temps réel par catégorie et par priorité. Les options du filtre catégorie se mettent à jour automatiquement selon les catégories présentes dans les tâches.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">💾</div>
+                        <h4>Persistance localStorage</h4>
+                        <p>Toutes les tâches sont sérialisées en JSON et stockées dans le <code>localStorage</code> du navigateur. Elles sont rechargées automatiquement à chaque ouverture de la page.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🌙</div>
+                        <h4>Mode sombre / clair</h4>
+                        <p>Bascule entre thème clair et sombre via un bouton dédié. La préférence est sauvegardée dans le localStorage pour être conservée entre les sessions.</p>
+                    </div>
+                </div>
+
+                <h2>Architecture technique</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Structure HTML & tableau de tâches</h4>
+                            <p>L'interface repose sur un <code>&lt;table&gt;</code> HTML avec un <code>&lt;tbody id="taskList"&gt;</code> rempli dynamiquement par JavaScript. Les colonnes couvrent le texte, la catégorie, la priorité et les actions.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Tableau de données global et persistance</h4>
+                            <p>Un tableau global <code>tasks[]</code> centralise toutes les tâches sous forme d'objets <code>{ task, category, priority }</code>. La fonction <code>saveTasks()</code> le sérialise en JSON dans le <code>localStorage</code> après chaque opération.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Rendu et filtrage dynamique</h4>
+                            <p>La fonction <code>renderTasks()</code> régénère entièrement le tableau à chaque action, en appliquant les filtres actifs de catégorie et de priorité. <code>updateFilterCategories()</code> maintient les options de filtre synchronisées avec les données.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Édition inline avec contentEditable</h4>
+                            <p><code>editTask()</code> active <code>contentEditable="true"</code> sur les cellules modifiables et bascule le bouton en mode "Enregistrer". <code>saveTask()</code> récupère le contenu édité, met à jour <code>tasks[]</code> et désactive l'édition.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">05</span>
+                        <div>
+                            <h4>Gestion des erreurs et UX</h4>
+                            <p>Validation des champs à l'ajout avec affichage d'un message d'erreur animé (opacité en fondu via <code>setTimeout</code>). Réinitialisation automatique du formulaire après ajout réussi.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Manipulation avancée du <strong>DOM</strong> : création, modification et suppression d'éléments dynamiquement</li>
+                    <li>Utilisation de <strong>localStorage</strong> pour la persistance des données côté client</li>
+                    <li>Gestion d'état avec un <strong>tableau global</strong> comme source de vérité unique</li>
+                    <li>Édition <strong>inline contentEditable</strong> pour une UX fluide sans modal</li>
+                    <li>Filtrage et rendu conditionnel en <strong>JavaScript vanilla</strong></li>
+                    <li>Gestion du thème sombre/clair avec sauvegarde des préférences utilisateur</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">2025 – 2026</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">~10 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Projet Web</span></div>
+                        <div class="sm-row"><span class="sm-label">Frontend</span><span class="sm-value">HTML / CSS / JS</span></div>
+                        <div class="sm-row"><span class="sm-label">Stockage</span><span class="sm-value">localStorage</span></div>
+                        <div class="sm-row"><span class="sm-label">Backend</span><span class="sm-value">Aucun</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Liens</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/to_do_list.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2024–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

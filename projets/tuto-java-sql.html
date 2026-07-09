@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoriel SQL Java Eclipse — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span>›</span>
+                <a href="../index.html#projects">Projets</a>
+                <span>›</span>
+                <span>Tutoriel SQL Java – Eclipse</span>
+            </div>
+            <div class="section-label">Documentation — BTS SIO · Octobre 2025</div>
+            <h1 class="page-title">📚 Tutoriel SQL Java – Eclipse</h1>
+            <p class="page-subtitle">Guide complet avec captures d'écran sur l'exécution de requêtes SQL en Java via Eclipse — CRUD complet et connexion JDBC</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Oct. 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>8 heures</strong></span>
+                <span class="meta-chip">🎓 <strong>BTS SIO</strong></span>
+                <span class="meta-chip">☕ <strong>Java / SQL</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Java</span>
+                <span class="tech-pill">SQL</span>
+                <span class="tech-pill">JDBC</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Eclipse</span>
+                <span class="tech-pill">CRUD</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>Ce tutoriel est un <strong>guide pratique complet</strong> documentant comment connecter Java à une base de données MySQL et exécuter des requêtes SQL depuis Eclipse. Il a été rédigé dans le cadre du BTS SIO pour accompagner l'apprentissage de la connexion base de données en Java via <strong>JDBC</strong> (Java Database Connectivity).</p>
+                <p>Le document inclut des <strong>captures d'écran pas à pas</strong> couvrant l'installation du driver JDBC, la configuration du projet Eclipse, l'établissement de la connexion, et l'exécution de toutes les opérations CRUD.</p>
+
+                <h2>Contenu du tutoriel</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">🔌</div>
+                        <h4>Configuration JDBC</h4>
+                        <p>Installation et ajout du driver MySQL Connector/J dans le classpath Eclipse. Configuration du projet pour la connexion à la base de données.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔗</div>
+                        <h4>Connexion à la BDD</h4>
+                        <p>Établissement de la connexion via <code>DriverManager.getConnection()</code> avec URL JDBC, nom d'utilisateur et mot de passe. Gestion des exceptions SQL.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📖</div>
+                        <h4>Requêtes SELECT</h4>
+                        <p>Lecture de données avec <code>Statement</code> et <code>ResultSet</code>. Itération sur les résultats et extraction des valeurs par nom de colonne.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">➕</div>
+                        <h4>Insertion de données</h4>
+                        <p>Utilisation de <code>PreparedStatement</code> pour insérer des enregistrements de manière sécurisée, avec paramètres liés pour éviter les injections SQL.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">✏️</div>
+                        <h4>Mise à jour (UPDATE)</h4>
+                        <p>Modification d'enregistrements existants avec requêtes préparées. Vérification du nombre de lignes affectées via <code>executeUpdate()</code>.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🗑️</div>
+                        <h4>Suppression (DELETE)</h4>
+                        <p>Suppression d'enregistrements ciblés avec conditions WHERE. Bonnes pratiques pour éviter les suppressions accidentelles.</p>
+                    </div>
+                </div>
+
+                <h2>Étapes couvertes dans le tutoriel</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Installation du driver JDBC</h4>
+                            <p>Téléchargement du MySQL Connector/J depuis le site officiel. Ajout du fichier <code>.jar</code> dans le Build Path du projet Eclipse via <em>Properties → Java Build Path → Add External JARs</em>.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Création de la base de données de test</h4>
+                            <p>Création d'une base MySQL de test avec une table simple (ex : <code>etudiants</code> avec id, nom, prénom, note). Script SQL fourni dans le tutoriel.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Établissement de la connexion</h4>
+                            <p>Écriture de la classe de connexion avec l'URL JDBC (<code>jdbc:mysql://localhost:3306/nomBDD</code>), chargement du driver et gestion des erreurs avec try-catch.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Requêtes SELECT et affichage</h4>
+                            <p>Exécution d'une requête SELECT avec <code>createStatement()</code> et <code>executeQuery()</code>. Parcours du <code>ResultSet</code> avec <code>while(rs.next())</code> pour afficher les données en console.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">05</span>
+                        <div>
+                            <h4>INSERT, UPDATE, DELETE avec PreparedStatement</h4>
+                            <p>Remplacement des <code>Statement</code> simples par des <code>PreparedStatement</code> paramétrés pour toutes les opérations d'écriture. Explication des avantages en termes de sécurité et performance.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">06</span>
+                        <div>
+                            <h4>Fermeture propre des ressources</h4>
+                            <p>Importance de fermer <code>ResultSet</code>, <code>Statement</code> et <code>Connection</code> dans un bloc <code>finally</code> ou avec try-with-resources pour éviter les fuites mémoire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Extrait de code — connexion et SELECT</h2>
+                <div class="code-block">
+                    <pre>import java.sql.*;
+
+public class ConnexionBDD {
+    static final String URL  = "jdbc:mysql://localhost:3306/ma_bdd";
+    static final String USER = "root";
+    static final String PASS = "";
+
+    public static void main(String[] args) {
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
+             Statement  stmt = conn.createStatement();
+             ResultSet  rs   = stmt.executeQuery("SELECT * FROM etudiants")) {
+
+            while (rs.next()) {
+                System.out.println(
+                    rs.getInt("id")     + " | " +
+                    rs.getString("nom") + " " +
+                    rs.getString("prenom")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</pre>
+                </div>
+
+                <h2>Extrait de code — INSERT sécurisé</h2>
+                <div class="code-block">
+                    <pre>String sql = "INSERT INTO etudiants (nom, prenom, note) VALUES (?, ?, ?)";
+
+try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
+    pstmt.setString(1, "Dupont");
+    pstmt.setString(2, "Alice");
+    pstmt.setDouble(3, 17.5);
+
+    int lignes = pstmt.executeUpdate();
+    System.out.println(lignes + " ligne(s) insérée(s).");
+} catch (SQLException e) {
+    e.printStackTrace();
+}</pre>
+                </div>
+
+                <h2>Compétences couvertes</h2>
+                <ul>
+                    <li>Comprendre le rôle de <strong>JDBC</strong> comme couche d'abstraction entre Java et la BDD</li>
+                    <li>Configurer un projet <strong>Eclipse</strong> avec un driver externe (.jar)</li>
+                    <li>Établir et gérer une <strong>connexion MySQL</strong> depuis Java</li>
+                    <li>Exécuter les 4 opérations <strong>CRUD</strong> en Java (SELECT, INSERT, UPDATE, DELETE)</li>
+                    <li>Utiliser <strong>PreparedStatement</strong> pour des requêtes sécurisées et paramétrées</li>
+                    <li>Appliquer les bonnes pratiques de gestion des ressources (<strong>try-with-resources</strong>)</li>
+                    <li>Gestion des exceptions <strong>SQLException</strong></li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">Octobre 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">8 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Contexte</span><span class="sm-value">BTS SIO</span></div>
+                        <div class="sm-row"><span class="sm-label">Langage</span><span class="sm-value">Java</span></div>
+                        <div class="sm-row"><span class="sm-label">BDD</span><span class="sm-value">MySQL</span></div>
+                        <div class="sm-row"><span class="sm-label">IDE</span><span class="sm-value">Eclipse</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Tutoriel / Documentation</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/tuto_java_sql_2025_ethan.pdf" class="sidebar-link primary" target="_blank">📄 Voir le PDF</a>
+                        <a href="../assets/files/tuto_java_sql_2025_ethan.pdf" class="sidebar-link primary" download>📥 Télécharger PDF</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

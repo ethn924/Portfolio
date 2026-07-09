@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme Gestion Compte Rendu — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#projects">Projets</a><span>›</span>
+                <span>Plateforme Gestion Compte Rendu</span>
+            </div>
+            <div class="section-label">AP1 — BTS SIO · Janvier 2025</div>
+            <h1 class="page-title">📋 Plateforme de Gestion de Compte Rendu</h1>
+            <p class="page-subtitle">Application web complète de gestion pédagogique développée en PHP/MySQL</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Jan. 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>80 heures</strong></span>
+                <span class="meta-chip">🎓 <strong>AP1 – BTS SIO</strong></span>
+                <span class="meta-chip">🌐 <strong>PHP / MySQL</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">HTML/CSS</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">PHPMailer</span>
+                <span class="tech-pill">MVC</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>Présentation du projet</h2>
+                <p>Cette plateforme web est mon projet d'<strong>AP1 en BTS SIO</strong>. Il s'agit d'une application complète de gestion de comptes rendus pédagogiques développée en <strong>PHP</strong> avec une base de données <strong>MySQL</strong>. L'application permet aux élèves de soumettre leurs comptes rendus et aux professeurs de les corriger et commenter.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">👥</div>
+                        <h4>Système d'authentification</h4>
+                        <p>Inscription et connexion sécurisée pour élèves et professeurs avec vérification d'email.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📝</div>
+                        <h4>Gestion des comptes rendus</h4>
+                        <p>Soumission, modification et gestion complète des comptes rendus par les élèves.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔍</div>
+                        <h4>Recherche avancée</h4>
+                        <p>Filtrage des comptes rendus par titre, matière, date ou statut.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">✏️</div>
+                        <h4>Système de correction</h4>
+                        <p>Correction en ligne avec commentaires détaillés et notation par les professeurs.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📎</div>
+                        <h4>Upload de fichiers</h4>
+                        <p>Upload de documents (PDF, images, Word) avec chaque compte rendu.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔔</div>
+                        <h4>Notifications email</h4>
+                        <p>Système de notifications via PHPMailer pour informer des corrections.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📊</div>
+                        <h4>Tableau de bord</h4>
+                        <p>Interface personnalisée pour élèves et professeurs avec statistiques et suivi.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔐</div>
+                        <h4>Sécurité</h4>
+                        <p>Hachage des mots de passe, protection XSS, validation des données côté serveur.</p>
+                    </div>
+                </div>
+
+                <h2>Architecture technique</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">BDD</span>
+                        <div>
+                            <h4>Base de données</h4>
+                            <p>Structure relationnelle optimisée avec tables pour utilisateurs, comptes rendus, commentaires, notifications et fichiers joints. Utilisation de clés étrangères et contraintes d'intégrité.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">MVC</span>
+                        <div>
+                            <h4>Architecture MVC</h4>
+                            <p>Séparation claire entre la logique métier (PHP), la présentation (HTML/CSS/JS) et les données (MySQL). Utilisation de fichiers include pour la réutilisabilité.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">SEC</span>
+                        <div>
+                            <h4>Sécurité</h4>
+                            <p>Protection contre les injections SQL via requêtes préparées, hachage sécurisé des mots de passe avec <code>password_hash()</code>, validation côté serveur.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Structure du projet</h2>
+                <div class="code-block">
+                    <pre>📁 PROJET_ETHAN_AP1/
+├── 📄 index.php          — Page d'accueil
+├── 📄 liste_cr.php       — Liste des comptes rendus
+├── 📄 editer_cr.php      — Édition de compte rendu
+├── 📄 inscription.php    — Inscription utilisateur
+├── 📄 ap1_ethan_2025.sql — Script SQL de la BDD
+├── 📁 docs/              — Documentation et specs
+└── 📁 uploads/           — Fichiers uploadés</pre>
+                </div>
+
+                <h2>Compétences développées</h2>
+                <ul>
+                    <li><strong>Backend :</strong> PHP procédural avancé, architecture d'application web, sessions utilisateur, envoi d'emails PHPMailer</li>
+                    <li><strong>Base de données :</strong> Conception de schéma relationnel, requêtes SQL complexes, transactions</li>
+                    <li><strong>Frontend :</strong> Interface utilisateur intuitive, JavaScript pour interactions dynamiques, responsive design</li>
+                    <li><strong>Sécurité :</strong> Protection XSS/SQL injection, authentification sécurisée, gestion des droits d'accès</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">Janvier 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">80 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Contexte</span><span class="sm-value">AP1 – BTS SIO</span></div>
+                        <div class="sm-row"><span class="sm-label">Stack</span><span class="sm-value">PHP + MySQL</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/PROJET_ETHAN_AP1.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2025 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

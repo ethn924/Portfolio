@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPS 3D Unity — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><a href="../index.html#projects">Projets</a><span>›</span><span>FPS 3D Unity</span></div>
+            <div class="section-label">Game Dev — En cours · Juil. 2026</div>
+            <h1 class="page-title">🎯 FPS 3D – Mon Premier Projet Unity</h1>
+            <p class="page-subtitle">Premier prototype FPS solo en Unity et C# — apprentissage game dev</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Juil. 2026</strong></span>
+                <span class="meta-chip">🎮 <strong>Game Dev</strong></span>
+                <span class="meta-chip">🟢 <strong>Actif</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Unity</span><span class="tech-pill">C#</span><span class="tech-pill">3D</span><span class="tech-pill">Physics</span><span class="tech-pill">URP</span>
+            </div>
+        </div>
+        <div class="page-body">
+            <main class="page-main">
+                <h2>À propos du projet</h2>
+                <p>Mon premier projet sérieux de game development : un <strong>FPS 3D solo</strong> réalisé avec <strong>Unity</strong> et <strong>C#</strong>. Encore au stade de prototype, il pose les bases d'un moteur de gameplay FPS : contrôleur de personnage, caméra à la première personne, système d'arme et objets physiques interactifs/destructibles.</p>
+                <p>Je suis la série <a href="https://www.youtube.com/playlist?list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8VbGUE" target="_blank">FPS Full Game Tutorial</a> de la chaîne <strong>Mike's Code</strong>, un tutoriel complet en 15 parties pour construire un FPS de A à Z. J'en suis actuellement à la <strong>Part 5</strong> (Shooting at Bottles).</p>
+                <p>Ce projet me permet de combiner ma passion pour les jeux vidéo avec mes compétences en programmation C#, tout en explorant un domaine complémentaire à ma formation BTS SIO. Le code source est public et suivi sur GitHub.</p>
+
+                <h2>Ce qui est déjà implémenté (Part 1 à 5)</h2>
+                <div class="steps-list">
+                    <div class="step-item"><span class="step-num">01</span><div><h4>Contrôleur du joueur — Basic Movement</h4><p>Déplacement via <code>CharacterController</code> (ZQSD/WASD), saut et gravité personnalisée avec détection de sol par sphère (groundCheck).</p></div></div>
+                    <div class="step-item"><span class="step-num">02</span><div><h4>Caméra FPS</h4><p>Rotation souris à la première personne, clamp vertical pour éviter le retournement de caméra, curseur verrouillé au centre de l'écran.</p></div></div>
+                    <div class="step-item"><span class="step-num">03</span><div><h4>Système d'arme — Basic & Advanced Shooting</h4><p>Trois modes de tir (<strong>Single / Burst / Auto</strong>), délai entre tirs, dispersion aléatoire (précision), balles physiques propulsées par impulsion (Rigidbody).</p></div></div>
+                    <div class="step-item"><span class="step-num">04</span><div><h4>Bullet Impact Effect</h4><p>Détection de collision par tag (<em>Target</em>, <em>Wall</em>, <em>Beer</em>) avec effet d'impact instancié au point de contact.</p></div></div>
+                    <div class="step-item"><span class="step-num">05</span><div><h4>Shooting at Bottles</h4><p>Bouteille de bière réagissant aux impacts (physique + son), avec anti-spam audio sur collisions rapprochées.</p></div></div>
+                    <div class="step-item"><span class="step-num">+</span><div><h4>Bonus perso — Objets destructibles</h4><p>Cubes démolissables en morceaux physiques via le plugin Mesh Demolisher, ajout personnel en dehors du tutoriel.</p></div></div>
+                </div>
+
+                <h2>Prochaines étapes (suite de la série)</h2>
+                <ul>
+                    <li>Part 6-7 — Modèle d'arme, son, muzzle flash et animations</li>
+                    <li>Part 8-9 — Rechargement et ajout d'une seconde arme</li>
+                    <li>Part 10-11 — Ramassage/changement d'arme et UI de base</li>
+                    <li>Part 12-13 — Ramassage de munitions et visée (ADS)</li>
+                    <li>Part 14-15 — Objets lançables (grenades)</li>
+                </ul>
+
+                <h2>Ce que j'apprends</h2>
+                <ul>
+                    <li>Programmation <strong>C#</strong> orientée objet dans un contexte game dev (enums, coroutines, singleton)</li>
+                    <li>Utilisation de l'éditeur <strong>Unity</strong> et ses composants (Rigidbody, CharacterController, Collider)</li>
+                    <li>Principes de <strong>physique 3D</strong> : forces, impulsions, raycast, détection de collisions par tag</li>
+                    <li>Conception de <strong>GameObjects</strong> et architecture de scripts Unity (séparation Core/Player/Weapons/Interactables)</li>
+                </ul>
+
+                <h2>Ressources utilisées</h2>
+                <ul>
+                    <li><a href="https://www.youtube.com/playlist?list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8VbGUE" target="_blank">FPS Full Game Tutorial — Mike's Code</a> — série complète suivie pour ce projet</li>
+                    <li><a href="https://learn.unity.com/" target="_blank">Unity Learn</a> — Documentation officielle</li>
+                </ul>
+            </main>
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Statut</span><span class="sm-value" style="color:var(--accent)">● En cours</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Projet personnel</span></div>
+                        <div class="sm-row"><span class="sm-label">Engine</span><span class="sm-value">Unity (C#)</span></div>
+                        <div class="sm-row"><span class="sm-label">Mode</span><span class="sm-value">Solo (prototype)</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Actions</h3>
+                    <div class="sidebar-links">
+                        <a href="https://github.com/ethn924/Unity-Project-FPS" target="_blank" class="sidebar-link primary">💻 Voir le code sur GitHub</a>
+                        <a href="https://www.youtube.com/playlist?list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8VbGUE" target="_blank" class="sidebar-link secondary">▶ Playlist Mike's Code</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

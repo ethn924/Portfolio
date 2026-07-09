@@ -1,0 +1,1526 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio — Ethan Lalienne</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          const t =
+            localStorage.getItem("theme") ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light");
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <nav class="navbar" id="navbar">
+      <div class="nav-inner">
+        <a href="#hero" class="nav-logo" data-scroll
+          >ETHAN<span class="logo-dot">.</span></a
+        >
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link" data-scroll>À propos</a></li>
+          <li><a href="#projects" class="nav-link" data-scroll>Projets</a></li>
+          <li><a href="#blog" class="nav-link" data-scroll>Blog</a></li>
+          <li><a href="#stage" class="nav-link" data-scroll>Stage</a></li>
+          <li>
+            <a href="#resources" class="nav-link" data-scroll>Ressources</a>
+          </li>
+          <li><a href="#contact" class="nav-link" data-scroll>Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button class="theme-btn" id="themeBtn" aria-label="Changer le thème">
+            <span class="theme-icon">◐</span>
+          </button>
+          <button class="burger" id="burger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#about" class="mob-link" data-scroll>À propos</a>
+        <a href="#projects" class="mob-link" data-scroll>Projets</a>
+        <a href="#blog" class="mob-link" data-scroll>Blog</a>
+        <a href="#stage" class="mob-link" data-scroll>Stage</a>
+        <a href="#resources" class="mob-link" data-scroll>Ressources</a>
+        <a href="#contact" class="mob-link" data-scroll>Contact</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ══ HERO ══ -->
+      <section class="hero" id="hero">
+        <div class="hero-bg">
+          <div class="hero-img"></div>
+          <div class="hero-overlay"></div>
+          <div class="grid-lines"></div>
+          <div class="glow glow-1"></div>
+          <div class="glow glow-2"></div>
+        </div>
+        <div class="hero-content">
+          <p class="hero-tag">Bachelor Dév. Informatique · Sup de Vinci · 2026–2027</p>
+          <h1 class="hero-title">
+            <span class="title-line">Ethan</span>
+            <span class="title-line accent">Lalienne</span>
+          </h1>
+          <p class="hero-sub">
+            Développeur en formation — passionné par la
+            <strong>POO Java</strong>, le <strong>Game Dev Unity</strong> et la
+            <strong>programmation créative</strong>
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" data-scroll
+              >Voir mes projets</a
+            >
+            <a
+              href="assets/files/CV_Ethan.pdf"
+              class="btn btn-outline"
+              target="_blank"
+              download
+              >📄 Télécharger CV</a
+            >
+          </div>
+          <div class="hero-stack">
+            <span>Java</span><span>PHP</span><span>MySQL</span><span>Unity</span
+            ><span>C#</span><span>HTML/CSS</span><span>JavaScript</span>
+          </div>
+        </div>
+        <a href="#about" class="scroll-arrow" data-scroll>↓</a>
+      </section>
+
+      <!-- ══ ABOUT ══ -->
+      <section class="section" id="about">
+        <div class="container">
+          <div class="section-label">01 — À propos</div>
+          <h2 class="section-title">Qui suis-je ?</h2>
+
+          <div class="about-grid">
+            <div class="about-text">
+              <p>
+                Je m'appelle <strong>Ethan Lalienne</strong>, passionné
+                d'informatique depuis mon plus jeune âge. Actuellement en
+                <strong>BTS SIO option SLAM</strong> au lycée Paul Lapie, je
+                poursuis désormais en <strong>Bachelor Développement
+                Informatique à Sup de Vinci</strong> (La Défense), où
+                j'approfondis le développement d'applications web et
+                logicielles.
+              </p>
+              <p>
+                Mon parcours m'a conduit du bac
+                <strong>STMG SIG</strong> jusqu'à des projets concrets en Java,
+                PHP, Unity et développement de jeux vidéo. Je crois que la
+                technologie doit servir des fins concrètes et j'aime concevoir
+                des solutions utiles, bien construites et maintenables.
+              </p>
+              <p>
+                Passionné de basketball, musculation, et bien sûr de jeux vidéos
+                — ce qui m'a naturellement conduit vers le game development
+                comme projet personnel avec Unity.
+              </p>
+              <div class="about-socials">
+                <a
+                  href="https://www.linkedin.com/in/ethan-lalienne-181854329/"
+                  target="_blank"
+                  class="social-chip"
+                  >💼 LinkedIn</a
+                >
+                <a
+                  href="https://github.com/ethn924"
+                  target="_blank"
+                  class="social-chip"
+                  >🐙 GitHub</a
+                >
+                <span
+                  class="social-chip"
+                  id="emailChipHero"
+                  role="link"
+                  tabindex="0"
+                  style="cursor:pointer;"
+                  data-u="ZXRoYW5sYWxpZW5uZTky"
+                  data-d="Z21haWwuY29t"
+                  >📧 Email</span
+                >
+                <a
+                  href="assets/files/CV_Ethan.pdf"
+                  target="_blank"
+                  class="social-chip"
+                  >📄 CV PDF</a
+                >
+              </div>
+            </div>
+
+            <div class="timeline">
+              <div class="tl-item">
+                <div class="tl-date">2021–2023</div>
+                <div class="tl-body">
+                  <strong>Bac STMG – SIG</strong>
+                  <p>Bases de l'informatique et des systèmes d'information</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date">2024–2026</div>
+                <div class="tl-body">
+                  <strong>BTS SIO – SLAM</strong>
+                  <p>
+                    Développement logiciel et applications métiers — Lycée Paul
+                    Lapie
+                  </p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date">2023–2025</div>
+                <div class="tl-body">
+                  <strong>Découverte du Game Dev</strong>
+                  <p>
+                    Apprentissage autodidacte d'Unity et C# via tutoriels
+                    (TUTO UNITY FR) — bases du moteur, scripting, physique 3D
+                  </p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date">Fév. 2025</div>
+                <div class="tl-body">
+                  <strong>Stage Développement</strong>
+                  <p>
+                    App météo HTML/CSS/JS + API REST, convertisseur YouTube MP3
+                  </p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date">2025–2026</div>
+                <div class="tl-body">
+                  <strong>Projets BTS & premier FPS Unity</strong>
+                  <p>AP1 (PHP), AP3 (Java), bibliothèque Java, démarrage du projet FPS 3D Unity</p>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-date">2026–2027</div>
+                <div class="tl-body">
+                  <strong>Bachelor Développement Informatique</strong>
+                  <p>Sup de Vinci, La Défense — poursuite d'études après le BTS SIO SLAM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-grid">
+            <div class="skill-block">
+              <div class="skill-icon">☕</div>
+              <h3>Développement POO</h3>
+              <p>
+                Java, JavaFX, JDBC, Swing — héritage, polymorphisme,
+                encapsulation, patterns MVC
+              </p>
+            </div>
+            <div class="skill-block">
+              <div class="skill-icon">🎮</div>
+              <h3>Game Development</h3>
+              <p>
+                Unity, C# — prototypes 3D, physique, mécaniques FPS, systèmes
+                multi-joueurs
+              </p>
+            </div>
+            <div class="skill-block">
+              <div class="skill-icon">🌐</div>
+              <h3>Développement Web</h3>
+              <p>
+                PHP, HTML/CSS, JavaScript — sites dynamiques, API REST,
+                applications web complètes
+              </p>
+            </div>
+            <div class="skill-block">
+              <div class="skill-icon">🗄️</div>
+              <h3>Base de données</h3>
+              <p>
+                MySQL, SQL — modélisation relationnelle, requêtes CRUD
+                complexes, optimisation
+              </p>
+            </div>
+          </div>
+
+          <!-- Compétences avec niveaux -->
+          <div style="margin-top: 3rem">
+            <div class="section-label" style="margin-bottom: 1rem">
+              Niveaux de compétences
+            </div>
+            <div class="skills-level-grid">
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">Java / POO</span
+                  ><span class="slc-icon">☕</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 80%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">PHP / MySQL</span
+                  ><span class="slc-icon">🌐</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 75%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">HTML / CSS</span
+                  ><span class="slc-icon">🎨</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 85%"></div>
+                </div>
+                <span class="slc-label">Très bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">JavaScript</span
+                  ><span class="slc-icon">⚡</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 70%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">SQL / BDD</span
+                  ><span class="slc-icon">🗄️</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 75%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">Unity / C#</span
+                  ><span class="slc-icon">🎮</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 55%"></div>
+                </div>
+                <span class="slc-label">Maîtrise partielle</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">Git / GitHub</span
+                  ><span class="slc-icon">🐙</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 65%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">Python</span
+                  ><span class="slc-icon">🐍</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 50%"></div>
+                </div>
+                <span class="slc-label">Maîtrise partielle</span>
+              </div>
+              <div class="skill-level-card">
+                <div class="slc-top">
+                  <span class="slc-name">Anglais B2</span
+                  ><span class="slc-icon">🇬🇧</span>
+                </div>
+                <div class="slc-bar">
+                  <div class="slc-fill" style="width: 70%"></div>
+                </div>
+                <span class="slc-label">Bonne maîtrise</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ PROJECTS ══ -->
+      <section class="section section-alt" id="projects">
+        <div class="container">
+          <div class="section-label">02 — Projets</div>
+          <h2 class="section-title">Mes projets</h2>
+          <p class="section-desc">
+            Projets freelance pour de vrais clients, projets concrets réalisés
+            durant ma formation BTS SIO, et projets personnels — de la gestion
+            web au game development en passant par la cybersécurité.
+          </p>
+
+          <!-- Tableau de synthèse E4 -->
+          <div class="annexe-banner">
+            <div class="annexe-info">
+              <span class="annexe-icon">📋</span>
+              <div>
+                <strong>Annexe 8.1 — Tableau de synthèse E4</strong>
+                <p>
+                  Document officiel récapitulant l'ensemble de mes réalisations
+                  et les compétences associées
+                </p>
+              </div>
+            </div>
+            <div class="annexe-actions">
+              <a
+                href="assets/files/tableau_synthese_E4.xlsx"
+                class="btn btn-primary"
+                download
+                >⬇ Télécharger (Excel)</a
+              >
+              <a
+                href="assets/files/tableau_synthese_E4.xlsx"
+                target="_blank"
+                class="btn btn-outline"
+                >👁 Consulter</a
+              >
+            </div>
+          </div>
+
+          <div class="filter-bar">
+            <button class="filter-btn active" data-filter="tous">Tous</button>
+            <button class="filter-btn" data-filter="java">Java</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="base-de-données">
+              Base de données
+            </button>
+            <button class="filter-btn" data-filter="cybersécurité">
+              Cybersécurité
+            </button>
+            <button class="filter-btn" data-filter="jeux">Game Dev</button>
+            <button class="filter-btn" data-filter="réseau système">Réseau / Système</button>
+            <button class="filter-btn" data-filter="freelance">Freelance</button>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <article class="project-card featured" data-tags="web freelance">
+              <div class="card-header">
+                <span class="card-icon">🚙</span>
+                <div class="card-meta">
+                  <span>2025</span><span class="badge badge-green">En ligne</span>
+                </div>
+              </div>
+              <h3>WashingStreet92 — Site vitrine</h3>
+              <p>
+                Site vitrine complet pour un service de lavage automobile
+                premium à domicile en Île-de-France, réalisé en freelance de A
+                à Z : design, intégration HTML/CSS/JS et référencement (SEO)
+                soigné — données structurées JSON-LD, Open Graph, sitemap.
+                Déployé en production sur Netlify.
+              </p>
+              <div class="card-tags">
+                <span>HTML/CSS</span><span>JavaScript</span><span>SEO</span
+                ><span>Netlify</span>
+              </div>
+              <div class="card-links">
+                <a href="https://washingstreet92.netlify.app/" target="_blank" class="card-link">🌐 Voir le site en ligne</a>
+              </div>
+            </article>
+
+            <article class="project-card featured" data-tags="web freelance">
+              <div class="card-header">
+                <span class="card-icon">🔧</span>
+                <div class="card-meta">
+                  <span>2026</span><span class="badge">En développement</span>
+                </div>
+              </div>
+              <h3>Automoto+ — Site vitrine garage</h3>
+              <p>
+                Maquette de site vitrine pour un garage automobile : présentation,
+                services, galerie véhicules, carte et module de prise de
+                rendez-vous en ligne. Développé en React/Next.js/TypeScript
+                dans le cadre de <strong>Nua</strong>, ma base de code
+                mutualisée pour déployer rapidement des sites clients (une
+                branche Git par client). La prise de rendez-vous est encore en
+                maquette, sans backend/BDD connecté.
+              </p>
+              <div class="card-tags">
+                <span>Next.js</span><span>React</span><span>TypeScript</span
+                ><span>Tailwind</span>
+              </div>
+              <div class="card-links">
+                <span class="card-link outline" style="cursor:default;opacity:0.7">🔒 Projet client — pas encore public</span>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="java base-de-données">
+              <div class="card-header">
+                <span class="card-icon">📚</span>
+                <div class="card-meta">
+                  <span>Oct. 2025</span><span>8h</span>
+                </div>
+              </div>
+              <h3>Tutoriel SQL Java – Eclipse</h3>
+              <p>
+                Tutoriel complet avec captures d'écran sur l'exécution de
+                requêtes SQL en Java via Eclipse. CRUD complet, connexion JDBC,
+                explications détaillées.
+              </p>
+              <div class="card-tags">
+                <span>Java</span><span>SQL</span><span>Eclipse</span
+                ><span>MySQL</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/tuto-java-sql.html" class="card-link">📚 Voir le projet</a>
+                <a
+                  href="assets/files/tuto_java_sql_2025_ethan.pdf"
+                  download
+                  class="card-link outline"
+                  >⬇ PDF</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web cybersécurité">
+              <div class="card-header">
+                <span class="card-icon">🔐</span>
+                <div class="card-meta">
+                  <span>Oct. 2025</span><span>12h</span>
+                </div>
+              </div>
+              <h3>TP Phishing – Reproduction Steam</h3>
+              <p>
+                Reproduction pédagogique de l'interface Steam pour comprendre
+                les mécanismes du phishing et les vulnérabilités web. TP
+                cybersécurité.
+              </p>
+              <div class="card-tags">
+                <span>HTML/CSS</span><span>JavaScript</span
+                ><span>Cybersécurité</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/steam.html" class="card-link"
+                  >🎯 Voir le projet</a
+                >
+              </div>
+            </article>
+
+            <article
+              class="project-card featured"
+              data-tags="web base-de-données"
+            >
+              <div class="card-header">
+                <span class="card-icon">📋</span>
+                <div class="card-meta">
+                  <span>Jan. 2025</span><span>35h</span
+                  ><span class="badge">AP1</span>
+                </div>
+              </div>
+              <h3>Plateforme Gestion Compte Rendu</h3>
+              <p>
+                Application web PHP/MySQL complète — authentification,
+                soumission de comptes rendus, corrections en ligne,
+                notifications par email via PHPMailer.
+              </p>
+              <div class="card-tags">
+                <span>PHP</span><span>MySQL</span><span>PHPMailer</span
+                ><span>JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/compte-rendu.html" class="card-link"
+                  >📋 Détails</a
+                >
+                <a
+                  href="assets/files/PROJET_ETHAN_AP1.zip"
+                  class="card-link outline"
+                  download
+                  >📥 ZIP</a
+                >
+                <a href="https://github.com/ethn924/AP1_WEB" target="_blank" class="card-link outline">💻 GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web base-de-données">
+              <div class="card-header">
+                <span class="card-icon">🌐</span>
+                <div class="card-meta">
+                  <span>Nov. 2025</span><span>25h</span>
+                </div>
+              </div>
+              <h3>Application Web Gestion de Stock</h3>
+              <p>
+                Gestion d'inventaire PHP/MySQL — ajout/suppression de produits,
+                gestion des utilisateurs, CRUD complet avec filtrage et
+                recherche avancée.
+              </p>
+              <div class="card-tags">
+                <span>PHP</span><span>MySQL</span><span>HTML/CSS</span
+                ><span>JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/gestion-app.html" class="card-link"
+                  >🚀 Voir le projet</a
+                >
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="java">
+              <div class="card-header">
+                <span class="card-icon">⚙️</span>
+                <div class="card-meta">
+                  <span>Sep. 2025</span><span>18h</span
+                  ><span class="badge">AP2</span>
+                </div>
+              </div>
+              <h3>Système de Gestion de Bibliothèque</h3>
+              <p>
+                Application Java avec interface Swing — emprunts, retours,
+                recherche avancée, génération de rapports. Architecture POO
+                complète avec patterns MVC/DAO.
+              </p>
+              <div class="card-tags">
+                <span>Java</span><span>Swing</span><span>POO</span
+                ><span>JDBC</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/bibliotheque.html" class="card-link"
+                  >📚 Voir le projet</a
+                >
+                <a href="assets/files/PROJET_ETHAN_AP2.zip" class="card-link outline" download>📥 ZIP</a>
+                <a href="https://github.com/ethn924/AP2_JAVA" target="_blank" class="card-link outline">💻 GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="jeux">
+              <div class="card-header">
+                <span class="card-icon">🎯</span>
+                <div class="card-meta">
+                  <span>Juil. 2026</span
+                  ><span class="badge badge-green">Actif</span>
+                </div>
+              </div>
+              <h3>FPS 3D – Unity</h3>
+              <p>
+                Premier projet game dev : contrôleur FPS (CharacterController,
+                saut, gravité), système d'arme modulable (tir simple/rafale/auto,
+                dispersion), balles physiques par impulsion, objets destructibles.
+                Suivi de la série
+                <a href="https://www.youtube.com/playlist?list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8VbGUE" target="_blank"
+                  >FPS Full Game Tutorial (Mike's Code)</a
+                >.
+              </p>
+              <div class="card-tags">
+                <span>Unity</span><span>C#</span><span>3D</span
+                ><span>Physique</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/fps-3d.html" class="card-link"
+                  >🎮 Voir les détails</a
+                >
+                <a href="https://github.com/ethn924/Unity-Project-FPS" target="_blank" class="card-link outline">💻 GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card featured" data-tags="java">
+              <div class="card-header">
+                <span class="card-icon">🏦</span>
+                <div class="card-meta">
+                  <span>Déc. 2025</span><span>30h</span
+                  ><span class="badge">AP3</span>
+                </div>
+              </div>
+              <h3>Application Bancaire – AP3</h3>
+              <p>
+                Application bancaire Java/JavaFX avec SceneBuilder. POO complète
+                — classes, encapsulation stricte, gestion comptes bancaires et
+                transactions sécurisées.
+              </p>
+              <div class="card-tags">
+                <span>Java</span><span>JavaFX</span><span>FXML</span
+                ><span>POO</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/ap3.html" class="card-link"
+                  >🏦 Voir le projet</a
+                >
+              </div>
+            </article>
+            <article class="project-card" data-tags="web base-de-données">
+              <div class="card-header">
+                <span class="card-icon">✈️</span>
+                <div class="card-meta">
+                  <span>2024–2025</span><span>~30h</span>
+                </div>
+              </div>
+              <h3>RoutyGo — Site de voyage</h3>
+              <p>
+                Plateforme web de voyage avec authentification par session, espace
+                utilisateur, formulaire de contact sauvegardé en base de données,
+                pages destinations et bandeau de recherche de vols avec calendrier.
+              </p>
+              <div class="card-tags">
+                <span>PHP</span><span>MySQL</span><span>HTML/CSS</span><span>JS</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/routygo.html" class="card-link">✈️ Voir le projet</a>
+                <a href="assets/files/routygo.zip" class="card-link outline" download>📥 ZIP</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web">
+              <div class="card-header">
+                <span class="card-icon">🌤️</span>
+                <div class="card-meta">
+                  <span>2024–2025</span><span>~6h</span>
+                </div>
+              </div>
+              <h3>Application Météo</h3>
+              <p>
+                Application météo en JavaScript pur. Appel à l'API OpenWeatherMap
+                pour afficher température, humidité et conditions météo, couplé à
+                l'API TimezoneDB pour afficher l'heure locale en temps réel.
+              </p>
+              <div class="card-tags">
+                <span>JavaScript</span><span>API REST</span><span>HTML/CSS</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/meteo.html" class="card-link">🌤️ Voir le projet</a>
+                <a href="assets/files/meteo.zip" class="card-link outline" download>📥 meteo.zip</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web base-de-données">
+              <div class="card-header">
+                <span class="card-icon">💬</span>
+                <div class="card-meta">
+                  <span>2025–2026</span><span>~20h</span>
+                </div>
+              </div>
+              <h3>Forum PHP/MySQL</h3>
+              <p>
+                Forum web avec création de sujets, système de réponses, modération
+                des messages et authentification utilisateurs. Architecture CRUD
+                complète avec gestion des droits.
+              </p>
+              <div class="card-tags">
+                <span>PHP</span><span>MySQL</span><span>HTML/CSS</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/forum.html" class="card-link">💬 Voir le projet</a>
+                <a href="assets/files/forum.zip" class="card-link outline" download>📥 forum.zip</a>
+                <a href="https://github.com/ethn924/FORUM" target="_blank" class="card-link outline">💻 GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="réseau système">
+              <div class="card-header">
+                <span class="card-icon">🖥️</span>
+                <div class="card-meta">
+                  <span>2025–2026</span><span>~15h</span>
+                </div>
+              </div>
+              <h3>GLPI — Gestion de Parc Informatique</h3>
+              <p>
+                Déploiement et configuration de GLPI pour la gestion du parc
+                informatique : inventaire des équipements, gestion des tickets
+                d'incidents et des utilisateurs.
+              </p>
+              <div class="card-tags">
+                <span>GLPI</span><span>Parc informatique</span><span>Tickets</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/glpi.html" class="card-link">🖥️ Voir le projet</a>
+                <a href="assets/files/glpi.pdf" class="card-link outline" download>📥 glpi.pdf</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web">
+              <div class="card-header">
+                <span class="card-icon">✅</span>
+                <div class="card-meta">
+                  <span>2025–2026</span><span>~10h</span>
+                </div>
+              </div>
+              <h3>To-Do List — Gestionnaire de tâches</h3>
+              <p>
+                Application web de gestion de tâches permettant de créer,
+                organiser et suivre ses tâches quotidiennes. Interface intuitive
+                avec gestion des priorités et des statuts.
+              </p>
+              <div class="card-tags">
+                <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="projets/to_do_list.html" class="card-link">✅ Voir le projet</a>
+                <a href="assets/files/to_do_list.zip" class="card-link outline" download>📥 ZIP</a>
+                <a href="https://github.com/ethn924/To-Do-List" target="_blank" class="card-link outline">💻 GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web">
+              <div class="card-header">
+                <span class="card-icon">🎵</span>
+                <div class="card-meta">
+                  <span>2025</span><span>~5h</span>
+                </div>
+              </div>
+              <h3>Convertisseur YouTube → MP3</h3>
+              <p>
+                Application web Node.js avec vues EJS pour convertir une vidéo
+                YouTube en fichier audio MP3 téléchargeable, à partir d'une
+                simple URL.
+              </p>
+              <div class="card-tags">
+                <span>Node.js</span><span>EJS</span><span>JavaScript</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/ethn924/YouTubeMP4ToMP3" target="_blank" class="card-link">💻 Voir sur GitHub</a>
+              </div>
+            </article>
+
+            <article class="project-card" data-tags="web">
+              <div class="card-header">
+                <span class="card-icon">💭</span>
+                <div class="card-meta">
+                  <span>2025</span><span>~3h</span>
+                </div>
+              </div>
+              <h3>Quote Generator</h3>
+              <p>
+                Générateur de citations aléatoires en JavaScript pur —
+                mini-projet front-end pour pratiquer la manipulation du DOM et
+                les tableaux d'objets.
+              </p>
+              <div class="card-tags">
+                <span>JavaScript</span><span>HTML</span><span>CSS</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/ethn924/QuoteGenerator" target="_blank" class="card-link">💻 Voir sur GitHub</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ BLOG ══ -->
+      <section class="section" id="blog">
+        <div class="container">
+          <div class="section-label">03 — Blog technique</div>
+          <h2 class="section-title">Articles & Veille</h2>
+          <p class="section-desc">
+            Tutoriels, retours d'expérience et veille technologique sur le
+            développement logiciel et le game dev. Ma veille est assurée via <strong>Feedly</strong>.
+          </p>
+
+          <div class="blog-filters">
+            <button class="filter-btn active" data-blog-filter="tous">
+              Tous
+            </button>
+            <button class="filter-btn" data-blog-filter="tutoriel">
+              Tutoriels
+            </button>
+            <button class="filter-btn" data-blog-filter="experience">
+              Retours d'expérience
+            </button>
+            <button class="filter-btn" data-blog-filter="veille">Veille</button>
+            <button class="filter-btn" data-blog-filter="gamedev">
+              Game Dev
+            </button>
+          </div>
+
+          <div class="blog-grid" id="blogGrid">
+            <article class="blog-card" data-blog-cat="tutoriel poo">
+              <div class="blog-top">
+                <span class="blog-cat cat-tutoriel">Tutoriel</span>
+                <span class="blog-time">⏱ 8 min</span>
+              </div>
+              <h3>Introduction à la POO en Java</h3>
+              <p>
+                Classes, objets, héritage, polymorphisme et encapsulation —
+                guide riche en analogies et exemples concrets pour vraiment
+                comprendre.
+              </p>
+              <div class="blog-footer">
+                <span class="blog-date">15 déc. 2024</span>
+                <a href="blog/article-poo-java.html" class="blog-link"
+                  >Lire →</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card" data-blog-cat="veille">
+              <div class="blog-top">
+                <span class="blog-cat cat-veille">Veille</span>
+                <span class="blog-time">⏱ 10 min</span>
+              </div>
+              <h3>L'Impact des Jeux Vidéos sur la Société</h3>
+              <p>
+                Analyse multidimensionnelle : socialisation, santé mentale,
+                éducation et économie de l'esport. 5 sources académiques.
+              </p>
+              <div class="veille-source">
+                <span class="veille-tool">📡 Collecté via <strong>Feedly</strong></span>
+              </div>
+              <div class="blog-footer">
+                <span class="blog-date">2 déc. 2024</span>
+                <a href="blog/article-impact-jeux-video.html" class="blog-link"
+                  >Lire →</a
+                >
+              </div>
+            </article>
+
+            <article class="blog-card soon" data-blog-cat="experience gamedev">
+              <div class="blog-top">
+                <span class="blog-cat cat-experience">Expérience</span>
+                <span class="blog-time">⏱ 8 min</span>
+              </div>
+              <h3>Mes premiers pas avec Unity</h3>
+              <p>
+                Retour sur mon apprentissage d'Unity et C# — défis rencontrés,
+                ressources utiles et premiers prototypes 3D.
+              </p>
+              <div class="blog-footer">
+                <span class="blog-date">10 jan. 2025</span>
+                <span class="blog-soon">Bientôt →</span>
+              </div>
+            </article>
+
+            <article class="blog-card soon" data-blog-cat="tutoriel">
+              <div class="blog-top">
+                <span class="blog-cat cat-tutoriel">Tutoriel</span>
+                <span class="blog-time">⏱ 8 min</span>
+              </div>
+              <h3>Site responsive HTML/CSS/JavaScript</h3>
+              <p>
+                Media queries, flexbox et bonnes pratiques du responsive design.
+                Guide pratique pour créer un site qui s'adapte à tous les
+                écrans.
+              </p>
+              <div class="blog-footer">
+                <span class="blog-date">5 jan. 2025</span>
+                <span class="blog-soon">Bientôt →</span>
+              </div>
+            </article>
+
+            <article class="blog-card soon" data-blog-cat="tutoriel">
+              <div class="blog-top">
+                <span class="blog-cat cat-tutoriel">Tutoriel</span>
+                <span class="blog-time">⏱ 10 min</span>
+              </div>
+              <h3>Application web PHP & MySQL</h3>
+              <p>
+                Formulaires, requêtes SQL et sécurité de base — créer une
+                application web complète côté serveur.
+              </p>
+              <div class="blog-footer">
+                <span class="blog-date">28 déc. 2024</span>
+                <span class="blog-soon">Bientôt →</span>
+              </div>
+            </article>
+
+            <article class="blog-card soon" data-blog-cat="experience">
+              <div class="blog-top">
+                <span class="blog-cat cat-experience">Expérience</span>
+                <span class="blog-time">⏱ 10 min</span>
+              </div>
+              <h3>Leçons apprises lors de mon stage</h3>
+              <p>
+                3 mois en entreprise — gestion de projet, travail en équipe,
+                code review et déploiement en production.
+              </p>
+              <div class="blog-footer">
+                <span class="blog-date">20 déc. 2024</span>
+                <span class="blog-soon">Bientôt →</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ STAGE ══ -->
+      <section class="section section-alt" id="stage">
+        <div class="container">
+          <div class="section-label">04 — Stage</div>
+          <h2 class="section-title">Mon stage en développement</h2>
+          <p class="section-desc">
+            Expérience professionnelle acquise lors de mon stage en entreprise —
+            missions, réalisations et compétences mobilisées.
+          </p>
+
+          <div class="stage-grid">
+            <div class="stage-card featured-stage">
+              <div class="stage-header">
+                <div class="stage-logo">🚗</div>
+                <div>
+                  <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                    <h3>First Car — Site Vitrine VTC</h3>
+                    <span class="badge badge-green">1ère année</span>
+                  </div>
+                  <span class="stage-period">04 Juin 2025 → 17 Juillet 2025 · 7 semaines · Courbevoie (92)</span>
+                </div>
+              </div>
+
+              <!-- Contexte entreprise -->
+              <div class="stage-context">
+                <div class="stage-context-item">
+                  <span class="ctx-label">Entreprise</span>
+                  <span>First Car — Transport VTC / Mise en relation chauffeurs</span>
+                </div>
+                <div class="stage-context-item">
+                  <span class="ctx-label">Tuteur</span>
+                  <span>M. Nicolas MORIN (PDG)</span>
+                </div>
+                <div class="stage-context-item">
+                  <span class="ctx-label">Mission principale</span>
+                  <span>Conception et développement du site internet vitrine</span>
+                </div>
+              </div>
+
+              <div class="stage-body">
+                <div class="stage-missions">
+                  <h4>🎯 Réalisations semaine par semaine</h4>
+                  <div class="missions-list">
+                    <div class="mission-item">
+                      <div class="mission-icon">📋</div>
+                      <div>
+                        <strong>S1 — Analyse des besoins</strong>
+                        <p>Entretien client, définition des fonctionnalités (5 pages), maquettage sur papier, choix de la stack HTML5/CSS3/JS</p>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">🎨</div>
+                      <div>
+                        <strong>S2 — Structure & Design global</strong>
+                        <p>Charte graphique (orange/sombre), header/footer communs, animations CSS (fadeIn, slideIn), feuille de style principale</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>CSS3</span><span>Flexbox</span><span>Animations</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">🚘</div>
+                      <div>
+                        <strong>S3 — Accueil & Galerie véhicules</strong>
+                        <p>Page d'accueil avec image de fond, galerie CSS Grid responsive (Tesla Model Y, Toyota, Mercedes Viano, VW Jetta) avec effets hover</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>CSS Grid</span><span>Responsive</span><span>HTML5</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">📬</div>
+                      <div>
+                        <strong>S4 — Pages "À propos" & Contact</strong>
+                        <p>Formulaire de contact fonctionnel via FormSubmit (sans backend), confirmation JS, iframe caché pour UX optimale</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>JavaScript</span><span>FormSubmit</span><span>UX</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">⚖️</div>
+                      <div>
+                        <strong>S5 — Pages légales (RGPD)</strong>
+                        <p>Obligations légales VTC et mentions légales du site, politique de confidentialité conforme RGPD</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>RGPD</span><span>Conformité</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">📱</div>
+                      <div>
+                        <strong>S6 — Tests & Responsive</strong>
+                        <p>Tests multi-appareils, implémentation media queries (768px, 480px), corrections navigation mobile, optimisation UX</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>Media Queries</span><span>DevTools</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">🚀</div>
+                      <div>
+                        <strong>S7 — Déploiement & Documentation</strong>
+                        <p>Préparation des fichiers pour mise en ligne, guide de mise à jour pour le tuteur, présentation finale validée par M. MORIN</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stage-skills">
+                  <h4>💡 Compétences acquises</h4>
+                  <div class="card-tags" style="flex-direction:column;gap:0.5rem;align-items:flex-start;">
+                    <span>HTML5 / CSS3</span>
+                    <span>JavaScript</span>
+                    <span>CSS Grid & Flexbox</span>
+                    <span>Responsive Design</span>
+                    <span>Intégration API</span>
+                    <span>RGPD & Conformité</span>
+                    <span>Gestion de projet</span>
+                    <span>Documentation</span>
+                  </div>
+                  <div style="margin-top:1.5rem">
+                    <h4>📊 Bilan</h4>
+                    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;margin-top:0.5rem">Stage validé avec succès. Site livré et approuvé par M. MORIN. Confirmation de mon attrait pour le développement web front-end.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rapport PDF -->
+              <div class="stage-rapport">
+                <div class="rapport-info">
+                  <span class="rapport-icon">📄</span>
+                  <div>
+                    <strong>Rapport de stage — 1ère année</strong>
+                    <p>17 pages · BTS SIO SLAM · Première année 2024-2025</p>
+                  </div>
+                </div>
+                <div class="rapport-actions">
+                  <a href="assets/files/rapport_stage_ethan_premiere_annee.pdf" target="_blank" class="btn btn-primary">👁 Lire le rapport</a>
+                  <a href="assets/files/rapport_stage_ethan_premiere_annee.pdf" download class="btn btn-outline">⬇ Télécharger PDF</a>
+                  <a href="assets/files/FirstCar.zip" download class="btn btn-outline">📦 FirstCar.zip</a>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="stage-card featured-stage" style="margin-top:2rem">
+              <div class="stage-header">
+                <div class="stage-logo">🚗</div>
+                <div>
+                  <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;">
+                    <h3>First Car — Plateforme de réservation & App Java</h3>
+                    <span class="badge badge-green">2ème année</span>
+                  </div>
+                  <span class="stage-period">Janvier 2026 → Février 2026 · 5 semaines · Paris / Asnières (92)</span>
+                </div>
+              </div>
+
+              <div class="stage-context">
+                <div class="stage-context-item">
+                  <span class="ctx-label">Entreprise</span>
+                  <span>First Car — Transport VTC / Mise en relation chauffeurs</span>
+                </div>
+                <div class="stage-context-item">
+                  <span class="ctx-label">Adresse</span>
+                  <span>60 rue François 1er, Paris (bureaux d'Asnières)</span>
+                </div>
+                <div class="stage-context-item">
+                  <span class="ctx-label">Tuteur</span>
+                  <span>M. Nicolas MORIN (PDG) & M. Hassan DJEDDOU (Associé)</span>
+                </div>
+                <div class="stage-context-item">
+                  <span class="ctx-label">Mission principale</span>
+                  <span>Plateforme de réservation en ligne (PHP/MySQL) + Application de gestion desktop (Java/Swing)</span>
+                </div>
+              </div>
+
+              <div class="stage-body">
+                <div class="stage-missions">
+                  <h4>🎯 Réalisations semaine par semaine</h4>
+                  <div class="missions-list">
+                    <div class="mission-item">
+                      <div class="mission-icon">🗄️</div>
+                      <div>
+                        <strong>S1 — Analyse des besoins & conception BDD</strong>
+                        <p>Réunion de cadrage avec M. MORIN, interviews des chauffeurs et assistants. Conception du schéma relationnel MySQL (7 tables : users, cars, chauffeurs, chauffeur_availability, reservations, ratings, password_reset_tokens). Création via phpMyAdmin.</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>MySQL</span><span>phpMyAdmin</span><span>Merise</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">🌐</div>
+                      <div>
+                        <strong>S2 — Développement du site de réservation</strong>
+                        <p>Système d'authentification PHP (sessions, bcrypt, tokens CSRF). Page d'accueil dynamique depuis BDD. Système de réservation en 3 étapes : choix créneau → chauffeurs disponibles (requête SQL sur disponibilités) → confirmation + email automatique.</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>PHP/PDO</span><span>Sessions</span><span>bcrypt</span><span>CSRF</span><span>Email</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">⚙️</div>
+                      <div>
+                        <strong>S3 — Espace administrateur</strong>
+                        <p>Dashboard avec statistiques (users, réservations, note moyenne). CRUD complet pour véhicules et chauffeurs (photos, langues, expérience, disponibilités par jour). Tableau des réservations filtrable par statut. Page de visualisation des avis clients (note 4,63/5).</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>CRUD</span><span>PHP</span><span>Admin panel</span><span>Dashboard</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">☕</div>
+                      <div>
+                        <strong>S4 — Application Java desktop</strong>
+                        <p>Application Swing avec VSCode. Architecture fichiers à la racine : DBConnection, User, Car, Chauffeur, Reservation, Session. Connexion MySQL via JDBC + connecteur 8.0.33. Hashage mots de passe JBCrypt. Interfaces : connexion, accueil, réservation (véhicule + chauffeur + date/heure + adresses), panel admin.</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>Java</span><span>Swing</span><span>JDBC</span><span>JBCrypt</span><span>VSCode</span></div>
+                      </div>
+                    </div>
+                    <div class="mission-item">
+                      <div class="mission-icon">✅</div>
+                      <div>
+                        <strong>S5 — Tests, corrections & documentation</strong>
+                        <p>Sessions de test avec M. MORIN et les assistants : connexion, réservation complète, historique. Corrections : format de date, bug affichage petits écrans, visibilité confirmation. Rédaction guide utilisateur. Livraison des fichiers à l'entreprise. Bilan final approuvé par M. MORIN.</p>
+                        <div class="card-tags" style="margin-top:0.5rem"><span>Tests utilisateurs</span><span>Débogage</span><span>Documentation</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="stage-skills">
+                  <h4>💡 Compétences acquises</h4>
+                  <div class="card-tags" style="flex-direction:column;gap:0.5rem;align-items:flex-start;">
+                    <span>PHP / PDO / MySQL</span>
+                    <span>Java / Swing / JDBC</span>
+                    <span>Authentification sécurisée</span>
+                    <span>Conception BDD relationnelle</span>
+                    <span>CRUD & Admin panel</span>
+                    <span>Tests utilisateurs</span>
+                    <span>JBCrypt / bcrypt</span>
+                    <span>Documentation technique</span>
+                  </div>
+                  <div style="margin-top:1.5rem">
+                    <h4>📊 Bilan</h4>
+                    <p style="font-size:0.82rem;color:var(--text-muted);line-height:1.7;margin-top:0.5rem">Stage validé avec succès. Deux livrables opérationnels : site de réservation PHP/MySQL et application Java Swing. M. MORIN très satisfait — fichiers installés en production sur les ordinateurs de l'entreprise.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stage-rapport">
+                <div class="rapport-info">
+                  <span class="rapport-icon">📄</span>
+                  <div>
+                    <strong>Rapport de stage — 2ème année</strong>
+                    <p>22 pages · BTS SIO SLAM · Deuxième année 2025-2026</p>
+                  </div>
+                </div>
+                <div class="rapport-actions">
+                  <a href="assets/files/rapport_stage_ethan_deuxieme_annee.pdf" target="_blank" class="btn btn-primary">👁 Lire le rapport</a>
+                  <a href="assets/files/rapport_stage_ethan_deuxieme_annee.pdf" download class="btn btn-outline">⬇ Télécharger PDF</a>
+                  <a href="assets/files/FirstCar2.zip" download class="btn btn-outline">📦 FirstCar2.zip</a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ RESOURCES ══ -->
+      <section class="section" id="resources">
+        <div class="container">
+          <div class="section-label">05 — Ressources</div>
+          <h2 class="section-title">Ressources utiles</h2>
+          <p class="section-desc">
+            Outils, plateformes et communautés que j'utilise au quotidien dans
+            mes apprentissages.
+          </p>
+
+          <div class="resources-grid">
+            <div class="resource-card">
+              <div class="res-icon">📚</div>
+              <h3>Pour apprendre</h3>
+              <ul>
+                <li>
+                  <a href="https://developer.mozilla.org/" target="_blank"
+                    >MDN Web Docs</a
+                  ><span>Documentation web de référence</span>
+                </li>
+                <li>
+                  <a href="https://www.w3schools.com/" target="_blank"
+                    >W3Schools</a
+                  ><span>Tutoriels web interactifs</span>
+                </li>
+                <li>
+                  <a href="https://learn.unity.com/" target="_blank"
+                    >Unity Learn</a
+                  ><span>Ressources officielles Unity</span>
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <div class="res-icon">🛠️</div>
+              <h3>Outils essentiels</h3>
+              <ul>
+                <li>
+                  <a href="https://git-scm.com/" target="_blank">Git</a
+                  ><span>Versioning</span>
+                </li>
+                <li>
+                  <a href="https://github.com/" target="_blank">GitHub</a
+                  ><span>Partage de code</span>
+                </li>
+                <li>
+                  <a href="https://www.canva.com/" target="_blank">Canva</a
+                  ><span>Design graphique</span>
+                </li>
+                <li>
+                  <a href="https://tinypng.com/" target="_blank">TinyPNG</a
+                  ><span>Compression d'images</span>
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <div class="res-icon">👥</div>
+              <h3>Communautés</h3>
+              <ul>
+                <li>
+                  <a href="https://stackoverflow.com/" target="_blank"
+                    >Stack Overflow</a
+                  ><span>Questions & réponses dev</span>
+                </li>
+                <li>
+                  <a
+                    href="https://www.reddit.com/r/learnprogramming/"
+                    target="_blank"
+                    >r/learnprogramming</a
+                  ><span>Communauté Reddit</span>
+                </li>
+                <li>
+                  <a href="https://discord.gg/unity" target="_blank"
+                    >Discord Unity</a
+                  ><span>Communauté officielle</span>
+                </li>
+              </ul>
+            </div>
+            <div class="resource-card">
+              <div class="res-icon">📡</div>
+              <h3>Veille technologique</h3>
+              <ul>
+                <li>
+                  <a href="https://feedly.com/" target="_blank">Feedly</a
+                  ><span>Agrégateur RSS — mon outil</span>
+                </li>
+                <li>
+                  <a href="https://github.com/trending" target="_blank"
+                    >GitHub Trending</a
+                  ><span>Projets populaires</span>
+                </li>
+                <li>
+                  <a href="https://news.ycombinator.com/" target="_blank"
+                    >Hacker News</a
+                  ><span>Actualités tech</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-section">
+            <h3 class="faq-title">Questions fréquentes</h3>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q">
+                  <span>Quel langage pour débuter en programmation ?</span
+                  ><span class="faq-arrow">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    <strong>Python</strong> pour sa simplicité.
+                    <strong>HTML/CSS/JS</strong> pour le web.
+                    <strong>Java</strong> pour apprendre la POO avec une bonne
+                    structure forcée par le langage.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  <span>Ressources pour apprendre Unity ?</span
+                  ><span class="faq-arrow">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    <strong>Unity Learn</strong> en premier, puis les chaînes
+                    YouTube <strong>Brackeys</strong>,
+                    <strong>Code Monkey</strong> et
+                    <strong>Mike's Code</strong> (excellente série FPS pas à
+                    pas). Commencez avec de petits projets simples.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  <span>SLAM ou SISR en BTS SIO ?</span
+                  ><span class="faq-arrow">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    <strong>SLAM</strong> si vous aimez la programmation, les
+                    applications et les BDD.<br /><strong>SISR</strong> si vous
+                    préférez les réseaux, la sécurité et l'administration
+                    système.
+                  </p>
+                </div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q">
+                  <span>Comment trouver un stage en développement ?</span
+                  ><span class="faq-arrow">+</span>
+                </button>
+                <div class="faq-a">
+                  <p>
+                    Créez un <strong>portfolio</strong> (comme celui-ci !),
+                    contribuez sur <strong>GitHub</strong>, participez à des
+                    <strong>hackathons</strong> et utilisez
+                    <strong>LinkedIn</strong> pour réseauter avec des
+                    professionnels du secteur.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ CONTACT ══ -->
+      <section class="section" id="contact">
+        <div class="container">
+          <div class="section-label">06 — Contact &amp; Projet Pro</div>
+          <h2 class="section-title">Discutons ensemble</h2>
+          <p class="section-desc">
+            Une idée, une collaboration ou simplement envie d'échanger ? Je suis
+            là.
+          </p>
+
+          <!-- Projet professionnel -->
+          <div class="projetpro-banner">
+            <div class="pp-content">
+              <span class="pp-icon">🚀</span>
+              <div>
+                <h3>Mon projet professionnel</h3>
+                <p>
+                  Après mon BTS SIO SLAM, j'intègre désormais le
+                  <strong>Bachelor Développement Informatique de Sup de Vinci</strong>
+                  à La Défense, pour progresser jusqu'au <strong>Bac+5</strong>.
+                  À plus long terme,
+                  mon objectif est d'ouvrir ma propre entreprise — en commençant
+                  par de la <strong>prestation de services</strong> en
+                  développement, puis en évoluant vers le
+                  <strong>développement de jeux vidéos</strong>.
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://www.linkedin.com/in/ethan-lalienne-181854329/"
+              target="_blank"
+              class="btn btn-primary"
+              >💼 Mon LinkedIn</a
+            >
+          </div>
+
+          <div class="contact-layout">
+            <div class="contact-form-wrap">
+              <form class="contact-form" id="contactForm">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="prenom">Prénom *</label
+                    ><input
+                      type="text"
+                      id="prenom"
+                      name="prenom"
+                      placeholder="Votre prénom"
+                      required
+                    />
+                  </div>
+                  <div class="form-field">
+                    <label for="nom">Nom *</label
+                    ><input
+                      type="text"
+                      id="nom"
+                      name="nom"
+                      placeholder="Votre nom"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="email">Email *</label
+                  ><input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="votre@email.com"
+                    required
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="company">Entreprise</label
+                  ><input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder="Optionnel"
+                  />
+                </div>
+                <div class="form-field">
+                  <label for="message">Message *</label
+                  ><textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="Votre message..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                  Envoyer le message ✉️
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <div class="contact-card">
+                <div class="cc-icon">📧</div>
+                <h3>Email</h3>
+                <p>
+                  <span
+                    id="emailContactLink"
+                    role="link"
+                    tabindex="0"
+                    style="cursor:pointer; color:var(--accent); text-decoration:underline;"
+                    data-u="ZXRoYW5sYWxpZW5uZTky"
+                    data-d="Z21haWwuY29t"
+                    >chargement…</span
+                  >
+                </p>
+                <small>Réponse sous 24h</small>
+              </div>
+              <div class="contact-card">
+                <div class="cc-icon">💼</div>
+                <h3>LinkedIn</h3>
+                <a href="https://www.linkedin.com/in/ethan-lalienne-181854329/" target="_blank"
+                  >Connexion professionnelle →</a
+                >
+              </div>
+              <div class="contact-card">
+                <div class="cc-icon">🐙</div>
+                <h3>GitHub</h3>
+                <a href="https://github.com/ethn924" target="_blank"
+                  >Découvrez mes repos →</a
+                >
+              </div>
+              <div class="status-badge">
+                <span class="status-dot"></span>
+                Disponible pour collaborer
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+            <footer class="footer">
+      <div class="container footer-inner">
+        <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+        <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+        <a href="#hero" data-scroll class="back-top">↑ Haut de page</a>
+      </div>
+    </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Anti-Cloudflare Email Obfuscation — aucun href mailto: dans le DOM
+    (function() {
+      function decodeEmail(u, d) {
+        return atob(u) + '@' + atob(d);
+      }
+      function wireEmail(el) {
+        if (!el) return;
+        var u = el.getAttribute('data-u');
+        var d = el.getAttribute('data-d');
+        var email = decodeEmail(u, d);
+        el.textContent = email;
+        el.addEventListener('click', function() { window.location.href = 'mai' + 'lto:' + email; });
+        el.addEventListener('keydown', function(e) { if (e.key === 'Enter' || e.key === ' ') { window.location.href = 'mai' + 'lto:' + email; } });
+      }
+      wireEmail(document.getElementById('emailChipHero'));
+      wireEmail(document.getElementById('emailContactLink'));
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Météo — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#projects">Projets</a><span>›</span>
+                <span>Application Météo</span>
+            </div>
+            <div class="section-label">Projet Web — 2024–2025</div>
+            <h1 class="page-title">🌤️ Application Météo</h1>
+            <p class="page-subtitle">Application météo JavaScript avec API OpenWeatherMap et affichage de l'heure locale en temps réel</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2024–2025</strong></span>
+                <span class="meta-chip">⏱ <strong>~6h</strong></span>
+                <span class="meta-chip">🌐 <strong>JavaScript</strong></span>
+                <span class="meta-chip">🔌 <strong>API REST</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">HTML/CSS</span>
+                <span class="tech-pill">API REST</span>
+                <span class="tech-pill">OpenWeatherMap</span>
+                <span class="tech-pill">TimezoneDB</span>
+                <span class="tech-pill">Font Awesome</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>WeatherScope est une application météo développée en <strong>JavaScript vanilla</strong> (sans framework). L'utilisateur entre le nom d'une ville et l'application interroge l'<strong>API OpenWeatherMap</strong> pour récupérer les données météo en temps réel : température, humidité, vitesse du vent et conditions atmosphériques.</p>
+                <p>En parallèle, l'API <strong>TimezoneDB</strong> est consultée à partir des coordonnées GPS de la ville pour afficher l'heure locale exacte, mise à jour toutes les secondes via <code>setInterval</code>.</p>
+
+                <h2>Fonctionnalités</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">🌡️</div>
+                        <h4>Données météo en temps réel</h4>
+                        <p>Température en °C, humidité en %, vitesse du vent en km/h et description des conditions (nuageux, pluvieux, ensoleillé…).</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🕐</div>
+                        <h4>Heure locale en direct</h4>
+                        <p>Affichage de l'heure locale de la ville recherchée, calculée à partir du décalage GMT et mise à jour chaque seconde.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🎨</div>
+                        <h4>Icônes dynamiques</h4>
+                        <p>Icône Font Awesome adaptée selon les conditions météo : soleil, nuage, pluie, neige, orage, brume.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">⌨️</div>
+                        <h4>Recherche au clavier</h4>
+                        <p>Lancement de la recherche au clic sur le bouton ou en appuyant sur la touche Entrée.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🖼️</div>
+                        <h4>Design immersif</h4>
+                        <p>Fond photo plein écran, conteneur glassmorphism avec backdrop-filter, boîtes de résultats avec effet zoom au survol.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔄</div>
+                        <h4>Mise à jour automatique</h4>
+                        <p>L'intervalle d'heure locale est arrêté et relancé à chaque nouvelle recherche pour éviter les conflits.</p>
+                    </div>
+                </div>
+
+                <h2>Étapes de développement</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Appel API OpenWeatherMap</h4>
+                            <p>Construction de l'URL avec la clé API, paramètres <code>units=metric</code> et <code>lang=fr</code>. Parsing de la réponse JSON pour extraire température, humidité, vent, coordonnées GPS et description.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Heure locale via TimezoneDB</h4>
+                            <p>Envoi des coordonnées <code>lat/lon</code> à TimezoneDB pour récupérer le <code>gmtOffset</code>. Calcul de l'heure locale : <code>new Date().getTime() + gmtOffset * 1000</code> et affichage formaté HH:MM:SS.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Icônes météo conditionnelles</h4>
+                            <p>Fonction <code>getWeatherIcon()</code> avec un <code>switch</code> sur la condition météo (Clear, Clouds, Rain, Snow, Thunderstorm…) renvoyant la classe Font Awesome correspondante.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Interface et CSS</h4>
+                            <p>Layout flexbox centré plein écran, fond image avec <code>background-size: cover</code>, boîtes résultats en glassmorphism (<code>backdrop-filter: blur</code>), transitions hover.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Extrait de code — appel API</h2>
+                <div class="code-block">
+                    <pre>let apiCall = function(city) {
+    let url = `https://api.openweathermap.org/data/2.5/weather
+               ?q=${city}&appid=${APIKEY}&units=metric&lang=fr`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            document.querySelector('#temp').innerHTML =
+                `&lt;i class="fas fa-thermometer-half"&gt;&lt;/i&gt; ${data.main.temp}°C`;
+            document.querySelector('#humidity').innerHTML =
+                `&lt;i class="fas fa-tint"&gt;&lt;/i&gt; ${data.main.humidity}%`;
+            // Récupère lat/lon pour l'heure locale
+            getLocalTime(data.coord.lat, data.coord.lon);
+        });
+};</pre>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Consommation d'<strong>API REST</strong> avec <code>fetch()</code> et chaînage de Promises</li>
+                    <li>Parsing et exploitation de réponses <strong>JSON</strong></li>
+                    <li>Manipulation du <strong>DOM</strong> : <code>querySelector</code>, <code>innerHTML</code></li>
+                    <li>Gestion du <strong>temps</strong> avec <code>setInterval</code> / <code>clearInterval</code></li>
+                    <li>Utilisation de <strong>Font Awesome</strong> pour les icônes dynamiques</li>
+                    <li>CSS avancé : <strong>glassmorphism</strong>, transitions, layout flexbox</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">2024 – 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">~6 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Projet Web</span></div>
+                        <div class="sm-row"><span class="sm-label">Langage</span><span class="sm-value">JavaScript vanilla</span></div>
+                        <div class="sm-row"><span class="sm-label">API 1</span><span class="sm-value">OpenWeatherMap</span></div>
+                        <div class="sm-row"><span class="sm-label">API 2</span><span class="sm-value">TimezoneDB</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/meteo.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2024–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

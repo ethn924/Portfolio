@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste des tâches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Bouton de basculement entre mode sombre et clair -->
+  <div class="mode-toggle">
+    <button id="modeToggle">🌙 Mode Sombre</button>
+  </div>
+
+  <div class="container">
+    <h1>Ma Liste de Tâches</h1>
+
+    <!-- Formulaire d'ajout de tâche avec sélection de catégorie et de priorité -->
+    <div class="champs">
+      <input type="text" id="taskinput" placeholder="Ajouter une tâche">
+      <select id="categorySelect">
+        <option value="" disabled selected>Choisir une catégorie</option>
+        <option value="travail">Travail</option>
+        <option value="personnel">Personnel</option>
+        <option value="urgent">Urgent</option>
+        <option value="new">Créer une nouvelle catégorie</option>
+      </select>
+      <input type="text" id="newCategory" placeholder="Nouvelle catégorie" style="display: none;">
+      <select id="prioritySelect">
+        <option value="" disabled selected>Choisir une priorité</option>
+        <option value="high">Haute</option>
+        <option value="medium">Moyenne</option>
+        <option value="low">Basse</option>
+      </select>
+      <button class="add" onclick="addTask()">
+        Ajouter une tâche
+      </button>
+    </div>
+
+    <!-- Zone pour afficher les messages d'erreur -->
+    <div id="error-message" class="error-message"></div>
+
+    <!-- Section des filtres : on affiche les catégories et priorités disponibles -->
+    <div class="filters">
+      <div class="filter-group">
+        <label for="filterCategory">Catégorie :</label>
+        <select id="filterCategory">
+          <option value="all">Toutes</option>
+          <!-- Les autres options seront mises à jour dynamiquement -->
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="filterPriority">Priorité :</label>
+        <select id="filterPriority">
+          <option value="all">Toutes</option>
+          <option value="high">Haute</option>
+          <option value="medium">Moyenne</option>
+          <option value="low">Basse</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tableau affichant les tâches -->
+    <table class="task-table">
+      <thead>
+        <tr>
+          <th>Tâche</th>
+          <th>Catégorie</th>
+          <th>Priorité</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="taskList"></tbody>
+    </table>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

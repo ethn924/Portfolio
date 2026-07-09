@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum PHP/MySQL — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#projects">Projets</a><span>›</span>
+                <span>Forum PHP/MySQL</span>
+            </div>
+            <div class="section-label">Projet Web — 2025–2026</div>
+            <h1 class="page-title">💬 Forum PHP/MySQL</h1>
+            <p class="page-subtitle">Forum web complet avec création de sujets, réponses et système de modération</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2025–2026</strong></span>
+                <span class="meta-chip">⏱ <strong>~20h</strong></span>
+                <span class="meta-chip">🌐 <strong>PHP / MySQL</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">HTML/CSS</span>
+                <span class="tech-pill">Sessions</span>
+                <span class="tech-pill">PDO</span>
+                <span class="tech-pill">CRUD</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>Ce forum web est développé en <strong>PHP</strong> avec une base de données <strong>MySQL</strong>. Il permet aux utilisateurs inscrits de créer des sujets de discussion, de poster des réponses et de gérer leurs contributions. Un système de modération permet aux administrateurs de superviser et supprimer les contenus inappropriés.</p>
+                <p>Le projet met en pratique les fondamentaux du développement web côté serveur : gestion des sessions, opérations CRUD complètes, contrôle des droits d'accès et sécurisation des entrées utilisateur.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">🔑</div>
+                        <h4>Authentification</h4>
+                        <p>Inscription et connexion sécurisées avec sessions PHP. Mots de passe hachés. Accès restreint aux fonctionnalités selon l'état de connexion.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📌</div>
+                        <h4>Création de sujets</h4>
+                        <p>Les utilisateurs connectés peuvent créer de nouveaux sujets avec titre et contenu. Chaque sujet est rattaché à son auteur et horodaté.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">💬</div>
+                        <h4>Réponses aux sujets</h4>
+                        <p>Système de réponses imbriquées sous chaque sujet. Affichage chronologique avec auteur et date de chaque message.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🛡️</div>
+                        <h4>Modération</h4>
+                        <p>Panneau de modération accessible aux administrateurs pour supprimer des sujets ou des réponses signalés.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">👥</div>
+                        <h4>Gestion des droits</h4>
+                        <p>Deux niveaux d'accès : utilisateur standard et administrateur. Vérification des droits à chaque action sensible côté serveur.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔐</div>
+                        <h4>Sécurité</h4>
+                        <p>Requêtes préparées PDO contre les injections SQL, échappement HTML avec <code>htmlspecialchars()</code> contre les failles XSS.</p>
+                    </div>
+                </div>
+
+                <h2>Architecture technique</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">BDD</span>
+                        <div>
+                            <h4>Structure de la base de données</h4>
+                            <p>Tables principales : <code>utilisateurs</code> (id, username, email, password, role), <code>sujets</code> (id, titre, contenu, auteur_id, date), <code>reponses</code> (id, sujet_id, contenu, auteur_id, date). Relations via clés étrangères.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Inscription et connexion</h4>
+                            <p>Formulaires avec validation côté serveur. Vérification de l'unicité du pseudo et de l'email. Hachage du mot de passe avec <code>password_hash()</code> et vérification avec <code>password_verify()</code>.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>CRUD sujets et réponses</h4>
+                            <p>Création via formulaires POST, lecture avec requêtes SELECT + JOIN pour récupérer les infos auteur, modification et suppression réservées à l'auteur ou à l'admin.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Système de modération</h4>
+                            <p>Vérification du rôle <code>admin</code> dans la session avant d'afficher les actions de modération. Suppression en cascade des réponses liées à un sujet supprimé.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Sécurisation des entrées</h4>
+                            <p>Toutes les requêtes SQL utilisent <code>PDO::prepare()</code>. Toutes les données affichées passent par <code>htmlspecialchars()</code>. Vérification de l'authentification sur chaque page protégée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Architecture d'une application web <strong>PHP multi-pages</strong> avec sessions</li>
+                    <li>Conception de <strong>base de données relationnelle</strong> avec clés étrangères et relations</li>
+                    <li>Opérations <strong>CRUD</strong> complètes avec PDO</li>
+                    <li>Système de <strong>gestion des droits</strong> utilisateur/admin</li>
+                    <li>Sécurité web : protection <strong>XSS</strong> et <strong>injections SQL</strong></li>
+                    <li>Suppression en cascade et intégrité référentielle</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">2025 – 2026</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">~20 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Projet Web</span></div>
+                        <div class="sm-row"><span class="sm-label">Backend</span><span class="sm-value">PHP + PDO</span></div>
+                        <div class="sm-row"><span class="sm-label">BDD</span><span class="sm-value">MySQL</span></div>
+                        <div class="sm-row"><span class="sm-label">Sécurité</span><span class="sm-value">XSS + SQLi</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/forum.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2024–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

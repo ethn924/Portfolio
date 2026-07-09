@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLPI — Gestion de Parc Informatique — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span>›</span>
+                <a href="../index.html#projects">Projets</a>
+                <span>›</span>
+                <span>GLPI — Gestion de Parc Informatique</span>
+            </div>
+            <div class="section-label">Réseau / Système — BTS SIO · 2025–2026</div>
+            <h1 class="page-title">🖥️ GLPI — Gestion de Parc Informatique</h1>
+            <p class="page-subtitle">Déploiement et configuration de GLPI pour la gestion du patrimoine informatique : inventaire, tickets d'incidents et gestion des utilisateurs</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2025–2026</strong></span>
+                <span class="meta-chip">🎓 <strong>BTS SIO</strong></span>
+                <span class="meta-chip">🖥️ <strong>Administration système</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">GLPI</span>
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">Apache</span>
+                <span class="tech-pill">Linux</span>
+                <span class="tech-pill">Gestion de parc</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p><strong>GLPI</strong> (Gestionnaire Libre de Parc Informatique) est une solution open-source de gestion du système d'information. Ce projet consiste en le déploiement, la configuration et la prise en main de GLPI dans le cadre de la compétence <strong>« Gérer le patrimoine informatique »</strong> du BTS SIO.</p>
+                <p>L'objectif est de mettre en place un système centralisé permettant de recenser les équipements, de gérer les demandes d'assistance, et de suivre l'ensemble du parc informatique d'une organisation.</p>
+
+                <h2>Fonctionnalités utilisées</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">📦</div>
+                        <h4>Inventaire du parc</h4>
+                        <p>Recensement et identification des ressources numériques : ordinateurs, serveurs, périphériques, logiciels et licences.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🎫</div>
+                        <h4>Gestion des tickets</h4>
+                        <p>Création, suivi et résolution des tickets d'incidents et de demandes d'assistance. Priorisation et attribution aux techniciens.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">👥</div>
+                        <h4>Gestion des utilisateurs</h4>
+                        <p>Administration des comptes utilisateurs, définition des rôles (technicien, administrateur, utilisateur final) et des habilitations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔗</div>
+                        <h4>Liens matériel / utilisateur</h4>
+                        <p>Association des équipements aux utilisateurs et aux entités. Suivi de l'affectation du matériel dans l'organisation.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📊</div>
+                        <h4>Tableaux de bord</h4>
+                        <p>Vue synthétique de l'état du parc et des tickets en cours. Statistiques et indicateurs de suivi de l'activité.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔒</div>
+                        <h4>Gestion des habilitations</h4>
+                        <p>Mise en place et vérification des niveaux d'accès associés aux différents profils utilisateurs.</p>
+                    </div>
+                </div>
+
+                <h2>Étapes du déploiement</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Installation de l'environnement</h4>
+                            <p>Mise en place du serveur web Apache, PHP et MySQL. Téléchargement et installation de GLPI. Configuration du fichier <code>config_db.php</code> pour la connexion à la base de données.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Configuration initiale</h4>
+                            <p>Paramétrage de l'instance GLPI : création des entités organisationnelles, configuration des profils d'accès et des règles d'habilitation pour les différents types d'utilisateurs.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Inventaire des équipements</h4>
+                            <p>Saisie et organisation des assets informatiques : catégorisation du matériel, renseignement des informations techniques, et association aux utilisateurs et entités.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Mise en place du helpdesk</h4>
+                            <p>Configuration du module de tickets : définition des catégories, des niveaux de priorité, des SLA et des workflows d'escalade. Tests de soumission et de traitement des tickets.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">05</span>
+                        <div>
+                            <h4>Documentation et rapport</h4>
+                            <p>Rédaction d'un rapport de synthèse documentant le déploiement, la configuration effectuée et les fonctionnalités mises en œuvre.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences mises en œuvre</h2>
+                <ul>
+                    <li>Recenser et identifier les ressources numériques d'un parc informatique</li>
+                    <li>Exploiter des référentiels et standards de gestion du patrimoine informatique</li>
+                    <li>Mettre en place et vérifier les niveaux d'habilitation associés à un service</li>
+                    <li>Administrer une solution ITSM open-source (<strong>GLPI</strong>)</li>
+                    <li>Configurer un environnement <strong>LAMP</strong> (Linux, Apache, MySQL, PHP)</li>
+                    <li>Gestion des incidents via un système de ticketing</li>
+                    <li>Documentation technique des procédures de déploiement</li>
+                </ul>
+
+                <h2>Technologies utilisées</h2>
+                <ul>
+                    <li><strong>Solution ITSM :</strong> GLPI (Gestionnaire Libre de Parc Informatique)</li>
+                    <li><strong>Serveur web :</strong> Apache</li>
+                    <li><strong>Langage serveur :</strong> PHP</li>
+                    <li><strong>Base de données :</strong> MySQL / MariaDB</li>
+                    <li><strong>Système :</strong> Linux (Debian/Ubuntu)</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">2025 – 2026</span></div>
+                        <div class="sm-row"><span class="sm-label">Contexte</span><span class="sm-value">BTS SIO</span></div>
+                        <div class="sm-row"><span class="sm-label">Solution</span><span class="sm-value">GLPI</span></div>
+                        <div class="sm-row"><span class="sm-label">Stack</span><span class="sm-value">PHP / MySQL / Apache</span></div>
+                        <div class="sm-row"><span class="sm-label">Compétence</span><span class="sm-value">Gérer le patrimoine</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/glpi.pdf" class="sidebar-link primary" download>📥 Télécharger le rapport PDF</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

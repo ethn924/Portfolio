@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Bancaire AP3 — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            try {
+                const t = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', t);
+            } catch(e) {}
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span>›</span>
+                <a href="../index.html#projects">Projets</a>
+                <span>›</span>
+                <span>Application Bancaire AP3</span>
+            </div>
+            <div class="section-label">AP3 — BTS SIO · Décembre 2025</div>
+            <h1 class="page-title">🏦 Application Bancaire – AP3</h1>
+            <p class="page-subtitle">Application de gestion bancaire développée en Java avec JavaFX et SceneBuilder</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Déc. 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>70 heures</strong></span>
+                <span class="meta-chip">🎓 <strong>AP3 – BTS SIO</strong></span>
+                <span class="meta-chip">☕ <strong>Java / JavaFX</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Java 11+</span>
+                <span class="tech-pill">JavaFX</span>
+                <span class="tech-pill">FXML</span>
+                <span class="tech-pill">SceneBuilder</span>
+                <span class="tech-pill">POO</span>
+                <span class="tech-pill">MVC</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>AP3 est une application de gestion bancaire développée en <strong>Java</strong> avec une interface graphique construite via <strong>FXML et SceneBuilder</strong>. L'application simule un système bancaire complet permettant de gérer des comptes, des transactions et les informations des clients.</p>
+                <p>Ce projet démontre l'application concrète des principes de la <strong>Programmation Orientée Objet (POO)</strong>, notamment l'encapsulation avec des comptes bancaires sécurisés, et l'architecture MVC pour une séparation claire des responsabilités.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">👤</div>
+                        <h4>Gestion des clients</h4>
+                        <p>Création, modification et suppression des profils clients avec leurs informations.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🏦</div>
+                        <h4>Comptes bancaires</h4>
+                        <p>Gestion de comptes courants et épargne avec solde, numéro et statut.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">💸</div>
+                        <h4>Transactions</h4>
+                        <p>Dépôts, retraits et virements entre comptes avec historique complet.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔒</div>
+                        <h4>Encapsulation stricte</h4>
+                        <p>Tous les attributs privés, accès uniquement via getters/setters contrôlés.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🖥️</div>
+                        <h4>Interface JavaFX</h4>
+                        <p>Interface graphique moderne créée avec SceneBuilder et fichiers FXML.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📊</div>
+                        <h4>Tableau de bord</h4>
+                        <p>Vue synthétique des comptes et des transactions récentes.</p>
+                    </div>
+                </div>
+
+                <h2>Étapes du développement</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Architecture et conception des classes</h4>
+                            <p>Conception de la structure objet : classes <code>Client</code>, <code>CompteBancaire</code>, <code>Transaction</code> avec leurs attributs privés et méthodes de gestion. Mise en place des principes POO pour une encapsulation robuste.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Interface graphique avec SceneBuilder</h4>
+                            <p>Création des écrans de l'application avec SceneBuilder : fenêtres de connexion, tableau de bord, gestion des comptes. Liaison FXML avec les contrôleurs Java.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Logique métier et contrôleurs</h4>
+                            <p>Implémentation des contrôleurs MVC pour gérer les interactions : création de compte, dépôts, retraits et virements avec validation des données.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Persistence des données</h4>
+                            <p>Mise en place de la sauvegarde des données clients et comptes. Gestion de l'état de l'application entre les sessions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Maîtrise approfondie de la <strong>Programmation Orientée Objet</strong> (classes, encapsulation, héritage, polymorphisme)</li>
+                    <li>Développement d'applications Desktop avec <strong>JavaFX et FXML</strong></li>
+                    <li>Design d'architecture d'application avec le <strong>pattern MVC</strong></li>
+                    <li>Utilisation de <strong>SceneBuilder</strong> pour la conception d'interfaces graphiques</li>
+                    <li>Gestion de la persistence et des données en mémoire</li>
+                    <li>Validation et sécurisation des entrées utilisateur</li>
+                </ul>
+
+                <h2>Technologies utilisées</h2>
+                <ul>
+                    <li><strong>Langage :</strong> Java 11+</li>
+                    <li><strong>Framework UI :</strong> JavaFX</li>
+                    <li><strong>Conception UI :</strong> SceneBuilder</li>
+                    <li><strong>Markup interface :</strong> FXML (XML)</li>
+                    <li><strong>IDE :</strong> Eclipse / IntelliJ IDEA</li>
+                    <li><strong>Paradigme :</strong> POO, MVC</li>
+                </ul>
+
+                <h2>Améliorations futures</h2>
+                <ul>
+                    <li>Intégration d'une vraie base de données (MySQL, PostgreSQL)</li>
+                    <li>Implémentation d'un système de virement international</li>
+                    <li>Ajout de notifications par email ou SMS</li>
+                    <li>Création d'une API REST pour une application mobile complémentaire</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">Décembre 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">70 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Contexte</span><span class="sm-value">AP3 – BTS SIO</span></div>
+                        <div class="sm-row"><span class="sm-label">Langage</span><span class="sm-value">Java 11+ / JavaFX</span></div>
+                        <div class="sm-row"><span class="sm-label">Paradigme</span><span class="sm-value">POO — MVC</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Actions</h3>
+                    <div class="sidebar-links">
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2025 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

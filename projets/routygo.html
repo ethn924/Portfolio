@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoutyGo — Ethan</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn" aria-label="Changer le thème"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#projects">Projets</a><span>›</span>
+                <span>RoutyGo</span>
+            </div>
+            <div class="section-label">Projet Web — 2024–2025</div>
+            <h1 class="page-title">✈️ RoutyGo — Site de Voyage</h1>
+            <p class="page-subtitle">Plateforme web de réservation de voyages développée en PHP/MySQL avec espace utilisateur</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2024–2025</strong></span>
+                <span class="meta-chip">⏱ <strong>~30h</strong></span>
+                <span class="meta-chip">🌐 <strong>PHP / MySQL</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">PHP</span>
+                <span class="tech-pill">MySQL</span>
+                <span class="tech-pill">HTML/CSS</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">Sessions</span>
+                <span class="tech-pill">PDO</span>
+            </div>
+        </div>
+
+        <div class="page-body">
+            <main class="page-main">
+
+                <h2>À propos du projet</h2>
+                <p>RoutyGo est une plateforme web de voyage développée en <strong>PHP</strong> avec une base de données <strong>MySQL</strong>. Le site propose aux utilisateurs de découvrir des destinations, de consulter des hôtels et restaurants, et de gérer leur compte personnel. Le projet inclut un système d'authentification complet avec inscription, connexion et déconnexion sécurisées.</p>
+                <p>Le site comprend également un bandeau de recherche de vols interactif avec un calendrier JavaScript permettant de sélectionner des plages de dates, ainsi qu'un formulaire de contact dont les messages sont enregistrés en base de données.</p>
+
+                <h2>Fonctionnalités principales</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="fi-icon">🔑</div>
+                        <h4>Authentification complète</h4>
+                        <p>Inscription, connexion et déconnexion sécurisées via sessions PHP. Affichage conditionnel des boutons selon l'état de connexion.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">👤</div>
+                        <h4>Espace utilisateur</h4>
+                        <p>Page "Mon Espace" accessible uniquement aux utilisateurs connectés. Affichage du profil (nom, email) récupéré depuis la base de données.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">✈️</div>
+                        <h4>Recherche de vols</h4>
+                        <p>Bandeau de recherche avec sélection d'aéroport de départ/arrivée, calendrier interactif pour choisir les dates et sélection du nombre de passagers.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🗓️</div>
+                        <h4>Calendrier JavaScript</h4>
+                        <p>Calendrier custom en JS pur permettant de sélectionner une plage de dates (aller-retour) avec navigation mensuelle et mise en surbrillance de la sélection.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🌍</div>
+                        <h4>Pages destinations</h4>
+                        <p>Section "Recherches Tendances" avec destinations populaires illustrées (Cappadoce, Chiang Mai, Okinawa…) liées à leur page Wikipédia.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">📬</div>
+                        <h4>Formulaire de contact</h4>
+                        <p>Formulaire de contact avec validation côté serveur. Les messages (nom, email, contenu) sont insérés en base de données avec horodatage.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">🔗</div>
+                        <h4>Réseaux sociaux</h4>
+                        <p>Présence sur Facebook, Instagram et LinkedIn avec icônes liées aux vrais profils RoutyGo.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="fi-icon">⬆️</div>
+                        <h4>Navigation fluide</h4>
+                        <p>Bouton "Retour en haut" avec animation smooth scroll, header fixe avec ombre portée.</p>
+                    </div>
+                </div>
+
+                <h2>Architecture technique</h2>
+                <div class="steps-list">
+                    <div class="step-item">
+                        <span class="step-num">01</span>
+                        <div>
+                            <h4>Base de données MySQL</h4>
+                            <p>Tables <code>utilisateurs</code> (id, username, email, password) et <code>message</code> (id, name, email, message, date_sent). Connexion via <code>PDO</code> avec gestion des erreurs.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">02</span>
+                        <div>
+                            <h4>Authentification par session</h4>
+                            <p>Démarrage de session avec <code>session_start()</code> sur chaque page. Vérification de <code>$_SESSION['username']</code> pour protéger l'espace utilisateur et adapter le header.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">03</span>
+                        <div>
+                            <h4>Formulaire de contact avec BDD</h4>
+                            <p>Réception des données POST, validation basique (champs vides), insertion préparée avec <code>PDO::prepare()</code> et <code>execute()</code> pour éviter les injections SQL.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">04</span>
+                        <div>
+                            <h4>Calendrier JavaScript custom</h4>
+                            <p>Calendrier entièrement écrit en JS vanilla : génération dynamique des jours du mois, navigation entre mois, sélection de plage de dates avec mise en surbrillance, fermeture au clic extérieur.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">05</span>
+                        <div>
+                            <h4>Structure multi-pages</h4>
+                            <p>Organisation en dossiers séparés par section : <code>Accueil/</code>, <code>Connexion/</code>, <code>Formulaire/</code>, <code>Destinations/</code>, <code>Hotels/</code>… avec fichiers CSS dédiés par page.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Compétences acquises</h2>
+                <ul>
+                    <li>Développement web <strong>PHP</strong> avec gestion des formulaires POST et sessions</li>
+                    <li>Connexion et requêtes sécurisées <strong>MySQL via PDO</strong></li>
+                    <li>Authentification complète : inscription, connexion, déconnexion, protection de pages</li>
+                    <li>JavaScript vanilla : <strong>calendrier interactif</strong>, événements DOM, logique de sélection de dates</li>
+                    <li>Organisation d'un projet multi-pages avec <strong>CSS modulaire</strong></li>
+                    <li>Intégration de réseaux sociaux et gestion du footer</li>
+                </ul>
+
+            </main>
+
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Date</span><span class="sm-value">2024 – 2025</span></div>
+                        <div class="sm-row"><span class="sm-label">Durée</span><span class="sm-value">~30 heures</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Projet Web</span></div>
+                        <div class="sm-row"><span class="sm-label">Backend</span><span class="sm-value">PHP + PDO</span></div>
+                        <div class="sm-row"><span class="sm-label">BDD</span><span class="sm-value">MySQL (hotel)</span></div>
+                        <div class="sm-row"><span class="sm-label">Frontend</span><span class="sm-value">HTML/CSS/JS</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Téléchargements</h3>
+                    <div class="sidebar-links">
+                        <a href="../assets/files/routygo.zip" class="sidebar-link primary" download>📥 Télécharger ZIP</a>
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2024–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
