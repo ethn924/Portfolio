@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Portfolio de Ethan</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">PORTFOLIO DE ETHAN</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="projets/index.html" class="nav-link">Mes projets</a></li>
+                <li><a href="about.html" class="nav-link">À propos de moi</a></li>
+                <li><a href="cv.html" class="nav-link active">Mon CV</a></li>
+                <li><a href="blog.html" class="nav-link">Blog Technique</a></li>
+                <li><a href="resources.html" class="nav-link">Ressources</a></li>
+                <li><a href="contact.html" class="nav-link">Me contacter</a></li>
+                <li>
+                    <button class="theme-toggle" aria-label="Changer le thème">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="cv-section">
+            <div class="cv-header">
+                <h1>MON CURRICULUM VITAE</h1>
+                <p class="cv-subtitle">Apprenant en développement - Étudiant BTS SIO - Passionné par le Game Development</p>
+            </div>
+
+            <div class="cv-content">
+                <div class="cv-card">
+                    <h2>🎯 Objectif Professionnel</h2>
+                    <p>Apprenant en développement passionné par la Programmation Orientée Objet et le développement de jeux vidéo. Je recherche une opportunité pour appliquer mes connaissances en développement tout en approfondissant mes compétences dans les technologies liées au game development.</p>
+                </div>
+
+                <div class="cv-card">
+                    <h2>📚 Formation</h2>
+                    <div class="cv-item">
+                        <h3>BTS SIO (Services Informatiques aux Organisations)</h3>
+                        <p class="cv-date">2023 - 2025 | Lycée Paul Lanie</p>
+                        <p>Parcours SLAM (Solutions Logicielles et Applications Métiers)</p>
+                        <ul class="cv-list">
+                            <li>Programmation Orientée Objet en Java</li>
+                            <li>Développement web et bases de données</li>
+                            <li>Cybersécurité et bonnes pratiques</li>
+                        </ul>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Baccalauréat STMG - SIG</h3>
+                        <p class="cv-date">2021 - 2023</p>
+                        <p>Spécialité Systèmes d'Information de Gestion</p>
+                    </div>
+                </div>
+
+                <div class="cv-card">
+                    <h2>💼 Expérience Professionnelle</h2>
+                    <div class="cv-item">
+                        <h3>Stage en développement web</h3>
+                        <p class="cv-date">Mai 2024 - Juillet 2024 | En entreprise</p>
+                        <p>Développement d'une application web interne, participation à la conception de la base de données, intégration front-end.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Projet personnel - Site vitrine</h3>
+                        <p class="cv-date">2023 | Projet d'école</p>
+                        <p>Création d'un site vitrine responsive avec HTML/CSS/JavaScript. Apprentissage du développement web et du responsive design.</p>
+                    </div>
+                </div>
+
+                <div class="cv-card">
+                    <h2>🛠️ Compétences Techniques</h2>
+                    <div class="skills-container">
+                        <div class="skill-category">
+                            <h3>Développement</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Java (POO)</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-category">
+                            <h3>Game Development</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">Unity</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Développement 3D</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Bases de Données</h3>
+                            <div class="skills-list">
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Modélisation relationnelle</span>
+                                <span class="skill-tag">Requêtes SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Outils & Environnements</h3>
+                            <div class="tools-list">
+                                <span class="tool-tag">Eclipse</span>
+                                <span class="tool-tag">VS Code</span>
+                                <span class="tool-tag">Git/GitHub</span>
+                                <span class="tool-tag">WAMP</span>
+                                <span class="tool-tag">Unity Engine</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-card">
+                    <h2>🌐 Langues</h2>
+                    <div class="languages">
+                        <div class="language-item">
+                            <span class="language-name">Français</span>
+                            <span class="language-level">Langue maternelle</span>
+                        </div>
+                        <div class="language-item">
+                            <span class="language-name">Anglais</span>
+                            <span class="language-level">Scolaire - Lecture de documentation technique</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-card">
+                    <h2>🎯 Centres d'intérêt</h2>
+                    <div class="interests">
+                        <div class="interest-item">
+                            <span class="interest-icon">🎮</span>
+                            <span>Développement Jeux Vidéo (tout type)</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">💻</span>
+                            <span>Programmation POO</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">📚</span>
+                            <span>Veille technologique</span>
+                        </div>
+                        <div class="interest-item">
+                            <span class="interest-icon">🏀</span>
+                            <span>Basketball</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cv-card">
+                    <h2>📈 Apprentissages Personnels</h2>
+                    <div class="cv-item">
+                        <h3>Initiation au développement de jeux avec Unity</h3>
+                        <p>Apprentissage autodidacte d'Unity et du C# en parallèle des études. Création de prototypes 3D simples incluant un FPS (First-Person Shooter) et exploration des concepts fondamentaux du game development. J'ai suivi les excellents tutoriels de <strong><a href="https://www.youtube.com/@TUTOUNITYFR" target="_blank" style="color: var(--primary-color); text-decoration: underline;">TUTO UNITY FR</a></strong> qui m'ont beaucoup aidé à progresser.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Approfondissement en Programmation Orientée Objet</h3>
+                        <p>Étude des principes de la POO en Java pour améliorer la qualité du code et l'architecture des applications. Compréhension des concepts clés comme l'héritage et le polymorphisme.</p>
+                    </div>
+                    <div class="cv-item">
+                        <h3>Découverte des outils de développement collaboratif</h3>
+                        <p>Utilisation de Git et GitHub pour le versioning, exploration d'architectures logicielles existantes et bonnes pratiques de développement collaboratif.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-download">
+                <a href="#" class="cta-button">📄 Télécharger mon CV PDF</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2023 par Ethan - Portfolio BTS SIO</p>
+    </footer>
+
+    <!-- Console Dev -->
+    <div class="dev-console">💻</div>
+    <div class="console-modal">
+        <div class="console-header">
+            <span>Console de Développement</span>
+            <button class="console-close">×</button>
+        </div>
+        <div class="console-body">
+            <div class="console-output"></div>
+            <div class="console-input">
+                <input type="text" placeholder="Tapez une commande...">
+                <button>Exécuter</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
