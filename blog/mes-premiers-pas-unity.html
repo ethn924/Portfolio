@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes premiers pas avec Unity — Ethan</title>
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#blog">Blog</a><span>›</span>
+                <span>Mes premiers pas avec Unity</span>
+            </div>
+            <span class="blog-cat cat-experience" style="display:inline-block;margin-bottom:1rem">Expérience</span>
+            <h1 class="page-title">Mes premiers pas avec Unity</h1>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Juillet 2026</strong></span>
+                <span class="meta-chip">⏱ <strong>8 min de lecture</strong></span>
+                <span class="meta-chip">✍ <strong>Ethan Lalienne</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Unity</span><span class="tech-pill">C#</span><span class="tech-pill">Game Dev</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <p class="article-intro">
+                Ça fait depuis le lycée que je me dis "un jour je fais un jeu vidéo". Ce mois-ci, j'ai enfin arrêté de repousser et j'ai ouvert Unity pour de vrai. Voilà où j'en suis après les premières parties de tutoriel, ce que j'ai compris, et ce qui m'a pris la tête.
+            </p>
+
+            <div class="article-section">
+                <h2>Pourquoi Unity, pourquoi maintenant</h2>
+                <p>Je suis passionné de jeux vidéo depuis toujours, mais entre le BTS SIO SLAM et les projets (AP1, AP2, AP3...), je n'avais jamais pris le temps de vraiment m'y mettre sérieusement. Une fois le rythme du Bachelor à Sup de Vinci un peu pris, je me suis dit que c'était le moment de lancer un vrai projet perso, sans note à la clé, juste pour apprendre et pour le plaisir.</p>
+                <p>J'ai choisi <strong>Unity</strong> en C# plutôt qu'Unreal ou Godot parce que je connaissais déjà un peu le C# (proche du Java qu'on utilise en BTS) et que la communauté française est énorme.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>La ressource qui m'a débloqué</h2>
+                <p>Après avoir tâtonné tout seul quelques jours, je suis tombé sur la playlist <a href="https://www.youtube.com/playlist?list=PLtLToKUhgzwm1rZnTeWSRAyx9tl8VbGUE" target="_blank">FPS Full Game Tutorial</a> de la chaîne <strong>Mike's Code</strong>. Un tutoriel en 15 parties pour construire un FPS complet, étape par étape. C'est exactement ce qu'il me fallait : pas juste "voici comment bouger un cube", mais un vrai projet qui avance.</p>
+                <p>Je suis actuellement à la <strong>Part 5</strong> (Shooting at Bottles), et j'ai poussé mon avancée sur <a href="https://github.com/ethn924/unity-fps-tutorial" target="_blank">GitHub</a> pour suivre ma progression.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ce que j'ai déjà réussi à faire</h2>
+                <p>En quelques sessions, j'ai un petit bonhomme qui bouge, qui vise, et qui tire :</p>
+                <ul>
+                    <li>Un contrôleur FPS avec <code>CharacterController</code> : déplacement ZQSD, saut, gestion de la gravité</li>
+                    <li>Une caméra à la première personne (rotation souris, avec un clamp vertical pour pas retourner la caméra comme une crêpe)</li>
+                    <li>Un système d'arme avec trois modes de tir — Single, Burst, Auto — et une dispersion aléatoire pour simuler la précision</li>
+                    <li>Des balles physiques, propulsées par impulsion sur un Rigidbody, avec des effets d'impact selon ce qu'elles touchent</li>
+                    <li>Des bouteilles de bière qui réagissent aux tirs (physique + son) — le petit exercice fun de la Part 5</li>
+                </ul>
+                <p>Et en bonus perso, en dehors du tuto, j'ai ajouté des cubes qu'on peut faire exploser en morceaux avec un plugin de démolition de mesh. C'était l'occasion de sortir un peu du cadre du tutoriel et de bidouiller de mon côté.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ce qui m'a pris la tête</h2>
+                <p>Le plus dur pour moi, ça n'a pas été le C# en lui-même (l'OOP, je la pratique déjà en Java), mais plutôt de comprendre <strong>comment Unity organise les choses</strong> : les GameObjects, les composants qu'on attache dessus, la différence entre ce qui se passe dans l'éditeur et dans le code. Le pattern singleton pour mes références globales (<code>GlobalReferences.Instance</code>), par exemple, m'a demandé de relire deux fois le tuto pour bien piger pourquoi on fait ça.</p>
+                <p>Autre truc auquel je m'attendais pas : le clamp de la caméra. Une histoire de degrés mal bornés et hop, la caméra fait un tour complet sur elle-même. Rien de grave, mais ça m'a rappelé qu'en 3D il faut toujours réfléchir aux angles avec plus de rigueur qu'en dev web.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>La suite</h2>
+                <p>Le tuto continue avec le modèle d'arme et ses animations, le rechargement, une deuxième arme, le ramassage de munitions, la visée (ADS), et des objets à lancer. J'ai hâte d'avoir un vrai visuel d'arme à l'écran plutôt qu'un cube qui tire des balles invisibles.</p>
+                <p>Pas de plan de jeu multijoueur pour l'instant — je préfère solidifier les bases solo avant de me lancer là-dedans. Mais je garde l'idée dans un coin de la tête pour plus tard.</p>
+            </div>
+        </div>
+
+        <div class="article-back">
+            <a href="../index.html#blog" class="btn btn-outline">← Retour au Blog</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

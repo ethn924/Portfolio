@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leçons apprises lors de mon stage — Ethan</title>
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#blog">Blog</a><span>›</span>
+                <span>Leçons apprises lors de mon stage</span>
+            </div>
+            <span class="blog-cat cat-experience" style="display:inline-block;margin-bottom:1rem">Expérience</span>
+            <h1 class="page-title">Leçons apprises lors de mon stage</h1>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Août 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>10 min de lecture</strong></span>
+                <span class="meta-chip">✍ <strong>Ethan Lalienne</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Stage</span><span class="tech-pill">HTML/CSS/JS</span><span class="tech-pill">Gestion de projet</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <p class="article-intro">
+                Je viens de terminer mes 7 semaines de stage de première année chez First Car, une entreprise de VTC à Courbevoie. Ma mission : créer leur site vitrine de A à Z. Voici ce que j'en retiens, entre fierté et petits ratés.
+            </p>
+
+            <div class="article-section">
+                <h2>Le contexte</h2>
+                <p>First Car met en relation des chauffeurs VTC avec des clients. Mon tuteur, M. Nicolas MORIN (le PDG), avait besoin d'un site internet vitrine — présentation de l'entreprise, galerie de véhicules, contact, mentions légales. Aucun site n'existait avant. Tout était à faire.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Semaine 1 : parler à un vrai client, pas un énoncé de BTS</h2>
+                <p>La première grosse différence avec un projet scolaire : personne ne me donne un cahier des charges tout prêt. J'ai dû interviewer M. MORIN pour comprendre ce qu'il voulait vraiment, définir avec lui les 5 pages du site, et faire un premier maquettage papier avant de toucher au code. Traduire les attentes d'un non-développeur en fonctionnalités concrètes, c'est un exercice à part entière — plus dur que je pensais.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Construire vraiment quelque chose</h2>
+                <p>Semaine après semaine, le site a pris forme : une charte graphique (orange et sombre, pour coller à l'image de l'entreprise), une galerie de véhicules en CSS Grid responsive (Tesla Model Y, Toyota, Mercedes Viano, VW Jetta) avec des effets au survol, un formulaire de contact fonctionnel via FormSubmit — sans backend, juste pour ce projet — et les pages légales obligatoires pour une activité VTC (RGPD compris).</p>
+                <p>Ce qui m'a le plus servi de mes cours de BTS SIO : la rigueur qu'on nous demande sur la structure du code, même sur un "simple" site vitrine. Header et footer communs, feuille de style organisée, ça évite de tout casser en changeant une seule page.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Le responsive, la vraie difficulté</h2>
+                <p>Je pensais que le plus dur serait le design. En fait, c'est le responsive qui m'a pris le plus de temps : tester sur plusieurs appareils, ajuster les media queries à 768px et 480px, corriger la navigation mobile qui ne s'affichait pas bien. Rien d'extraordinaire sur le papier, mais en vrai il faut de la patience et beaucoup d'allers-retours dans les DevTools.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ce que je retiens</h2>
+                <ul>
+                    <li><strong>Un client n'est pas un professeur.</strong> Il faut savoir reformuler, proposer, parfois dire non à une idée qui ne marchera pas techniquement.</li>
+                    <li><strong>Livrer compte plus que perfectionner.</strong> À un moment il faut arrêter de peaufiner et livrer une version qui fonctionne.</li>
+                    <li><strong>La documentation, c'est pas optionnel.</strong> J'ai dû écrire un petit guide pour que M. MORIN puisse mettre à jour le site lui-même après mon départ.</li>
+                    <li><strong>Le front-end web, ça me plaît vraiment.</strong> Ce stage a confirmé quelque chose que je soupçonnais déjà.</li>
+                </ul>
+            </div>
+
+            <div class="article-section">
+                <h2>Le résultat</h2>
+                <p>Stage validé, site livré et approuvé par M. MORIN. Le code est <a href="https://github.com/ethn924/first-car-site" target="_blank">public sur GitHub</a> si ça vous intéresse de voir le résultat. Et vu que First Car m'a repris pour un deuxième stage l'année suivante (sur un projet bien plus ambitieux, avec base de données et application Java), je suppose que ça s'est plutôt bien passé.</p>
+            </div>
+        </div>
+
+        <div class="article-back">
+            <a href="../index.html#blog" class="btn btn-outline">← Retour au Blog</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

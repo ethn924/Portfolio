@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site responsive HTML/CSS/JavaScript — Ethan</title>
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+    <style>
+        code { font-family: var(--font-mono); font-size: 0.82rem; background: var(--surface); border: 1px solid var(--border); padding: 0.1rem 0.4rem; border-radius: 3px; color: var(--accent); }
+        .code-block { background: #0e0e1a; border: 1px solid #2a2a3a; border-radius: var(--r-md); padding: 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
+        .code-block pre { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.75; color: #e8e8ee; margin: 0; white-space: pre; }
+        .kw { color: #818cf8; } .cl { color: #6ee7b7; } .cm { color: #5a5a7a; font-style: italic; } .st { color: #f472b6; } .nm { color: #fbbf24; }
+        .concept-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .concept-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; transition: border-color 0.2s; }
+        .concept-card:hover { border-color: var(--accent); }
+        .concept-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--accent); }
+        .concept-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+        @media (max-width: 600px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#blog">Blog</a><span>›</span>
+                <span>Site responsive HTML/CSS/JavaScript</span>
+            </div>
+            <span class="blog-cat cat-tutoriel" style="display:inline-block;margin-bottom:1rem">Tutoriel</span>
+            <h1 class="page-title">Construire un site responsive : ce qui marche vraiment</h1>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Septembre 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>8 min de lecture</strong></span>
+                <span class="meta-chip">✍ <strong>Ethan Lalienne</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">CSS</span><span class="tech-pill">Flexbox</span><span class="tech-pill">Grid</span><span class="tech-pill">Media Queries</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <p class="article-intro">
+                Pendant mon stage chez First Car, j'ai passé une semaine entière rien que sur le responsive du site vitrine. Voici les quelques principes qui m'ont vraiment servi, avec les erreurs que j'ai faites au passage.
+            </p>
+
+            <div class="article-section">
+                <h2>Commencer par les vraies tailles d'écran, pas des chiffres au hasard</h2>
+                <p>Au début, je changeais des breakpoints un peu à l'aveugle jusqu'à ce que "ça ait l'air bien". Grosse perte de temps. Ce qui marche mieux : tester avec les DevTools sur des tailles réelles et n'ajouter un breakpoint que quand la mise en page casse vraiment.</p>
+                <p>Sur le site First Car, j'ai fini avec deux breakpoints principaux :</p>
+                <div class="code-block"><pre><span class="cm">/* Tablette */</span>
+<span class="kw">@media</span> (max-width: <span class="nm">768px</span>) {
+    .galerie { grid-template-columns: <span class="kw">repeat</span>(<span class="nm">2</span>, <span class="nm">1fr</span>); }
+}
+
+<span class="cm">/* Mobile */</span>
+<span class="kw">@media</span> (max-width: <span class="nm">480px</span>) {
+    .galerie { grid-template-columns: <span class="nm">1fr</span>; }
+    .nav-links { display: none; } <span class="cm">/* menu burger à la place */</span>
+}</pre></div>
+            </div>
+
+            <div class="article-section">
+                <h2>Flexbox vs Grid : j'ai arrêté de me poser la question à chaque fois</h2>
+                <div class="concept-grid">
+                    <div class="concept-card"><h4>↔️ Flexbox</h4><p>Pour aligner des éléments sur un axe : header, footer, barre de navigation, boutons alignés.</p></div>
+                    <div class="concept-card"><h4>▦ Grid</h4><p>Pour une vraie grille en deux dimensions : galerie de véhicules, cartes de projets, tableaux de contenu.</p></div>
+                </div>
+                <p>La galerie de véhicules du site First Car (Tesla Model Y, Toyota, Mercedes Viano, VW Jetta) est en <code>display: grid</code> avec <code>repeat(auto-fit, minmax(...))</code>, ce qui évite d'avoir à recalculer le nombre de colonnes à chaque breakpoint.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Le menu mobile, plus casse-tête que prévu</h2>
+                <p>Sur desktop, le menu de navigation s'affiche en ligne. Sur mobile, il fallait un menu burger qui ouvre/ferme un panneau. Rien de sorcier en soi, mais j'ai eu un bug bête : le menu s'affichait bien, mais un clic en dehors ne le refermait pas. Un simple event listener sur le document a réglé le problème :</p>
+                <div class="code-block"><pre><span class="kw">document</span>.addEventListener(<span class="st">'click'</span>, (e) => {
+    <span class="kw">if</span> (!menu.contains(e.target) && !burger.contains(e.target)) {
+        menu.classList.remove(<span class="st">'open'</span>);
+    }
+});</pre></div>
+            </div>
+
+            <div class="article-section">
+                <h2>Tester pour de vrai, pas juste redimensionner la fenêtre</h2>
+                <p>Redimensionner la fenêtre du navigateur donne une bonne idée, mais ne remplace pas un vrai test sur téléphone. Deux-trois bugs (zone de clic trop petite sur un bouton, texte qui débordait) ne sont apparus que sur mon propre téléphone, pas dans les DevTools. Depuis, je teste systématiquement sur un vrai appareil avant de considérer une page terminée.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ce que je retiens</h2>
+                <ul>
+                    <li>Peu de breakpoints, mais bien choisis — pas un par pixel cassé</li>
+                    <li>Flexbox pour aligner, Grid pour structurer</li>
+                    <li>Toujours tester sur un vrai appareil, pas seulement dans les DevTools</li>
+                    <li>Le responsive prend souvent plus de temps que le design lui-même — à prévoir dans le planning</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="article-back">
+            <a href="../index.html#blog" class="btn btn-outline">← Retour au Blog</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

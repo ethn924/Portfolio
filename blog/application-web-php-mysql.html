@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application web PHP & MySQL — Ethan</title>
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+    <style>
+        code { font-family: var(--font-mono); font-size: 0.82rem; background: var(--surface); border: 1px solid var(--border); padding: 0.1rem 0.4rem; border-radius: 3px; color: var(--accent); }
+        .code-block { background: #0e0e1a; border: 1px solid #2a2a3a; border-radius: var(--r-md); padding: 1.5rem; margin: 1.25rem 0; overflow-x: auto; }
+        .code-block pre { font-family: var(--font-mono); font-size: 0.78rem; line-height: 1.75; color: #e8e8ee; margin: 0; white-space: pre; }
+        .kw { color: #818cf8; } .cl { color: #6ee7b7; } .cm { color: #5a5a7a; font-style: italic; } .st { color: #f472b6; } .nm { color: #fbbf24; }
+        .concept-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; }
+        .concept-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; transition: border-color 0.2s; }
+        .concept-card:hover { border-color: var(--accent); }
+        .concept-card h4 { font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--accent); }
+        .concept-card p { font-size: 0.82rem; color: var(--text-muted); margin: 0; }
+        @media (max-width: 600px) { .concept-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link active">Blog</a></li>
+                <li><a href="../index.html#stage" class="nav-link">Stage</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#stage" class="mob-link">Stage</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a><span>›</span>
+                <a href="../index.html#blog">Blog</a><span>›</span>
+                <span>Application web PHP & MySQL</span>
+            </div>
+            <span class="blog-cat cat-tutoriel" style="display:inline-block;margin-bottom:1rem">Tutoriel</span>
+            <h1 class="page-title">Application web PHP & MySQL : les bases que j'applique à chaque projet</h1>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>Décembre 2025</strong></span>
+                <span class="meta-chip">⏱ <strong>10 min de lecture</strong></span>
+                <span class="meta-chip">✍ <strong>Ethan Lalienne</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">PHP</span><span class="tech-pill">MySQL</span><span class="tech-pill">PDO</span><span class="tech-pill">Sécurité</span>
+            </div>
+        </div>
+
+        <div class="article-body">
+            <p class="article-intro">
+                Entre mon projet AP1 (gestion de comptes rendus), le forum et RoutyGo, j'ai fini par écrire pas mal de formulaires PHP connectés à MySQL. Voici les réflexes que j'ai fini par prendre — et ceux que j'ai appris à mes dépens.
+            </p>
+
+            <div class="article-section">
+                <h2>PDO plutôt que mysqli</h2>
+                <p>Sur mes premiers essais, j'utilisais <code>mysqli</code>. Depuis, je suis passé sur <strong>PDO</strong> avec des requêtes préparées, plus lisible et plus simple à sécuriser contre les injections SQL :</p>
+                <div class="code-block"><pre><span class="cm">// Jamais ça (injection SQL possible)</span>
+<span class="cl">$sql</span> = <span class="st">"SELECT * FROM utilisateur WHERE email = '"</span> . <span class="cl">$email</span> . <span class="st">"'"</span>;
+
+<span class="cm">// Toujours ça (requête préparée)</span>
+<span class="cl">$stmt</span> = <span class="cl">$pdo</span>->prepare(<span class="st">"SELECT * FROM utilisateur WHERE email = ?"</span>);
+<span class="cl">$stmt</span>->execute([<span class="cl">$email</span>]);</pre></div>
+                <p>Avec les paramètres liés (<code>?</code> ou <code>:nom</code>), la valeur n'est jamais interprétée comme du SQL. Simple, mais ça change tout.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Les mots de passe : jamais en clair, jamais</h2>
+                <p>Sur RoutyGo et le forum, chaque compte utilisateur a son mot de passe haché avant d'être stocké — jamais en clair dans la base :</p>
+                <div class="code-block"><pre><span class="cm">// À l'inscription</span>
+<span class="cl">$hash</span> = password_hash(<span class="cl">$motDePasse</span>, <span class="cl">PASSWORD_DEFAULT</span>);
+
+<span class="cm">// À la connexion</span>
+<span class="kw">if</span> (password_verify(<span class="cl">$motDePasseSaisi</span>, <span class="cl">$hashEnBase</span>)) {
+    <span class="cm">// connexion autorisée</span>
+}</pre></div>
+                <p>Sur mon stage de deuxième année chez First Car, on est allés un cran plus loin côté Java avec JBCrypt pour l'appli desktop — même logique, juste une autre lib.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ne jamais faire confiance à ce qui vient du formulaire</h2>
+                <p>Toute donnée envoyée par un utilisateur doit être vérifiée côté serveur, même si elle est déjà validée côté JavaScript (qui peut toujours être contourné). Sur mes projets, je passe systématiquement les entrées dans une fonction de validation avant de les utiliser :</p>
+                <div class="code-block"><pre><span class="kw">function</span> valider_email(<span class="cl">$email</span>) {
+    <span class="kw">return</span> filter_var(<span class="cl">$email</span>, <span class="cl">FILTER_VALIDATE_EMAIL</span>);
+}</pre></div>
+                <p>Et côté affichage, j'échappe toujours ce qui vient de la base avant de l'afficher (<code>htmlspecialchars</code>), pour éviter qu'un utilisateur malin injecte du HTML ou du JavaScript dans un commentaire, par exemple.</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Les sessions et les tokens CSRF</h2>
+                <p>Pour l'authentification, j'utilise les sessions PHP classiques (<code>$_SESSION</code>). Sur le projet de réservation de mon deuxième stage, on a ajouté des tokens CSRF sur les formulaires sensibles pour éviter qu'un site tiers puisse soumettre une action à la place de l'utilisateur sans qu'il le sache. Ça reste un réflexe simple à prendre dès qu'un formulaire modifie des données (pas juste un formulaire de recherche).</p>
+            </div>
+
+            <div class="article-section">
+                <h2>Ce que je retiens</h2>
+                <ul>
+                    <li>Requêtes préparées, toujours — même pour "juste un petit projet perso"</li>
+                    <li>Mots de passe hachés (<code>password_hash</code>/<code>password_verify</code>), jamais stockés en clair</li>
+                    <li>Valider et échapper toute donnée qui vient de l'utilisateur, côté serveur</li>
+                    <li>Penser aux tokens CSRF dès qu'un formulaire modifie des données</li>
+                </ul>
+                <p>Rien de révolutionnaire, mais ce sont exactement les réflexes qui manquent le plus souvent dans les premiers projets — les miens y compris, au début.</p>
+            </div>
+        </div>
+
+        <div class="article-back">
+            <a href="../index.html#blog" class="btn btn-outline">← Retour au Blog</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
