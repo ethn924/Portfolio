@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapid Rename — Ethan</title>
+    <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/favicon-32.png">
+    <link rel="apple-touch-icon" href="../assets/images/favicon-180.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+    <script>(function(){try{const t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}})()</script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="../index.html" class="nav-logo">ETHAN<span class="logo-dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about" class="nav-link">À propos</a></li>
+                <li><a href="../index.html#projects" class="nav-link active">Projets</a></li>
+                <li><a href="../index.html#blog" class="nav-link">Blog</a></li>
+                <li><a href="../index.html#resources" class="nav-link">Ressources</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-btn" id="themeBtn"><span>◐</span></button>
+                <button class="burger" id="burger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="../index.html#about" class="mob-link">À propos</a>
+            <a href="../index.html#projects" class="mob-link">Projets</a>
+            <a href="../index.html#blog" class="mob-link">Blog</a>
+            <a href="../index.html#resources" class="mob-link">Ressources</a>
+            <a href="../index.html#contact" class="mob-link">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        <div class="page-header container">
+            <div class="breadcrumb"><a href="../index.html">Accueil</a><span>›</span><a href="../index.html#projects">Projets</a><span>›</span><span>Rapid Rename</span></div>
+            <div class="section-label">Game Dev / Tooling — En développement · 2026</div>
+            <h1 class="page-title">🛠️ Rapid Rename — Outil d'éditeur Unity</h1>
+            <p class="page-subtitle">Renommage de lots d'assets en un clic, avec détection de règle par l'exemple</p>
+            <div class="page-meta">
+                <span class="meta-chip">📅 <strong>2026</strong></span>
+                <span class="meta-chip">🛠️ <strong>Editor Tooling</strong></span>
+                <span class="meta-chip">🟡 <strong>En développement</strong></span>
+            </div>
+            <div class="tech-pills">
+                <span class="tech-pill">Unity</span><span class="tech-pill">C#</span><span class="tech-pill">Editor Window</span><span class="tech-pill">Tests unitaires</span>
+            </div>
+        </div>
+        <div class="page-body">
+            <main class="page-main">
+                <h2>À propos du projet</h2>
+                <p>Renommer des dizaines d'assets à la main dans Unity (variantes de prefabs, séries de textures, packs de sons...) est une corvée répétitive. <strong>Rapid Rename</strong> est une extension d'éditeur qui traite ça en un clic : sélection multiple, règle de renommage définie une fois, appliquée à tous les assets sélectionnés.</p>
+                <p>C'est un projet personnel pensé dès le départ pour être <strong>publié sur l'Asset Store</strong> — d'où une attention particulière portée à la robustesse (tests unitaires) et à la sécurité des opérations (rien n'est irréversible).</p>
+
+                <h2>Fonctionnalités</h2>
+                <div class="steps-list">
+                    <div class="step-item"><span class="step-num">01</span><div><h4>Renommage par l'exemple</h4><p>La fonctionnalité phare : on édite le nom souhaité pour un seul asset de la sélection, l'outil déduit automatiquement la règle (ajout de préfixe/suffixe, ou remplacement d'une portion du nom) et l'applique à tout le lot.</p></div></div>
+                    <div class="step-item"><span class="step-num">02</span><div><h4>Transformations de casse</h4><p>snake_case, PascalCase, Title Case, majuscules/minuscules — avec détection intelligente des limites de mots (espaces, tirets, underscores, et transitions camelCase).</p></div></div>
+                    <div class="step-item"><span class="step-num">03</span><div><h4>Recherche / remplacement</h4><p>Littéral ou regex, sensible ou non à la casse, combinable avec trim, préfixe/suffixe et numérotation automatique (position, pas, remplissage de zéros).</p></div></div>
+                    <div class="step-item"><span class="step-num">04</span><div><h4>Historique avec annulation</h4><p>Unity ne couvre pas le renommage d'assets dans son système d'Undo — Rapid Rename journalise chaque lot (suivi par GUID, donc résistant aux déplacements de fichiers) et permet de tout annuler en un clic, y compris après un redémarrage de l'éditeur.</p></div></div>
+                    <div class="step-item"><span class="step-num">05</span><div><h4>Anti-doublons</h4><p>Si deux résultats de renommage entrent en collision, l'outil ajoute automatiquement un suffixe numérique pour garder des noms uniques.</p></div></div>
+                </div>
+
+                <h2>Qualité & tests</h2>
+                <p>Le moteur de renommage (<code>RenameEngine</code>) et la logique de déduction par l'exemple (<code>RenameByExample</code>) sont écrits sans dépendance à l'API Unity — uniquement du C# pur — ce qui les rend entièrement testables unitairement, séparément de l'interface graphique. Les règles de transformation et l'historique sont couverts par des tests automatisés.</p>
+
+                <h2>Statut</h2>
+                <p>Le cœur du moteur et l'interface sont fonctionnels. Reste une phase de validation dans des projets Unity réels avant publication sur l'Asset Store. Le code n'est pas public pour l'instant — projet destiné à la vente.</p>
+            </main>
+            <aside class="page-sidebar">
+                <div class="sidebar-card">
+                    <h3>Infos du projet</h3>
+                    <div class="sidebar-meta">
+                        <div class="sm-row"><span class="sm-label">Statut</span><span class="sm-value" style="color:var(--accent)">● En développement</span></div>
+                        <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Outil commercial (Asset Store)</span></div>
+                        <div class="sm-row"><span class="sm-label">Engine</span><span class="sm-value">Unity (C#)</span></div>
+                        <div class="sm-row"><span class="sm-label">Tests</span><span class="sm-value">Unitaires (NUnit)</span></div>
+                    </div>
+                </div>
+                <div class="sidebar-card">
+                    <h3>Actions</h3>
+                    <div class="sidebar-links">
+                        <a href="../index.html#projects" class="sidebar-link secondary">← Retour aux projets</a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container footer-inner">
+            <p class="footer-brand">ETHAN<span class="logo-dot">.</span></p>
+            <p class="footer-copy">&copy; 2023–2026 Ethan Lalienne · Portfolio BTS SIO · Bachelor Sup de Vinci</p>
+            <a href="../index.html" class="back-top">← Accueil</a>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
