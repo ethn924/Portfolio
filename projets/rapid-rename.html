@@ -49,29 +49,26 @@
                 <span class="meta-chip">🟡 <strong>En développement</strong></span>
             </div>
             <div class="tech-pills">
-                <span class="tech-pill">Unity</span><span class="tech-pill">C#</span><span class="tech-pill">Editor Window</span><span class="tech-pill">Tests unitaires</span>
+                <span class="tech-pill">Unity</span><span class="tech-pill">C#</span><span class="tech-pill">Editor Window</span>
             </div>
         </div>
         <div class="page-body">
             <main class="page-main">
                 <h2>À propos du projet</h2>
-                <p>Renommer des dizaines d'assets à la main dans Unity (variantes de prefabs, séries de textures, packs de sons...) est une corvée répétitive. <strong>Rapid Rename</strong> est une extension d'éditeur qui traite ça en un clic : sélection multiple, règle de renommage définie une fois, appliquée à tous les assets sélectionnés.</p>
-                <p>C'est un projet personnel pensé dès le départ pour être <strong>publié sur l'Asset Store</strong> — d'où une attention particulière portée à la robustesse (tests unitaires) et à la sécurité des opérations (rien n'est irréversible).</p>
+                <p>Renommer des dizaines d'assets à la main dans Unity (variantes de prefabs, séries de textures, packs de sons...) est une corvée répétitive. <strong>Rapid Rename</strong> est une extension d'éditeur qui traite ça en un clic sur toute une sélection.</p>
+                <p>C'est un projet personnel pensé dès le départ pour être <strong>publié sur l'Asset Store</strong> — d'où une attention particulière portée à la robustesse (développement testé) et à la sécurité des opérations (rien n'est irréversible). Le détail de l'implémentation n'est volontairement pas décrit ici.</p>
 
-                <h2>Fonctionnalités</h2>
+                <h2>Ce que ça apporte</h2>
                 <div class="steps-list">
-                    <div class="step-item"><span class="step-num">01</span><div><h4>Renommage par l'exemple</h4><p>La fonctionnalité phare : on édite le nom souhaité pour un seul asset de la sélection, l'outil déduit automatiquement la règle (ajout de préfixe/suffixe, ou remplacement d'une portion du nom) et l'applique à tout le lot.</p></div></div>
-                    <div class="step-item"><span class="step-num">02</span><div><h4>Transformations de casse</h4><p>snake_case, PascalCase, Title Case, majuscules/minuscules — avec détection intelligente des limites de mots (espaces, tirets, underscores, et transitions camelCase).</p></div></div>
-                    <div class="step-item"><span class="step-num">03</span><div><h4>Recherche / remplacement</h4><p>Littéral ou regex, sensible ou non à la casse, combinable avec trim, préfixe/suffixe et numérotation automatique (position, pas, remplissage de zéros).</p></div></div>
-                    <div class="step-item"><span class="step-num">04</span><div><h4>Historique avec annulation</h4><p>Unity ne couvre pas le renommage d'assets dans son système d'Undo — Rapid Rename journalise chaque lot (suivi par GUID, donc résistant aux déplacements de fichiers) et permet de tout annuler en un clic, y compris après un redémarrage de l'éditeur.</p></div></div>
-                    <div class="step-item"><span class="step-num">05</span><div><h4>Anti-doublons</h4><p>Si deux résultats de renommage entrent en collision, l'outil ajoute automatiquement un suffixe numérique pour garder des noms uniques.</p></div></div>
+                    <div class="step-item"><span class="step-num">01</span><div><h4>Renommage par l'exemple</h4><p>La fonctionnalité phare de l'outil : plus besoin de configurer une règle à la main, un seul exemple suffit à la déduire pour tout le lot.</p></div></div>
+                    <div class="step-item"><span class="step-num">02</span><div><h4>Transformations de casse</h4><p>Bascule tout un lot de noms entre les conventions courantes (snake_case, PascalCase, Title Case...) en un clic.</p></div></div>
+                    <div class="step-item"><span class="step-num">03</span><div><h4>Recherche / remplacement avancée</h4><p>Combinable avec numérotation automatique, préfixes/suffixes et nettoyage de nom, pour les cas plus spécifiques.</p></div></div>
+                    <div class="step-item"><span class="step-num">04</span><div><h4>Historique avec annulation</h4><p>Unity ne couvre pas le renommage d'assets dans son système d'Undo — Rapid Rename garde la trace de chaque lot et permet de tout annuler en un clic, y compris après un redémarrage de l'éditeur.</p></div></div>
+                    <div class="step-item"><span class="step-num">05</span><div><h4>Zéro collision</h4><p>Les cas où deux noms se retrouveraient identiques après renommage sont gérés automatiquement.</p></div></div>
                 </div>
 
-                <h2>Qualité & tests</h2>
-                <p>Le moteur de renommage (<code>RenameEngine</code>) et la logique de déduction par l'exemple (<code>RenameByExample</code>) sont écrits sans dépendance à l'API Unity — uniquement du C# pur — ce qui les rend entièrement testables unitairement, séparément de l'interface graphique. Les règles de transformation et l'historique sont couverts par des tests automatisés.</p>
-
                 <h2>Statut</h2>
-                <p>Le cœur du moteur et l'interface sont fonctionnels. Reste une phase de validation dans des projets Unity réels avant publication sur l'Asset Store. Le code n'est pas public pour l'instant — projet destiné à la vente.</p>
+                <p>Le cœur de l'outil et l'interface sont fonctionnels. Reste une phase de validation dans des projets Unity réels avant publication sur l'Asset Store. Code source privé — projet destiné à la vente, pas de dépôt public pour l'instant.</p>
             </main>
             <aside class="page-sidebar">
                 <div class="sidebar-card">
@@ -80,7 +77,7 @@
                         <div class="sm-row"><span class="sm-label">Statut</span><span class="sm-value" style="color:var(--accent)">● En développement</span></div>
                         <div class="sm-row"><span class="sm-label">Type</span><span class="sm-value">Outil commercial (Asset Store)</span></div>
                         <div class="sm-row"><span class="sm-label">Engine</span><span class="sm-value">Unity (C#)</span></div>
-                        <div class="sm-row"><span class="sm-label">Tests</span><span class="sm-value">Unitaires (NUnit)</span></div>
+                        <div class="sm-row"><span class="sm-label">Code source</span><span class="sm-value">Privé</span></div>
                     </div>
                 </div>
                 <div class="sidebar-card">
